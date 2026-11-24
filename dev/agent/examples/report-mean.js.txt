@@ -1,0 +1,15 @@
+// modified by jinlong.feng at 2026-11-20 KF助手现场证据补验
+const samples = InParam && InParam.samples;
+OutParam.type = "relation";
+OutParam.data = [];
+if (!Array.isArray(samples) || samples.length !== 5) {
+  OutParam.status = "need_five_samples";
+} else if (!samples.every(sample => sample && sample.Q === 192 && Number.isFinite(sample.V))) {
+  OutParam.status = "bad_sample";
+} else {
+  const mean = samples.reduce((sum, sample) => sum + sample.V, 0) / samples.length;
+  OutParam.data = [{ mean }];
+  OutParam.status = "ok";
+}
+endResponse(RequestID);
+// end

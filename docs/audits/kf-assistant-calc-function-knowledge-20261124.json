@@ -1,0 +1,3237 @@
+{
+  "title": "KF 计算函数离线知识条目",
+  "version": "2026-11-24",
+  "status": "源码核对草稿",
+  "scope": "覆盖当前助手接口目录中已登记、暂无详细用法的计算运行态全局函数。以仓库 Node 运行态源码为主。",
+  "notes": [
+    "所有条目均待在适用环境验证。signature 用描述性名称记录位置，方括号表示可省略的候选写法。registration 是注册层形参元数据。",
+    "evidence 的 source 关联 sourceFiles。line 和 column 以 1 为起点，指向原始文件，压缩文件需同时查看列或搜索 symbol。sha256 按原文件字节计算。",
+    "中心运行态、工程模板和 Node 的比较按字节进行。KH 的字节差异也包含格式变更，已抽查全局包装、参数校验和 HTTP 实现，未发现上述七参规则在三份快照间的差异。",
+    "状态码 0、-1、-2 在通用枚举中分别有成功、失败和入参无效的定义。适配器可能回传其他码，具体接口还可能返回布尔值、错误对象或混合类型。",
+    "这是离线资料。条目尚未发布到运行知识库、工具接口或模型上下文。"
+  ],
+  "offlineChecks": {
+    "coverage": "已逐项比对现有函数目录，62 个待补函数全部覆盖且无重复。46 份主来源、对应快照变体及 209 处符号定位均已校验。",
+    "isolatedSourceChecks": [
+      "用替身 KH 管理层执行原始包装及校验函数。时段采样七参在 await 版返回参数错误，回调版因缺第八参而拒绝 Promise。八参分别到达输出数组或回调。",
+      "用替身文件系统确认存在回调返回 0、缺失返回 false，覆盖写入即便传入异步错误也会回 0。",
+      "用替身集合验证 Mongo DAO 从 data 读取删除条件。条件只放 wherestr 且缺 data 的对照在调用集合前抛异常。"
+    ],
+    "liveStatus": "未运行 KF App，未接入实际适配器。替身结果只证明所测快照分支。"
+  },
+  "khSamplingPreflight": {
+    "date": "2026-11-24",
+    "m6Version": "67089443fe25",
+    "m6RuntimeChecksPassed": 18,
+    "environment": "单节点试点 测试环境，现有 M6 普通开发账号",
+    "observed": "专用计算 App 可访问。数据源目录返回 39 条，核对类型、运行实例及工程权限后，没有找到当前账号可用于本次对照的运行中 KH 测试源。",
+    "status": "等待可读的 KH 测试源和一个有历史记录的测试点",
+    "comparison": [
+      "在同一专用计算 App、同一 KH 连接、点和时间窗先调用 KHQueryRawDatas。保留状态码与原始时间、值、质量。",
+      "KHQuerySampleDatas1 分别测样本时间和两条原始记录之间的时间，逐个记录模式、值、时间和质量。",
+      "KHQuerySampleDatas2 用相同边界做区间采样，记录采样模式、间隔、点数、首末边界、值和质量，另留空窗或零值对照。"
+    ],
+    "khCallsExecuted": 0
+  },
+  "baseline": {
+    "registered": 77,
+    "detailed": 15,
+    "pending": 62,
+    "counts": {
+      "dll": {
+        "registered": 3,
+        "detailed": 0,
+        "pending": 3
+      },
+      "file": {
+        "registered": 6,
+        "detailed": 2,
+        "pending": 4
+      },
+      "kh": {
+        "registered": 9,
+        "detailed": 1,
+        "pending": 8
+      },
+      "kio": {
+        "registered": 4,
+        "detailed": 4,
+        "pending": 0
+      },
+      "ks": {
+        "registered": 6,
+        "detailed": 1,
+        "pending": 5
+      },
+      "math": {
+        "registered": 18,
+        "detailed": 2,
+        "pending": 16
+      },
+      "md5": {
+        "registered": 2,
+        "detailed": 0,
+        "pending": 2
+      },
+      "mongo": {
+        "registered": 8,
+        "detailed": 1,
+        "pending": 7
+      },
+      "redis": {
+        "registered": 7,
+        "detailed": 1,
+        "pending": 6
+      },
+      "redundancy": {
+        "registered": 2,
+        "detailed": 0,
+        "pending": 2
+      },
+      "request": {
+        "registered": 3,
+        "detailed": 0,
+        "pending": 3
+      },
+      "sql": {
+        "registered": 4,
+        "detailed": 3,
+        "pending": 1
+      },
+      "user": {
+        "registered": 5,
+        "detailed": 0,
+        "pending": 5
+      }
+    },
+    "alreadyDetailed": [
+      "ReadFile",
+      "WriteFile",
+      "KHQueryRawDatas",
+      "AsynKIOQueryDatas",
+      "AsynKIOUpdateDatas",
+      "KIOQueryDatas",
+      "KIOUpdateDatas",
+      "KSQueryDatas",
+      "Average",
+      "Sum",
+      "MongoDBQuery",
+      "redisGet",
+      "AsynSQLExecute",
+      "SQLExecute",
+      "SQLQuery"
+    ]
+  },
+  "validationOrder": [
+    {
+      "symbols": [
+        "KHQuerySampleDatas1",
+        "KHQuerySampleDatas2"
+      ],
+      "goal": "优先验目标历史适配器的时刻和时段采样，与同一批原始记录对照。"
+    },
+    {
+      "symbols": [
+        "Round",
+        "Trunc",
+        "Abs",
+        "Pow",
+        "Sqrt"
+      ],
+      "goal": "按对应运行依赖并行验证纯函数的数值边界。"
+    },
+    {
+      "symbols": [
+        "KHGetCurrentValue"
+      ],
+      "goal": "核对历史端当前值、质量和源时间，明确与 KIO 实时读数并用的判断依据。"
+    }
+  ],
+  "groups": {
+    "kh": {
+      "title": "KH 历史库",
+      "notes": [
+        "alias 是计算工程已配置的 KH 连接名。管理层还需要找到该连接关联的运行数据源实例。查询用非空点名数组。",
+        "timeoutMs 在计算侧 HTTP 包装中按 timeoutMs || 3000 取值。全局包装固定转发全部形参位置，因此内部 arguments.length 分支不能直接当作公共签名。",
+        "三个 Asyn 查询和 AsynKHAddDatas 的业务结果走回调。全局包装声明 async，但没有返回或等待业务结果。错误分支也会直接调用回调，须传入有效函数。",
+        "传统 KH 枚举、DAO 和 KH4.0 Linux 是不同证据。具体字段、质量、时间口径及统计模式以目标适配器上机记录为准。"
+      ]
+    },
+    "math": {
+      "title": "数学",
+      "notes": [
+        "建议先用有限 Number 做业务计算。mathjs 委托函数的扩展类型、舍入和异常以目标机安装的依赖版本为准，计算运行态自身的依赖清单未锁定该库。"
+      ]
+    },
+    "md5": {
+      "title": "摘要",
+      "notes": [
+        "两条路径最终调用同一个 md5 依赖。摘要适用于已有协议兼容与内容比对，按项目约定核对输入字节和编码。"
+      ]
+    },
+    "ks": {
+      "title": "KingSCADA 数据",
+      "notes": [
+        "alias 是计算工程内已配置的 KS 连接名。管理层解析关联实例，配置和实例缺失时给参数错误码 -2。已看到的 HTTP 请求超时固定 3000 毫秒。",
+        "Asyn 系列的外层 Promise 无业务结果。输入无效或连接缺失时，回调可能在发出任何请求前执行，务必提供有效回调。"
+      ]
+    },
+    "sql": {
+      "title": "关系库 SQL",
+      "notes": [
+        "仅整理缺条目的 AsynSQLQuery。alias 按计算工程连接名匹配。SQLQuery、SQLExecute、AsynSQLExecute 已有条目。"
+      ]
+    },
+    "file": {
+      "title": "计算 App 本地文件",
+      "notes": [
+        "读写发生在计算 App 进程所在主机，受该进程工作目录、运行身份、文件权限及部署平台影响。",
+        "Asyn 系列的即时 0 只表示包装已发起调用。回调才交付结果。若回调漏传或类型不符，某些参数校验分支仍直接调用该位置，可能抛异常。"
+      ]
+    },
+    "mongo": {
+      "title": "MongoDB",
+      "notes": [
+        "alias 和 collection 为字符串，alias 应匹配计算工程中的数据源。包装的 object 型检查只使用 typeof，需由调用方确认确实是预期文档、过滤对象或更新字段。",
+        "批量写入接口只消费返回的总状态，变更范围和实际条数要在测试集合回读。Asyn 外层 Promise 不承载业务回执，校验和路由错误可能立即回调。"
+      ]
+    },
+    "redis": {
+      "title": "Redis",
+      "notes": [
+        "alias、key、field 和写入的 value 在全局包装层均按字符串检查。alias 应匹配计算工程连接名。",
+        "读接口成功取适配器的 data，失败可能返回数值错误码。写删接口返回总体状态，不返回 Redis 自身的改动条数。"
+      ]
+    },
+    "redundancy": {
+      "title": "冗余事件订阅",
+      "notes": [
+        "计算 App 通过部署配置中的运维网关订阅事件，注册时建立共享连接。实际许可、WS 可达性和事件字段以目标部署验证为准。"
+      ]
+    },
+    "request": {
+      "title": "请求式脚本调用与身份",
+      "notes": [
+        "目标是计算 App 中已发布的请求式脚本。Node 与工程模板的 URL 拼接、请求正文和回调实现有差异，本组逐项描述 Node 快照。",
+        "应由工程负责人核对运行身份和访问范围。测试只用专用账号与 App，本条目不收录凭据或现场地址。"
+      ]
+    },
+    "user": {
+      "title": "账号批量操作",
+      "notes": [
+        "运行时调用 KF 账号网关。token 为空时直接返回字符串 invalid token，超时使用 timeoutMs || 15000。",
+        "正常响应 errorCode 为 0 时取 data，特定业务失败取 data.message 或 data.errorCode，其他失败取 message。HTTP 助手捕获异常后可能返回 undefined，解包可能再抛错。不可统一按数值 0 判断。",
+        "依赖当前账号的租户及管理权限。人工先核对角色与允许的操作范围，再用测试账号验证可见性、部分失败和实际变更。"
+      ]
+    },
+    "dll": {
+      "title": "Windows DLL",
+      "notes": [
+        "全局注册仅在 win32 执行，接口依赖 win64 原生模块。快照内入口有引用一致性疑点。下面记录静态形参与意图，需核对部署产物和原生依赖后才能确定可用性。"
+      ]
+    }
+  },
+  "entries": [
+    {
+      "family": "kh",
+      "symbol": "KHQuerySampleDatas1",
+      "signature": "KHQuerySampleDatas1(alias, tagNames, specificTime, samplingMode, rows[, timeoutMs])",
+      "effect": "查询",
+      "result": "Promise<状态码>。进入 HTTP 层后清空 rows，再写入适配器行。Linux 分组形态会展开。",
+      "facts": [
+        "指定时刻必须为字符串。模式校验用宽松比较匹配 0 或 1。传统 KH 把模式与时刻交给原生 DAO，KH4.0 Linux 时刻查询分支未使用该模式值，且用 value || \"-\" 取数据，可能把真实 0 输出为 \"-\"。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "用已知原始记录覆盖精确命中、前后都有数据、跨日、无记录、0 值及坏质量。对照返回字段、源时间、时区和 mode=0/1 的实际效果。",
+      "priority": "优先实测",
+      "registration": {
+        "formals": 6,
+        "requiredFormals": 6,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "kh_global_func",
+          "symbol": "global.KHQuerySampleDatas1",
+          "line": 6,
+          "column": 4
+        },
+        {
+          "source": "kh_global_interface",
+          "symbol": "KHQuerySampleDatas1",
+          "line": 173,
+          "column": 9
+        },
+        {
+          "source": "kh_manger",
+          "symbol": "KHQuerySampleDatas1",
+          "line": 30,
+          "column": 11
+        },
+        {
+          "source": "kh_interface",
+          "symbol": "KHQuerySampleDatas1Pool",
+          "line": 81,
+          "column": 5
+        },
+        {
+          "source": "dao_kh",
+          "symbol": "KHQuerySampleDatas1",
+          "line": 1,
+          "column": 2268
+        },
+        {
+          "source": "datasource_kh4.0",
+          "symbol": "KHQuerySampleDatas1",
+          "line": 554,
+          "column": 11
+        }
+      ]
+    },
+    {
+      "family": "kh",
+      "symbol": "KHQuerySampleDatas2",
+      "signature": "KHQuerySampleDatas2(alias, tagNames, startTime, endTime, samplingMode, interval, calculationMode, rows[, timeoutMs])",
+      "effect": "查询",
+      "result": "Promise<状态码>。进入 HTTP 层后清空并填充 rows。该路径还识别回包 errcode。",
+      "facts": [
+        "起止均为字符串。内层接受模式 0/1/2，并拒绝 interval <= 0。公共入口中第七位是 calculationMode，第八位才是输出容器或回调。内层七参分支的移位在该包装路径不会触发。",
+        "传统 KH 枚举将 0/1/2 标作步进、线性、统计。KH4.0 Linux 的实现将 1/2 用于步进和趋势，趋势用毫秒时间差除以 interval 算网格。其统计分支与传统枚举也有差异，勿跨适配器沿用模式或单位。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "给定固定短区间、两点名和已知记录，按适配器查模式 0/1/2、间隔单位、首末边界、质量与空窗。七参及对照八参从脚本公开入口单独取证。",
+      "priority": "优先实测",
+      "registration": {
+        "formals": 9,
+        "requiredFormals": 9,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "kh_global_func",
+          "symbol": "global.KHQuerySampleDatas2",
+          "line": 8,
+          "column": 4
+        },
+        {
+          "source": "kh_global_interface",
+          "symbol": "KHQuerySampleDatas2",
+          "line": 207,
+          "column": 9
+        },
+        {
+          "source": "kh_manger",
+          "symbol": "KHQuerySampleDatas2",
+          "line": 38,
+          "column": 11
+        },
+        {
+          "source": "kh_interface",
+          "symbol": "KHQuerySampleDatas2Pool",
+          "line": 115,
+          "column": 5
+        },
+        {
+          "source": "dao_kh",
+          "symbol": "KHQuerySampleDatas2",
+          "line": 1,
+          "column": 2628
+        },
+        {
+          "source": "enum_common",
+          "symbol": "enum_khSamplingModeforKP",
+          "line": 180,
+          "column": 7
+        },
+        {
+          "source": "datasource_kh4.0",
+          "symbol": "KHQuerySampleDatas2",
+          "line": 637,
+          "column": 11
+        }
+      ]
+    },
+    {
+      "family": "kh",
+      "symbol": "KHGetCurrentValue",
+      "signature": "KHGetCurrentValue(alias, tagNames, rows[, timeoutMs])",
+      "effect": "查询",
+      "result": "Promise<状态码>。HTTP 层先清空 rows，再按下标复制历史适配器的当前值，解析异常可给 -1。",
+      "facts": [
+        "KH4.0 Linux 分支返回 N/T/V/Q 等字段，Q 为 Good/Bad。该调用走 KH 当前值，结果新鲜度需按该适配器实测。"
+      ],
+      "verification": "KF 实机",
+      "check": "与 KIO 读数并列验证停采前后、真实 0、坏质量、不存在点、时间戳和无新样本。",
+      "priority": "采样验收后",
+      "registration": {
+        "formals": 4,
+        "requiredFormals": 4,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "kh_global_func",
+          "symbol": "global.KHGetCurrentValue",
+          "line": 10,
+          "column": 4
+        },
+        {
+          "source": "kh_global_interface",
+          "symbol": "KHGetCurrentValue",
+          "line": 263,
+          "column": 9
+        },
+        {
+          "source": "kh_manger",
+          "symbol": "KHGetCurrentValue",
+          "line": 46,
+          "column": 11
+        },
+        {
+          "source": "kh_interface",
+          "symbol": "KHGetCurrentValuePool",
+          "line": 153,
+          "column": 5
+        },
+        {
+          "source": "datasource_kh4.0",
+          "symbol": "KHGetCurrentValue",
+          "line": 310,
+          "column": 11
+        }
+      ]
+    },
+    {
+      "family": "kh",
+      "symbol": "KHAddDatas",
+      "signature": "KHAddDatas(alias, dataByTag, errorCodes[, timeoutMs])",
+      "effect": "写历史",
+      "result": "Promise<总状态码>。进入 HTTP 层后清空 errorCodes。不同回包分支写入 ErrorStatus 或按 tag_oks 追加 0。",
+      "facts": [
+        "dataByTag 是按点名组织的对象。每个点的值是非空记录数组，同组 DataValue 类型一致。每条必有 DataValue、非空字符串 TimeStamp 和 QualityStamp。可选 DataType 为数字，DataLength 仅在 DataType 为 10/11/13/14 时接受数字。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "人工确认点归属、版本和重复时间戳策略。用专用历史点验单点、多点和部分失败，再按点名和时间回读，核实总码与逐项状态。",
+      "priority": "专项核对",
+      "registration": {
+        "formals": 4,
+        "requiredFormals": 4,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "kh_global_func",
+          "symbol": "global.KHAddDatas",
+          "line": 2,
+          "column": 1
+        },
+        {
+          "source": "kh_global_interface",
+          "symbol": "KHAddDatas",
+          "line": 4,
+          "column": 9
+        },
+        {
+          "source": "kh_manger",
+          "symbol": "KHAddDatas",
+          "line": 14,
+          "column": 11
+        },
+        {
+          "source": "kh_interface",
+          "symbol": "KHAddDatasPool",
+          "line": 7,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "family": "kh",
+      "symbol": "AsynKHAddDatas",
+      "signature": "AsynKHAddDatas(alias, dataByTag, callback[, timeoutMs])",
+      "effect": "写历史",
+      "result": "callback(code, errorCodes)。Linux 标记分支可以回空 errorCodes。",
+      "facts": [
+        "dataByTag 是按点名组织的对象。每个点的值是非空记录数组，同组 DataValue 类型一致。每条必有 DataValue、非空字符串 TimeStamp 和 QualityStamp。可选 DataType 为数字，DataLength 仅在 DataType 为 10/11/13/14 时接受数字。",
+        "空回执不能证明点位均写入成功。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "人工确认点归属、版本和重复时间戳策略。用专用历史点验单点、多点和部分失败，再按点名和时间回读，核实总码与逐项状态。 另核对回调次数及 Linux 空错误数组。",
+      "priority": "专项核对",
+      "registration": {
+        "formals": 4,
+        "requiredFormals": 4,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "kh_global_func",
+          "symbol": "global.AsynKHAddDatas",
+          "line": 12,
+          "column": 4
+        },
+        {
+          "source": "kh_global_interface",
+          "symbol": "AsynKHAddDatas",
+          "line": 288,
+          "column": 3
+        },
+        {
+          "source": "kh_manger",
+          "symbol": "AsynKHAddDatas",
+          "line": 54,
+          "column": 5
+        },
+        {
+          "source": "kh_interface",
+          "symbol": "AsynKHAddDatasPool",
+          "line": 183,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "family": "kh",
+      "symbol": "AsynKHQueryRawDatas",
+      "signature": "AsynKHQueryRawDatas(alias, tagNames, startTime, endTime, version, filter, quality, callback[, timeoutMs])",
+      "effect": "查询",
+      "result": "callback(code, rows)。HTTP 层收集适配器返回行，失败分支可能交付空数组。",
+      "facts": [
+        "起止为字符串，version 为 -3/-2/-1/0，filter 为字符串，quality 为数字 0/1。与已有 KHQueryRawDatas 契约配对。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "用同一批原始记录比对 await 版本与回调版本。验过滤、质量、空结果、断连回调及非标准错误回包。",
+      "priority": "按项目需求",
+      "registration": {
+        "formals": 9,
+        "requiredFormals": 9,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "kh_global_func",
+          "symbol": "global.AsynKHQueryRawDatas",
+          "line": 14,
+          "column": 4
+        },
+        {
+          "source": "kh_global_interface",
+          "symbol": "AsynKHQueryRawDatas",
+          "line": 402,
+          "column": 3
+        },
+        {
+          "source": "kh_manger",
+          "symbol": "AsynKHQueryRawDatas",
+          "line": 68,
+          "column": 5
+        },
+        {
+          "source": "kh_interface",
+          "symbol": "AsynKHQueryRawDatasPool",
+          "line": 207,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "family": "kh",
+      "symbol": "AsynKHQuerySampleDatas1",
+      "signature": "AsynKHQuerySampleDatas1(alias, tagNames, specificTime, samplingMode, callback[, timeoutMs])",
+      "effect": "查询",
+      "result": "callback(code, rows)。回调的数据数组由运行接口创建。",
+      "facts": [
+        "指定时刻必须为字符串。模式校验用宽松比较匹配 0 或 1。传统 KH 把模式与时刻交给原生 DAO，KH4.0 Linux 时刻查询分支未使用该模式值，且用 value || \"-\" 取数据，可能把真实 0 输出为 \"-\"。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "用已知原始记录覆盖精确命中、前后都有数据、跨日、无记录、0 值及坏质量。对照返回字段、源时间、时区和 mode=0/1 的实际效果。 对照 await 版并核对回调时序。",
+      "priority": "按项目需求",
+      "registration": {
+        "formals": 6,
+        "requiredFormals": 6,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "kh_global_func",
+          "symbol": "global.AsynKHQuerySampleDatas1",
+          "line": 16,
+          "column": 4
+        },
+        {
+          "source": "kh_global_interface",
+          "symbol": "AsynKHQuerySampleDatas1",
+          "line": 461,
+          "column": 3
+        },
+        {
+          "source": "kh_manger",
+          "symbol": "AsynKHQuerySampleDatas1",
+          "line": 82,
+          "column": 5
+        },
+        {
+          "source": "kh_interface",
+          "symbol": "AsynKHQuerySampleDatas1Pool",
+          "line": 242,
+          "column": 5
+        },
+        {
+          "source": "datasource_kh4.0",
+          "symbol": "KHQuerySampleDatas1",
+          "line": 554,
+          "column": 11
+        }
+      ]
+    },
+    {
+      "family": "kh",
+      "symbol": "AsynKHQuerySampleDatas2",
+      "signature": "AsynKHQuerySampleDatas2(alias, tagNames, startTime, endTime, samplingMode, interval, calculationMode, callback[, timeoutMs])",
+      "effect": "查询",
+      "result": "callback(code, rows)。第八参必须为回调函数。",
+      "facts": [
+        "内层接受模式 0/1/2，并拒绝 interval <= 0。公共入口中第七位是 calculationMode，第八位才是输出容器或回调。内层七参分支的移位在该包装路径不会触发。",
+        "传统 KH 枚举将 0/1/2 标作步进、线性、统计。KH4.0 Linux 的实现将 1/2 用于步进和趋势，趋势用毫秒时间差除以 interval 算网格。其统计分支与传统枚举也有差异，勿跨适配器沿用模式或单位。",
+        "七参调用可能在试图调用缺失回调时使外层 Promise 拒绝。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "给定固定短区间、两点名和已知记录，按适配器查模式 0/1/2、间隔单位、首末边界、质量与空窗。七参及对照八参从脚本公开入口单独取证。 另核对短签名拒绝方式及异步错误回执。",
+      "priority": "按项目需求",
+      "registration": {
+        "formals": 9,
+        "requiredFormals": 9,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "kh_global_func",
+          "symbol": "global.AsynKHQuerySampleDatas2",
+          "line": 18,
+          "column": 4
+        },
+        {
+          "source": "kh_global_interface",
+          "symbol": "AsynKHQuerySampleDatas2",
+          "line": 502,
+          "column": 3
+        },
+        {
+          "source": "kh_manger",
+          "symbol": "AsynKHQuerySampleDatas2",
+          "line": 96,
+          "column": 5
+        },
+        {
+          "source": "kh_interface",
+          "symbol": "AsynKHQuerySampleDatas2Pool",
+          "line": 274,
+          "column": 5
+        },
+        {
+          "source": "enum_common",
+          "symbol": "enum_khSamplingModeforKP",
+          "line": 180,
+          "column": 7
+        },
+        {
+          "source": "datasource_kh4.0",
+          "symbol": "KHQuerySampleDatas2",
+          "line": 637,
+          "column": 11
+        }
+      ]
+    },
+    {
+      "family": "math",
+      "symbol": "Abs",
+      "signature": "Abs(value)",
+      "effect": "纯计算",
+      "result": "对应 mathjs.abs 的绝对值结果。",
+      "facts": [
+        "直接委托 mathjs.abs。"
+      ],
+      "verification": "对应依赖版本单测",
+      "check": "负数、-0、无效输入及数值类型。",
+      "priority": "可并行单测",
+      "registration": {
+        "delegated": true
+      },
+      "evidence": [
+        {
+          "source": "math_global_func",
+          "symbol": "global.Abs",
+          "line": 1,
+          "column": 30
+        }
+      ]
+    },
+    {
+      "family": "math",
+      "symbol": "Trunc",
+      "signature": "Trunc(value)",
+      "effect": "纯计算",
+      "result": "Math.trunc 的结果，有限小数向零截断。",
+      "facts": [
+        "直接委托 JavaScript Math.trunc。"
+      ],
+      "verification": "目标 Node 单测",
+      "check": "正负小数、负零、NaN 和字符串转换。",
+      "priority": "可并行单测",
+      "registration": {
+        "delegated": true
+      },
+      "evidence": [
+        {
+          "source": "math_global_func",
+          "symbol": "global.Trunc",
+          "line": 1,
+          "column": 50
+        }
+      ]
+    },
+    {
+      "family": "math",
+      "symbol": "Round",
+      "signature": "Round(value[, decimals])",
+      "effect": "纯计算",
+      "result": "对应 mathjs.round 的舍入结果。",
+      "facts": [
+        "直接委托 mathjs.round，精度参数的默认值和扩展类型由依赖解释。"
+      ],
+      "verification": "对应依赖版本单测",
+      "check": "正负半值、两位小数和无效精度。",
+      "priority": "可并行单测",
+      "registration": {
+        "delegated": true
+      },
+      "evidence": [
+        {
+          "source": "math_global_func",
+          "symbol": "global.Round",
+          "line": 1,
+          "column": 116
+        }
+      ]
+    },
+    {
+      "family": "math",
+      "symbol": "Pow",
+      "signature": "Pow(base, exponent)",
+      "effect": "纯计算",
+      "result": "对应 mathjs.pow 的幂运算结果。",
+      "facts": [
+        "直接委托 mathjs.pow。"
+      ],
+      "verification": "对应依赖版本单测",
+      "check": "负底数、分数指数、0 和非有限数。",
+      "priority": "可并行单测",
+      "registration": {
+        "delegated": true
+      },
+      "evidence": [
+        {
+          "source": "math_global_func",
+          "symbol": "global.Pow",
+          "line": 1,
+          "column": 74
+        }
+      ]
+    },
+    {
+      "family": "math",
+      "symbol": "Sqrt",
+      "signature": "Sqrt(value)",
+      "effect": "纯计算",
+      "result": "对应 mathjs.sqrt 的平方根结果。",
+      "facts": [
+        "直接委托 mathjs.sqrt。"
+      ],
+      "verification": "对应依赖版本单测",
+      "check": "0、正数与负数。核对负数是否得到复数及其在 KF 脚本中的序列化。",
+      "priority": "可并行单测",
+      "registration": {
+        "delegated": true
+      },
+      "evidence": [
+        {
+          "source": "math_global_func",
+          "symbol": "global.Sqrt",
+          "line": 1,
+          "column": 94
+        }
+      ]
+    },
+    {
+      "family": "math",
+      "symbol": "ArcCos",
+      "signature": "ArcCos(value)",
+      "effect": "纯计算",
+      "result": "常规数值返回角度，按源码换算并四舍五入到最多两位小数。",
+      "facts": [
+        "先检查 value 是否超出 [-1, 1]，超出返回 this.NaN。域内通过 math.acos 计算。"
+      ],
+      "verification": "对应依赖版本单测",
+      "check": "±1、0、越界以及调用时 this 对无效值的影响。",
+      "priority": "按项目需求",
+      "registration": {
+        "formals": 1,
+        "requiredFormals": 1,
+        "async": false
+      },
+      "evidence": [
+        {
+          "source": "math_global_func",
+          "symbol": "global.ArcCos",
+          "line": 1,
+          "column": 140
+        }
+      ]
+    },
+    {
+      "family": "math",
+      "symbol": "ArcSin",
+      "signature": "ArcSin(value)",
+      "effect": "纯计算",
+      "result": "常规数值返回角度，最多两位小数。",
+      "facts": [
+        "先检查 value 是否超出 [-1, 1]，超出返回 this.NaN。域内通过 math.asin 计算。"
+      ],
+      "verification": "对应依赖版本单测",
+      "check": "±1、0、越界及非数值。",
+      "priority": "按项目需求",
+      "registration": {
+        "formals": 1,
+        "requiredFormals": 1,
+        "async": false
+      },
+      "evidence": [
+        {
+          "source": "math_global_func",
+          "symbol": "global.ArcSin",
+          "line": 1,
+          "column": 233
+        }
+      ]
+    },
+    {
+      "family": "math",
+      "symbol": "ArcTan",
+      "signature": "ArcTan(value)",
+      "effect": "纯计算",
+      "result": "常规数值返回角度，最多两位小数。",
+      "facts": [
+        "实现也限制 [-1, 1]，超出返回 this.NaN。"
+      ],
+      "verification": "对应依赖版本单测",
+      "check": "对照 1 与 2、负数及非数值，确认脚本调用的限制。",
+      "priority": "按项目需求",
+      "registration": {
+        "formals": 1,
+        "requiredFormals": 1,
+        "async": false
+      },
+      "evidence": [
+        {
+          "source": "math_global_func",
+          "symbol": "global.ArcTan",
+          "line": 1,
+          "column": 326
+        }
+      ]
+    },
+    {
+      "family": "math",
+      "symbol": "Cos",
+      "signature": "Cos(degrees)",
+      "effect": "纯计算",
+      "result": "常规数值返回余弦值，最多两位小数。",
+      "facts": [
+        "先将角度换算为弧度，再使用 math.cos 和 Round。"
+      ],
+      "verification": "对应依赖版本单测",
+      "check": "0、90、180 度和负角度。",
+      "priority": "按项目需求",
+      "registration": {
+        "formals": 1,
+        "requiredFormals": 1,
+        "async": false
+      },
+      "evidence": [
+        {
+          "source": "math_global_func",
+          "symbol": "global.Cos",
+          "line": 1,
+          "column": 516
+        }
+      ]
+    },
+    {
+      "family": "math",
+      "symbol": "Sin",
+      "signature": "Sin(degrees)",
+      "effect": "纯计算",
+      "result": "常规数值返回正弦值，最多两位小数。",
+      "facts": [
+        "先将角度换算为弧度，再使用 math.sin 和 Round。"
+      ],
+      "verification": "对应依赖版本单测",
+      "check": "0、30、90 度和负角度。",
+      "priority": "按项目需求",
+      "registration": {
+        "formals": 1,
+        "requiredFormals": 1,
+        "async": false
+      },
+      "evidence": [
+        {
+          "source": "math_global_func",
+          "symbol": "global.Sin",
+          "line": 1,
+          "column": 586
+        }
+      ]
+    },
+    {
+      "family": "math",
+      "symbol": "Tan",
+      "signature": "Tan(degrees)",
+      "effect": "纯计算",
+      "result": "常规数值返回正切值，最多两位小数。",
+      "facts": [
+        "先将角度换算为弧度，再使用 math.tan 和 Round。包装没有奇点处理。"
+      ],
+      "verification": "对应依赖版本单测",
+      "check": "45 度和 90 度两侧及 90 度，明确调用方的奇点策略。",
+      "priority": "按项目需求",
+      "registration": {
+        "formals": 1,
+        "requiredFormals": 1,
+        "async": false
+      },
+      "evidence": [
+        {
+          "source": "math_global_func",
+          "symbol": "global.Tan",
+          "line": 1,
+          "column": 656
+        }
+      ]
+    },
+    {
+      "family": "math",
+      "symbol": "Exp",
+      "signature": "Exp(exponent)",
+      "effect": "纯计算",
+      "result": "e 的指定次幂。",
+      "facts": [
+        "使用 Pow(math.e, exponent)。"
+      ],
+      "verification": "对应依赖版本单测",
+      "check": "指数 0、正负指数与指数溢出。",
+      "priority": "按项目需求",
+      "registration": {
+        "formals": 1,
+        "requiredFormals": 1,
+        "async": false
+      },
+      "evidence": [
+        {
+          "source": "math_global_func",
+          "symbol": "global.Exp",
+          "line": 1,
+          "column": 726
+        }
+      ]
+    },
+    {
+      "family": "math",
+      "symbol": "LogE",
+      "signature": "LogE(value)",
+      "effect": "纯计算",
+      "result": "对应 math.log(value, math.e) 的结果。",
+      "facts": [
+        "以 math.e 为底调用 mathjs。"
+      ],
+      "verification": "对应依赖版本单测",
+      "check": "1、正数、0、负数与复数结果。",
+      "priority": "按项目需求",
+      "registration": {
+        "formals": 1,
+        "requiredFormals": 1,
+        "async": false
+      },
+      "evidence": [
+        {
+          "source": "math_global_func",
+          "symbol": "global.LogE",
+          "line": 1,
+          "column": 771
+        }
+      ]
+    },
+    {
+      "family": "math",
+      "symbol": "LogN",
+      "signature": "LogN(value, base)",
+      "effect": "纯计算",
+      "result": "对应 math.log(value, base) 的结果。",
+      "facts": [
+        "第一参为真数，第二参为底数。"
+      ],
+      "verification": "对应依赖版本单测",
+      "check": "常用底数、底为 1、底为 0、负数和无效输入。",
+      "priority": "按项目需求",
+      "registration": {
+        "formals": 2,
+        "requiredFormals": 2,
+        "async": false
+      },
+      "evidence": [
+        {
+          "source": "math_global_func",
+          "symbol": "global.LogN",
+          "line": 1,
+          "column": 822
+        }
+      ]
+    },
+    {
+      "family": "math",
+      "symbol": "PI",
+      "signature": "PI()",
+      "effect": "纯计算",
+      "result": "直接返回 math.pi。",
+      "facts": [
+        "登记为无参函数。"
+      ],
+      "verification": "对应依赖版本单测",
+      "check": "比较 PI() 和 Math.PI 并核对返回类型。",
+      "priority": "按项目需求",
+      "registration": {
+        "formals": 0,
+        "requiredFormals": 0,
+        "async": false
+      },
+      "evidence": [
+        {
+          "source": "math_global_func",
+          "symbol": "global.PI",
+          "line": 1,
+          "column": 870
+        }
+      ]
+    },
+    {
+      "family": "math",
+      "symbol": "Sgn",
+      "signature": "Sgn(value)",
+      "effect": "纯计算",
+      "result": "严格等于数值 0 时返回 0，大于或小于 0 时返回 1 或 -1，未命中返回 undefined。",
+      "facts": [
+        "先严格比较 0，随后采用 JavaScript 关系比较。"
+      ],
+      "verification": "目标 Node 单测",
+      "check": "数值 0、±值、NaN、null 和字符串 \"0\"。",
+      "priority": "按项目需求",
+      "registration": {
+        "formals": 1,
+        "requiredFormals": 1,
+        "async": false
+      },
+      "evidence": [
+        {
+          "source": "math_global_func",
+          "symbol": "global.Sgn",
+          "line": 1,
+          "column": 907
+        }
+      ]
+    },
+    {
+      "family": "md5",
+      "symbol": "hex_md5",
+      "signature": "hex_md5(input)",
+      "effect": "摘要",
+      "result": "直接返回 md5(input) 的结果。",
+      "facts": [
+        "包装只向依赖传入第一个参数。"
+      ],
+      "verification": "对应依赖版本单测",
+      "check": "用空串、ASCII 和中文向量核对实际编码及十六进制格式。",
+      "priority": "按项目需求",
+      "registration": {
+        "formals": 1,
+        "requiredFormals": 1,
+        "async": false
+      },
+      "evidence": [
+        {
+          "source": "md5_global_func",
+          "symbol": "global.hex_md5",
+          "line": 1,
+          "column": 26
+        }
+      ]
+    },
+    {
+      "family": "md5",
+      "symbol": "md5",
+      "signature": "md5(input)",
+      "effect": "摘要",
+      "result": "直接返回 md5 依赖的结果。",
+      "facts": [
+        "全局名直接指向依赖导出。库版本和可选参数由目标机的依赖决定。"
+      ],
+      "verification": "对应依赖版本单测",
+      "check": "与 hex_md5 对照相同输入，核对 Buffer 和扩展选项是否受当前依赖支持。",
+      "priority": "按项目需求",
+      "registration": {
+        "delegated": true
+      },
+      "evidence": [
+        {
+          "source": "md5_global_func",
+          "symbol": "global.md5",
+          "line": 1,
+          "column": 68
+        }
+      ]
+    },
+    {
+      "family": "ks",
+      "symbol": "KSQueryHistoryDatas",
+      "signature": "KSQueryHistoryDatas(alias, tagNames, startTime, endTime, version, filter, quality, rows)",
+      "effect": "查询",
+      "result": "Promise<状态码>。HTTP 成功后按索引写 rows，未清空旧数组。",
+      "facts": [
+        "输入为连接名、非空点名数组和历史查询参数。转发字段为 startTime、endTime、DataVersion、filter、dataQuality，计算层没有完整校验这些字段。",
+        "每次传新数组，避免尾部旧行混进结果。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "核对目标驱动支持的版本与质量参数、时间单位与日界线、返回行结构和空结果。",
+      "priority": "按项目需求",
+      "registration": {
+        "formals": 8,
+        "requiredFormals": 8,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "ks_global_func",
+          "symbol": "global.KSQueryHistoryDatas",
+          "line": 1,
+          "column": 285
+        },
+        {
+          "source": "ks_global_interface",
+          "symbol": "KSQueryHistoryDatas",
+          "line": 1,
+          "column": 1870
+        },
+        {
+          "source": "ks_manger",
+          "symbol": "KSQueryHistoryDatas",
+          "line": 1,
+          "column": 1390
+        },
+        {
+          "source": "ks_interface",
+          "symbol": "KSQueryHistoryDatasPool",
+          "line": 1,
+          "column": 1669
+        }
+      ]
+    },
+    {
+      "family": "ks",
+      "symbol": "AsynKSQueryHistoryDatas",
+      "signature": "AsynKSQueryHistoryDatas(alias, tagNames, startTime, endTime, version, filter, quality, callback)",
+      "effect": "查询",
+      "result": "callback(code, rows)。底层创建新结果数组。",
+      "facts": [
+        "输入为连接名、非空点名数组和历史查询参数。转发字段为 startTime、endTime、DataVersion、filter、dataQuality，计算层没有完整校验这些字段。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "核对目标驱动支持的版本与质量参数、时间单位与日界线、返回行结构和空结果。 另验回调时序和断连。",
+      "priority": "按项目需求",
+      "registration": {
+        "formals": 8,
+        "requiredFormals": 8,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "ks_global_func",
+          "symbol": "global.AsynKSQueryHistoryDatas",
+          "line": 1,
+          "column": 413
+        },
+        {
+          "source": "ks_global_interface",
+          "symbol": "AsynKSQueryHistoryDatas",
+          "line": 1,
+          "column": 2461
+        },
+        {
+          "source": "ks_manger",
+          "symbol": "AsynKSQueryHistoryDatas",
+          "line": 1,
+          "column": 1990
+        },
+        {
+          "source": "ks_interface",
+          "symbol": "AsynKSQueryHistoryDatasPool",
+          "line": 1,
+          "column": 3824
+        }
+      ]
+    },
+    {
+      "family": "ks",
+      "symbol": "AsynKSQueryDatas",
+      "signature": "AsynKSQueryDatas(alias, tagNames, callback)",
+      "effect": "查询",
+      "result": "callback(code, rows)。实时回包的 data 按下标复制。",
+      "facts": [
+        "第二参须为数组。包装未明确拒绝空点名列表。"
+      ],
+      "verification": "KF 实机",
+      "check": "对照 KSQueryDatas，核对空列表、不存在的点、返回字段、坏质量和超时回调。",
+      "priority": "按项目需求",
+      "registration": {
+        "formals": 3,
+        "requiredFormals": 3,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "ks_global_func",
+          "symbol": "global.AsynKSQueryDatas",
+          "line": 1,
+          "column": 536
+        },
+        {
+          "source": "ks_global_interface",
+          "symbol": "AsynKSQueryDatas",
+          "line": 1,
+          "column": 3134
+        },
+        {
+          "source": "ks_manger",
+          "symbol": "AsynKSQueryDatas",
+          "line": 1,
+          "column": 2603
+        },
+        {
+          "source": "ks_interface",
+          "symbol": "AsynKSQueryDatasPool",
+          "line": 1,
+          "column": 2490
+        }
+      ]
+    },
+    {
+      "family": "ks",
+      "symbol": "KSUpdateDatas",
+      "signature": "KSUpdateDatas(alias, changes, errorCodes)",
+      "effect": "写设备",
+      "result": "Promise<总状态码>。进入 HTTP 层后清空 errorCodes，已看到的路径未填逐点结果。",
+      "facts": [
+        "changes 通常用含 N/V/T/Q 的非空数组。N 不应有首尾空白，V 不能为 undefined 或空字符串。缺 T 时补本机 locale 时间，缺失或空 Q 时补 Good，这些默认值会修改传入项。",
+        "对 Q 使用宽松判断拒绝 true 及等价输入。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "确认用户有权写测试点。用单点、多点和一项失败的批次，核对实际值、质量、源时间和回执数组。",
+      "priority": "专项核对",
+      "registration": {
+        "formals": 3,
+        "requiredFormals": 3,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "ks_global_func",
+          "symbol": "global.KSUpdateDatas",
+          "line": 1,
+          "column": 189
+        },
+        {
+          "source": "ks_global_interface",
+          "symbol": "KSUpdateDatas",
+          "line": 1,
+          "column": 683
+        },
+        {
+          "source": "ks_manger",
+          "symbol": "KSUpdateDatas",
+          "line": 1,
+          "column": 822
+        },
+        {
+          "source": "ks_interface",
+          "symbol": "KSUpdateDatasPool",
+          "line": 1,
+          "column": 996
+        }
+      ]
+    },
+    {
+      "family": "ks",
+      "symbol": "AsynKSUpdateDatas",
+      "signature": "AsynKSUpdateDatas(alias, changes, callback)",
+      "effect": "写设备",
+      "result": "callback(code, errorCodes)。已看到的 HTTP 路径中 errorCodes 为空数组。",
+      "facts": [
+        "changes 通常用含 N/V/T/Q 的非空数组。N 不应有首尾空白，V 不能为 undefined 或空字符串。缺 T 时补本机 locale 时间，缺失或空 Q 时补 Good，这些默认值会修改传入项。",
+        "对 Q 使用与 KSUpdateDatas 同类的检查。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "确认用户有权写测试点。用单点、多点和一项失败的批次，核对实际值、质量、源时间和回执数组。 记录回调是否恰好一次。",
+      "priority": "专项核对",
+      "registration": {
+        "formals": 3,
+        "requiredFormals": 3,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "ks_global_func",
+          "symbol": "global.AsynKSUpdateDatas",
+          "line": 1,
+          "column": 625
+        },
+        {
+          "source": "ks_global_interface",
+          "symbol": "AsynKSUpdateDatas",
+          "line": 1,
+          "column": 3758
+        },
+        {
+          "source": "ks_manger",
+          "symbol": "AsynKSUpdateDatas",
+          "line": 1,
+          "column": 3172
+        },
+        {
+          "source": "ks_interface",
+          "symbol": "AsynKSUpdateDatasPool",
+          "line": 1,
+          "column": 3183
+        }
+      ]
+    },
+    {
+      "family": "sql",
+      "symbol": "AsynSQLQuery",
+      "signature": "AsynSQLQuery(alias, sql, callback[, timeoutMs = 3000])",
+      "effect": "查询",
+      "result": "callback(code, rows)。外层 async 包装不会返回查询行。",
+      "facts": [
+        "第二参字符串和 object 都能通过包装校验，实际对象查询的形状取决于适配器。查询正文由运行接口作为 script 下发。"
+      ],
+      "verification": "KF 实机",
+      "check": "用只读 SELECT 对照 SQLQuery，核对无行、无效 alias、数据库错误与超时。对象形式如业务需要再单独验证。",
+      "priority": "按项目需求",
+      "registration": {
+        "formals": 4,
+        "requiredFormals": 3,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "sql_global_func",
+          "symbol": "global.AsynSQLQuery",
+          "line": 1,
+          "column": 272
+        },
+        {
+          "source": "sql_global_interface",
+          "symbol": "AsynSQLQuery",
+          "line": 1,
+          "column": 1424
+        },
+        {
+          "source": "sql_manger",
+          "symbol": "AsynSQLQuery",
+          "line": 1,
+          "column": 1513
+        },
+        {
+          "source": "sql_interface",
+          "symbol": "AsynAllSQLQueryPool",
+          "line": 1,
+          "column": 1326
+        }
+      ]
+    },
+    {
+      "family": "file",
+      "symbol": "isFileExists",
+      "signature": "isFileExists(path)",
+      "effect": "读文件状态",
+      "result": "Promise<状态码>。文件系统路径存在返回 0，缺失或异常返回 -1，包装入参不合规返回 -2。",
+      "facts": [
+        "输入为字符串，下游使用 fs.existsSync，目录路径也可被判定为存在。"
+      ],
+      "verification": "KF 实机",
+      "check": "在 App 自己的目录下验存在、缺失、相对路径、目录路径和运行用户权限。",
+      "priority": "按项目需求",
+      "registration": {
+        "formals": 1,
+        "requiredFormals": 1,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "file_global_func",
+          "symbol": "global.isFileExists",
+          "line": 1,
+          "column": 160
+        },
+        {
+          "source": "file_global_interface",
+          "symbol": "isFileExists",
+          "line": 1,
+          "column": 948
+        }
+      ]
+    },
+    {
+      "family": "file",
+      "symbol": "AsynIsFileExists",
+      "signature": "AsynIsFileExists(path, callback)",
+      "effect": "读文件状态",
+      "result": "即时返回状态码。callback(result) 在存在时收到数值 0，缺失时收到布尔 false，异常可收到 -1。",
+      "facts": [
+        "下游使用 fs.exists。回调结果类型混合，不能依赖真假值判断。"
+      ],
+      "verification": "KF 实机",
+      "check": "验证 0 与 false 的严格类型差异。核对无效参数和访问受限路径上的回调。",
+      "priority": "按项目需求",
+      "registration": {
+        "formals": 2,
+        "requiredFormals": 2,
+        "async": false
+      },
+      "evidence": [
+        {
+          "source": "file_global_func",
+          "symbol": "global.AsynIsFileExists",
+          "line": 1,
+          "column": 2106
+        },
+        {
+          "source": "file_global_interface",
+          "symbol": "AsynIsFileExists",
+          "line": 1,
+          "column": 87
+        }
+      ]
+    },
+    {
+      "family": "file",
+      "symbol": "AsynReadFile",
+      "signature": "AsynReadFile(path[, encoding], callback)",
+      "effect": "读文件",
+      "result": "即时返回状态码。callback(codeOrError, data) 接收内容。fs 失败可以把 Error 放在首参。",
+      "facts": [
+        "支持路径加回调和路径加编码加回调。省略编码时数据来自 fs.readFile 默认输出。部分同步异常只传回调首参。"
+      ],
+      "verification": "KF 实机",
+      "check": "验证省略编码得到 Buffer、显式编码得到文本、缺失文件和权限拒绝，核对即时返回与回调的区别。",
+      "priority": "按项目需求",
+      "registration": {
+        "formals": 3,
+        "requiredFormals": 3,
+        "async": false
+      },
+      "evidence": [
+        {
+          "source": "file_global_func",
+          "symbol": "global.AsynReadFile",
+          "line": 1,
+          "column": 2385
+        },
+        {
+          "source": "file_global_interface",
+          "symbol": "AsynReadFile",
+          "line": 1,
+          "column": 364
+        }
+      ]
+    },
+    {
+      "family": "file",
+      "symbol": "AsynWriteFile",
+      "signature": "AsynWriteFile(mode, path, data[, encoding], callback)",
+      "effect": "写文件",
+      "result": "即时返回状态码，业务结果走 callback(codeOrError)。追加分支会转交 fs 错误。",
+      "facts": [
+        "mode=1 覆盖，mode=2 追加。第三参经 typeof 校验可为字符串或对象，实际数据类型由 fs 决定。",
+        "覆盖分支的 fs.writeFile 回调忽略底层异步错误参数，可能回 0 而没有写成。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "只用测试目录验覆盖与追加。单独制造不可写路径并在回调后回读字节，先确认实际保存再采信用码。",
+      "priority": "专项核对",
+      "registration": {
+        "formals": 5,
+        "requiredFormals": 5,
+        "async": false
+      },
+      "evidence": [
+        {
+          "source": "file_global_func",
+          "symbol": "global.AsynWriteFile",
+          "line": 1,
+          "column": 3262
+        },
+        {
+          "source": "file_global_interface",
+          "symbol": "AsynWriteFile",
+          "line": 1,
+          "column": 629
+        }
+      ]
+    },
+    {
+      "family": "mongo",
+      "symbol": "AsynMongoDBQuery",
+      "signature": "AsynMongoDBQuery(alias, collection, filter, callback)",
+      "effect": "查询",
+      "result": "callback(code, rows)。查询外层和嵌套 data 的错误码都能影响 code。",
+      "facts": [
+        "filter 按 object 校验，发给 find 的 wherestr。成功分支把嵌套 data 的行复制入新数组。"
+      ],
+      "verification": "KF 实机",
+      "check": "对照 MongoDBQuery，核对无匹配与查错的区别、扩展字段类型以及回调时序。",
+      "priority": "按项目需求",
+      "registration": {
+        "formals": 4,
+        "requiredFormals": 4,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "mongo_global_func",
+          "symbol": "global.AsynMongoDBQuery",
+          "line": 1,
+          "column": 497
+        },
+        {
+          "source": "mongo_global_interface",
+          "symbol": "AsynMongoDBQuery",
+          "line": 1,
+          "column": 1546
+        },
+        {
+          "source": "mongo_manger",
+          "symbol": "AsynMongoDBQueryPool",
+          "line": 1,
+          "column": 1601
+        },
+        {
+          "source": "mongo_interface",
+          "symbol": "AsynMongoDBQueryPool",
+          "line": 1,
+          "column": 2931
+        },
+        {
+          "source": "datasource_mongodb",
+          "symbol": "SQLQuery",
+          "line": 1,
+          "column": 1197
+        },
+        {
+          "source": "dao_mongodb",
+          "symbol": "SQLQuery",
+          "line": 1,
+          "column": 472
+        }
+      ]
+    },
+    {
+      "family": "mongo",
+      "symbol": "MongoDBInsertMany",
+      "signature": "MongoDBInsertMany(alias, collection, documents)",
+      "effect": "新增文档",
+      "result": "Promise<总状态码>。路径只消费回包的总错误码，成功默认为 0。",
+      "facts": [
+        "documents 按 object 类型通过包装并由适配器解释。建议按文档数组核对实际 insertMany 路径。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "确认测试集合及唯一键。验证批量插入、键冲突和部分成功，插入后按键回读。",
+      "priority": "专项核对",
+      "registration": {
+        "formals": 3,
+        "requiredFormals": 3,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "mongo_global_func",
+          "symbol": "global.MongoDBInsertMany",
+          "line": 1,
+          "column": 181
+        },
+        {
+          "source": "mongo_global_interface",
+          "symbol": "MongoDBInsertMany",
+          "line": 1,
+          "column": 495
+        },
+        {
+          "source": "mongo_manger",
+          "symbol": "mongoDBInsertManyPool",
+          "line": 1,
+          "column": 496
+        },
+        {
+          "source": "mongo_interface",
+          "symbol": "mongoDBInsertManyPool",
+          "line": 1,
+          "column": 970
+        },
+        {
+          "source": "datasource_mongodb",
+          "symbol": "SQLExecute",
+          "line": 1,
+          "column": 1986
+        },
+        {
+          "source": "dao_mongodb",
+          "symbol": "SQLExecute",
+          "line": 1,
+          "column": 1180
+        }
+      ]
+    },
+    {
+      "family": "mongo",
+      "symbol": "AsynMongoDBInsertMany",
+      "signature": "AsynMongoDBInsertMany(alias, collection, documents, callback)",
+      "effect": "新增文档",
+      "result": "callback(code)。路径只消费回包的总错误码，成功默认为 0。",
+      "facts": [
+        "documents 按 object 类型通过包装并由适配器解释。建议按文档数组核对实际 insertMany 路径。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "与 await 版对照，用唯一键回读，并验证重复键、部分失败和回调次数。",
+      "priority": "专项核对",
+      "registration": {
+        "formals": 4,
+        "requiredFormals": 4,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "mongo_global_func",
+          "symbol": "global.AsynMongoDBInsertMany",
+          "line": 1,
+          "column": 590
+        },
+        {
+          "source": "mongo_global_interface",
+          "symbol": "AsynMongoDBInsertMany",
+          "line": 1,
+          "column": 1919
+        },
+        {
+          "source": "mongo_manger",
+          "symbol": "AsynMongoDBInsertManyPool",
+          "line": 1,
+          "column": 1959
+        },
+        {
+          "source": "mongo_interface",
+          "symbol": "AsynMongoDBInsertManyPool",
+          "line": 1,
+          "column": 3731
+        },
+        {
+          "source": "datasource_mongodb",
+          "symbol": "SQLExecute",
+          "line": 1,
+          "column": 1986
+        },
+        {
+          "source": "dao_mongodb",
+          "symbol": "SQLExecute",
+          "line": 1,
+          "column": 1180
+        }
+      ]
+    },
+    {
+      "family": "mongo",
+      "symbol": "MongoDBUpdateMany",
+      "signature": "MongoDBUpdateMany(alias, collection, filter, fields)",
+      "effect": "更新文档",
+      "result": "Promise<总状态码>。路径只消费回包的总错误码，成功默认为 0。",
+      "facts": [
+        "filter 下发为 wherestr，fields 在接口层包成 { $set: fields }。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "人工确认匹配范围，使用只含测试数据的集合核对精确命中、不匹配及批量范围，写后回读实际结果。 检查 fields 的实际覆盖范围。",
+      "priority": "专项核对",
+      "registration": {
+        "formals": 4,
+        "requiredFormals": 4,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "mongo_global_func",
+          "symbol": "global.MongoDBUpdateMany",
+          "line": 1,
+          "column": 285
+        },
+        {
+          "source": "mongo_global_interface",
+          "symbol": "MongoDBUpdateMany",
+          "line": 1,
+          "column": 843
+        },
+        {
+          "source": "mongo_manger",
+          "symbol": "mongoDBupdateManyPool",
+          "line": 1,
+          "column": 865
+        },
+        {
+          "source": "mongo_interface",
+          "symbol": "mongoDBupdateManyPool",
+          "line": 1,
+          "column": 1612
+        },
+        {
+          "source": "datasource_mongodb",
+          "symbol": "SQLExecute",
+          "line": 1,
+          "column": 1986
+        },
+        {
+          "source": "dao_mongodb",
+          "symbol": "SQLExecute",
+          "line": 1,
+          "column": 1180
+        }
+      ]
+    },
+    {
+      "family": "mongo",
+      "symbol": "AsynMongoDBUpdateMany",
+      "signature": "AsynMongoDBUpdateMany(alias, collection, filter, fields, callback)",
+      "effect": "更新文档",
+      "result": "callback(code)。路径只消费回包的总错误码，成功默认为 0。",
+      "facts": [
+        "filter 下发为 wherestr，fields 在接口层包成 { $set: fields }。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "人工确认匹配范围，使用只含测试数据的集合核对精确命中、不匹配及批量范围，写后回读实际结果。 观察回调与写入的时序。",
+      "priority": "专项核对",
+      "registration": {
+        "formals": 5,
+        "requiredFormals": 5,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "mongo_global_func",
+          "symbol": "global.AsynMongoDBUpdateMany",
+          "line": 1,
+          "column": 693
+        },
+        {
+          "source": "mongo_global_interface",
+          "symbol": "AsynMongoDBUpdateMany",
+          "line": 1,
+          "column": 2297
+        },
+        {
+          "source": "mongo_manger",
+          "symbol": "AsynMongoDBupdateManyPool",
+          "line": 1,
+          "column": 2329
+        },
+        {
+          "source": "mongo_interface",
+          "symbol": "AsynMongoDBupdateManyPool",
+          "line": 1,
+          "column": 4354
+        },
+        {
+          "source": "datasource_mongodb",
+          "symbol": "SQLExecute",
+          "line": 1,
+          "column": 1986
+        },
+        {
+          "source": "dao_mongodb",
+          "symbol": "SQLExecute",
+          "line": 1,
+          "column": 1180
+        }
+      ]
+    },
+    {
+      "family": "mongo",
+      "symbol": "MongoDBDeleteMany",
+      "signature": "MongoDBDeleteMany(alias, collection, filter)",
+      "effect": "删除文档",
+      "result": "Promise<总状态码>。路径只消费回包的总错误码，成功默认为 0。",
+      "facts": [
+        "await 版把调用者的条件放到请求 data，filter 对象本身只含 collection。该 Node Mongo DAO 也从 data 取删除条件。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "重点核对目标 Mongo 适配器如何解释两个字段。先在测试集合检查删除前后命中文档和旁路对照文档。",
+      "priority": "专项核对",
+      "registration": {
+        "formals": 3,
+        "requiredFormals": 3,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "mongo_global_func",
+          "symbol": "global.MongoDBDeleteMany",
+          "line": 1,
+          "column": 393
+        },
+        {
+          "source": "mongo_global_interface",
+          "symbol": "MongoDBDeleteMany",
+          "line": 1,
+          "column": 1204
+        },
+        {
+          "source": "mongo_manger",
+          "symbol": "mongoDBdeleteManyPool",
+          "line": 1,
+          "column": 1238
+        },
+        {
+          "source": "mongo_interface",
+          "symbol": "mongoDBdeleteManyPool",
+          "line": 1,
+          "column": 2276
+        },
+        {
+          "source": "datasource_mongodb",
+          "symbol": "SQLExecute",
+          "line": 1,
+          "column": 1986
+        },
+        {
+          "source": "dao_mongodb",
+          "symbol": "SQLExecute",
+          "line": 1,
+          "column": 1180
+        }
+      ]
+    },
+    {
+      "family": "mongo",
+      "symbol": "AsynMongoDBDeleteMany",
+      "signature": "AsynMongoDBDeleteMany(alias, collection, filter, callback)",
+      "effect": "删除文档",
+      "result": "callback(code)。路径只消费回包的总错误码，成功默认为 0。",
+      "facts": [
+        "该版把条件放到 filter.wherestr 且不发 data。该 Node Mongo DAO 却从 data 取删除条件，进入分支前会读 data._id，存在失败风险，暂缓给生成脚本使用。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "对照 await 版，用测试集合核对过滤对象位置、命中范围、回调和实际删除条数。",
+      "priority": "专项核对",
+      "registration": {
+        "formals": 4,
+        "requiredFormals": 4,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "mongo_global_func",
+          "symbol": "global.AsynMongoDBDeleteMany",
+          "line": 1,
+          "column": 800
+        },
+        {
+          "source": "mongo_global_interface",
+          "symbol": "AsynMongoDBDeleteMany",
+          "line": 1,
+          "column": 2692
+        },
+        {
+          "source": "mongo_manger",
+          "symbol": "AsynMongoDBdeleteManyPool",
+          "line": 1,
+          "column": 2703
+        },
+        {
+          "source": "mongo_interface",
+          "symbol": "AsynMongoDBdeleteManyPool",
+          "line": 1,
+          "column": 4999
+        },
+        {
+          "source": "datasource_mongodb",
+          "symbol": "SQLExecute",
+          "line": 1,
+          "column": 1986
+        },
+        {
+          "source": "dao_mongodb",
+          "symbol": "SQLExecute",
+          "line": 1,
+          "column": 1180
+        }
+      ]
+    },
+    {
+      "family": "redis",
+      "symbol": "redisExists",
+      "signature": "redisExists(alias, key)",
+      "effect": "查询",
+      "result": "Promise<data 或错误码>。成功数据沿 HTTP 回包透传。",
+      "facts": [
+        "向 Redis 适配器发送 exists，其 Node ioredis 路径直接回传命中结果。"
+      ],
+      "verification": "KF 实机",
+      "check": "用存在、不存在和错连接的键核对返回类型及 0 的语义。",
+      "priority": "按项目需求",
+      "registration": {
+        "formals": 2,
+        "requiredFormals": 2,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "redis_global_func",
+          "symbol": "global.redisExists",
+          "line": 1,
+          "column": 101
+        },
+        {
+          "source": "redis_global_interface",
+          "symbol": "redisExists",
+          "line": 1,
+          "column": 155
+        },
+        {
+          "source": "redis_manager",
+          "symbol": "redisExists",
+          "line": 1,
+          "column": 295
+        },
+        {
+          "source": "redis_interface",
+          "symbol": "redisQuery",
+          "line": 1,
+          "column": 118
+        },
+        {
+          "source": "dao_ioredis",
+          "symbol": "SQLQuery",
+          "line": 1,
+          "column": 667
+        }
+      ]
+    },
+    {
+      "family": "redis",
+      "symbol": "redisHget",
+      "signature": "redisHget(alias, key, field)",
+      "effect": "查询",
+      "result": "Promise<data 或错误码>。成功数据沿 HTTP 回包透传。",
+      "facts": [
+        "向 Redis 适配器发送 hget，指定哈希键和字段。"
+      ],
+      "verification": "KF 实机",
+      "check": "对照有值、空字符串、缺字段、缺键和键类型错误。",
+      "priority": "按项目需求",
+      "registration": {
+        "formals": 3,
+        "requiredFormals": 3,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "redis_global_func",
+          "symbol": "global.redisHget",
+          "line": 1,
+          "column": 277
+        },
+        {
+          "source": "redis_global_interface",
+          "symbol": "redisHget",
+          "line": 1,
+          "column": 774
+        },
+        {
+          "source": "redis_manager",
+          "symbol": "redisHget",
+          "line": 1,
+          "column": 561
+        },
+        {
+          "source": "redis_interface",
+          "symbol": "redisQuery",
+          "line": 1,
+          "column": 118
+        },
+        {
+          "source": "dao_ioredis",
+          "symbol": "SQLQuery",
+          "line": 1,
+          "column": 667
+        }
+      ]
+    },
+    {
+      "family": "redis",
+      "symbol": "redisSet",
+      "signature": "redisSet(alias, key, value)",
+      "effect": "写缓存",
+      "result": "Promise<总状态码>。成功默认为 0，失败为适配器或配置错误码。",
+      "facts": [
+        "发送 set。公开入口未提供 TTL 或 NX 参数。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "确认测试键命名和覆盖规则，实测覆盖已有值、写后读值及旧 TTL 是否保留。",
+      "priority": "专项核对",
+      "registration": {
+        "formals": 3,
+        "requiredFormals": 3,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "redis_global_func",
+          "symbol": "global.redisSet",
+          "line": 1,
+          "column": 368
+        },
+        {
+          "source": "redis_global_interface",
+          "symbol": "redisSet",
+          "line": 1,
+          "column": 1095
+        },
+        {
+          "source": "redis_manager",
+          "symbol": "redisSet",
+          "line": 1,
+          "column": 697
+        },
+        {
+          "source": "redis_interface",
+          "symbol": "redisExecute",
+          "line": 1,
+          "column": 654
+        },
+        {
+          "source": "dao_ioredis",
+          "symbol": "SQLExecute",
+          "line": 1,
+          "column": 1562
+        }
+      ]
+    },
+    {
+      "family": "redis",
+      "symbol": "redisHset",
+      "signature": "redisHset(alias, key, field, value)",
+      "effect": "写缓存",
+      "result": "Promise<总状态码>。成功默认为 0，失败为适配器或配置错误码。",
+      "facts": [
+        "发送 hset，指定哈希键、字段及字符串值。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "用测试键核对创建字段、覆盖字段和类型错误。回读字段值验证结果。",
+      "priority": "专项核对",
+      "registration": {
+        "formals": 4,
+        "requiredFormals": 4,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "redis_global_func",
+          "symbol": "global.redisHset",
+          "line": 1,
+          "column": 457
+        },
+        {
+          "source": "redis_global_interface",
+          "symbol": "redisHset",
+          "line": 1,
+          "column": 1413
+        },
+        {
+          "source": "redis_manager",
+          "symbol": "redisHset",
+          "line": 1,
+          "column": 845
+        },
+        {
+          "source": "redis_interface",
+          "symbol": "redisExecute",
+          "line": 1,
+          "column": 654
+        },
+        {
+          "source": "dao_ioredis",
+          "symbol": "SQLExecute",
+          "line": 1,
+          "column": 1562
+        }
+      ]
+    },
+    {
+      "family": "redis",
+      "symbol": "redisDel",
+      "signature": "redisDel(alias, key)",
+      "effect": "删除缓存",
+      "result": "Promise<总状态码>。成功默认为 0，失败为适配器或配置错误码。",
+      "facts": [
+        "发送 del，指定一个键。包装不返回实际删除数。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "先确认键的归属，在测试键上分别验存在与缺失，回读验证删除范围。",
+      "priority": "专项核对",
+      "registration": {
+        "formals": 2,
+        "requiredFormals": 2,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "redis_global_func",
+          "symbol": "global.redisDel",
+          "line": 1,
+          "column": 552
+        },
+        {
+          "source": "redis_global_interface",
+          "symbol": "redisDel",
+          "line": 1,
+          "column": 1747
+        },
+        {
+          "source": "redis_manager",
+          "symbol": "redisDel",
+          "line": 1,
+          "column": 1005
+        },
+        {
+          "source": "redis_interface",
+          "symbol": "redisExecute",
+          "line": 1,
+          "column": 654
+        },
+        {
+          "source": "dao_ioredis",
+          "symbol": "SQLExecute",
+          "line": 1,
+          "column": 1562
+        }
+      ]
+    },
+    {
+      "family": "redis",
+      "symbol": "redisHdel",
+      "signature": "redisHdel(alias, key, field)",
+      "effect": "删除缓存",
+      "result": "Promise<总状态码>。成功默认为 0，失败为适配器或配置错误码。",
+      "facts": [
+        "发送 hdel，指定一个键内的一个字段。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "在测试键确认指定字段删除、其他字段保留，并核对缺字段时的回执。",
+      "priority": "专项核对",
+      "registration": {
+        "formals": 3,
+        "requiredFormals": 3,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "redis_global_func",
+          "symbol": "global.redisHdel",
+          "line": 1,
+          "column": 637
+        },
+        {
+          "source": "redis_global_interface",
+          "symbol": "redisHdel",
+          "line": 1,
+          "column": 2052
+        },
+        {
+          "source": "redis_manager",
+          "symbol": "redisHdel",
+          "line": 1,
+          "column": 1143
+        },
+        {
+          "source": "redis_interface",
+          "symbol": "redisExecute",
+          "line": 1,
+          "column": 654
+        },
+        {
+          "source": "dao_ioredis",
+          "symbol": "SQLExecute",
+          "line": 1,
+          "column": 1562
+        }
+      ]
+    },
+    {
+      "family": "redundancy",
+      "symbol": "SubscribeRedundancyMessage",
+      "signature": "SubscribeRedundancyMessage(callback)",
+      "effect": "订阅事件",
+      "result": "有效回调返回订阅 ID，无效回调返回 null。状态和事件通过 callback(message) 交付。",
+      "facts": [
+        "初始快照消息为 REDUNDANCY_EVENT_SNAPSHOT，payload 是当前 OPEN 事件集合。变更消息为 REDUNDANCY_EVENT_CHANGED，payload 为单条投影事件。",
+        "首个订阅会尝试连接。收到快照前缓存变更，已就绪时新增订阅可立即收到当前快照。断线后有重连逻辑，时间格式化采用固定 UTC+8 偏移。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "核对目标权限、首次快照顺序、恢复事件、断线重连和时间表示。在独立实例观察回调日志。",
+      "priority": "专项核对",
+      "registration": {
+        "formals": 1,
+        "requiredFormals": 1,
+        "async": false
+      },
+      "evidence": [
+        {
+          "source": "redundancy_global_func",
+          "symbol": "global.SubscribeRedundancyMessage",
+          "line": 229,
+          "column": 1
+        },
+        {
+          "source": "redundancy_global_func",
+          "symbol": "subscribe",
+          "line": 20,
+          "column": 5
+        },
+        {
+          "source": "redundancy_global_func",
+          "symbol": "handleMessage",
+          "line": 90,
+          "column": 5
+        },
+        {
+          "source": "redundancy_global_func",
+          "symbol": "createSnapshotMessage",
+          "line": 169,
+          "column": 5
+        },
+        {
+          "source": "redundancy_global_func",
+          "symbol": "formatTime",
+          "line": 159,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "family": "redundancy",
+      "symbol": "UnsubscribeRedundancyMessage",
+      "signature": "UnsubscribeRedundancyMessage(subscriptionId)",
+      "effect": "取消订阅",
+      "result": "同步返回布尔值，表示订阅 ID 是否被删除。",
+      "facts": [
+        "删除最后一个回调会停止重连、关闭连接并清理快照。"
+      ],
+      "verification": "KF 实机",
+      "check": "校验已知 ID、重复取消、两位订阅者的相互独立性，以及取消最后一位后的关闭情况。",
+      "priority": "按项目需求",
+      "registration": {
+        "formals": 1,
+        "requiredFormals": 1,
+        "async": false
+      },
+      "evidence": [
+        {
+          "source": "redundancy_global_func",
+          "symbol": "global.UnsubscribeRedundancyMessage",
+          "line": 232,
+          "column": 1
+        },
+        {
+          "source": "redundancy_global_func",
+          "symbol": "unsubscribe",
+          "line": 32,
+          "column": 5
+        },
+        {
+          "source": "redundancy_global_func",
+          "symbol": "stop",
+          "line": 213,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "family": "request",
+      "symbol": "getTokenbyUser",
+      "signature": "getTokenbyUser(username, password)",
+      "effect": "身份认证",
+      "result": "Promise<{code, message, token}>。按常规回包分支，成功时 token 为访问令牌，失败时 token 为 null。",
+      "facts": [
+        "向配置的账号网关提交用户名密码，使用部署 OAuth 客户端和租户。失败信息从回包构造，异常回包结构的表现需另验。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "在隔离账号验证有效与无效凭据、租户、异常回包和令牌有效期。记录时省去令牌及密码。",
+      "priority": "专项核对",
+      "registration": {
+        "formals": 2,
+        "requiredFormals": 2,
+        "async": false
+      },
+      "evidence": [
+        {
+          "source": "request_global_func",
+          "symbol": "global.getTokenbyUser",
+          "line": 1,
+          "column": 504
+        },
+        {
+          "source": "template_request_global_func",
+          "symbol": "global.getTokenbyUser",
+          "line": 1,
+          "column": 512
+        }
+      ]
+    },
+    {
+      "family": "request",
+      "symbol": "sendHttpRequestwithToken",
+      "signature": "sendHttpRequestwithToken(token, baseUrl, scriptName, inParam[, legacyArg])",
+      "effect": "调用其他计算脚本",
+      "result": "Promise<完整回包>。Node 回包有非零 errorCode 时以该回包拒绝。",
+      "facts": [
+        "Node 将 baseUrl 与 scriptName 直接拼接。入参 token 放请求正文，Authorization 使用计算运行态当前令牌。第五个形参在该版本未使用。",
+        "工程模板有不同实现，URL 带显式斜杠，第五参可参与回调。目标请求式脚本可以包含写入，因此需核对目的和权限。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "验证两种快照对应的已部署产物。用无副作用的专用请求脚本核对 URL、有效身份、业务错误和失败传播。",
+      "priority": "专项核对",
+      "registration": {
+        "formals": 5,
+        "requiredFormals": 5,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "request_global_func",
+          "symbol": "global.sendHttpRequestwithToken",
+          "line": 1,
+          "column": 97
+        },
+        {
+          "source": "template_request_global_func",
+          "symbol": "global.sendHttpRequestwithToken",
+          "line": 1,
+          "column": 97
+        }
+      ]
+    },
+    {
+      "family": "request",
+      "symbol": "sendHttpRequestwithUser",
+      "signature": "sendHttpRequestwithUser(username, password, baseUrl, scriptName, inParam, callback)",
+      "effect": "认证并调用其他计算脚本",
+      "result": "认证成功并请求成功时调用 callback(response)，认证失败时调用 callback(message)。外层 Promise 不返回响应行。",
+      "facts": [
+        "先调用 getTokenbyUser，再调用 sendHttpRequestwithToken。请求拒绝时该快照没有本地捕获，可能跳过回调并使外层 Promise 拒绝。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "隔离账号下核对成功、账号无效、目标拒绝、目标超时与回调次数。核对目标脚本的副作用。",
+      "priority": "专项核对",
+      "registration": {
+        "formals": 6,
+        "requiredFormals": 6,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "request_global_func",
+          "symbol": "global.sendHttpRequestwithUser",
+          "line": 1,
+          "column": 1187
+        },
+        {
+          "source": "template_request_global_func",
+          "symbol": "global.sendHttpRequestwithUser",
+          "line": 1,
+          "column": 1174
+        },
+        {
+          "source": "request_global_func",
+          "symbol": "global.sendHttpRequestwithToken",
+          "line": 1,
+          "column": 97
+        }
+      ]
+    },
+    {
+      "family": "user",
+      "symbol": "batchCreateUser",
+      "signature": "batchCreateUser(userInfo, token[, timeoutMs])",
+      "effect": "创建账号",
+      "result": "Promise<网关 data 或错误信息>。完整回执按账号接口的返回分支解释。",
+      "facts": [
+        "userInfo 为账号对象数组，计算包装以 userInfoArr 提交。对象含 password 时原地改成 Base64 字符串，勿复用原数组做重试。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "确认租户和允许的账号类型、默认角色与分组。用测试账号覆盖重复用户名、部分失败和创建后的权限。",
+      "priority": "专项核对",
+      "registration": {
+        "formals": 3,
+        "requiredFormals": 3,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "user_global_func",
+          "symbol": "global.batchCreateUser",
+          "line": 1,
+          "column": 81
+        },
+        {
+          "source": "user_global_interface",
+          "symbol": "batchCreateUser",
+          "line": 1,
+          "column": 302
+        },
+        {
+          "source": "user_controller",
+          "symbol": "multiCreateUser",
+          "line": 1,
+          "column": 3546
+        },
+        {
+          "source": "user_service",
+          "symbol": "multiCreateUser",
+          "line": 152,
+          "column": 11
+        },
+        {
+          "source": "request_util",
+          "symbol": "httpPost",
+          "line": 40,
+          "column": 11
+        }
+      ]
+    },
+    {
+      "family": "user",
+      "symbol": "batchModifyUser",
+      "signature": "batchModifyUser(userInfo, token[, timeoutMs])",
+      "effect": "修改账号",
+      "result": "Promise<网关 data 或错误信息>。完整回执按账号接口的返回分支解释。",
+      "facts": [
+        "计算包装以 userInfoArr 提交，存在 password 时会原地转换。控制器按 userId 定位，部分省略字段会填默认值，不能按通用局部更新理解。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "核对可修改字段、默认角色与分组是否覆盖旧值，按账号逐项回读。密码变更另从重置路径验证。",
+      "priority": "专项核对",
+      "registration": {
+        "formals": 3,
+        "requiredFormals": 3,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "user_global_func",
+          "symbol": "global.batchModifyUser",
+          "line": 1,
+          "column": 183
+        },
+        {
+          "source": "user_global_interface",
+          "symbol": "batchModifyUser",
+          "line": 1,
+          "column": 788
+        },
+        {
+          "source": "user_controller",
+          "symbol": "multiModifyUser",
+          "line": 1,
+          "column": 15061
+        },
+        {
+          "source": "user_service",
+          "symbol": "multiModifyUser",
+          "line": 553,
+          "column": 11
+        },
+        {
+          "source": "request_util",
+          "symbol": "httpPost",
+          "line": 40,
+          "column": 11
+        }
+      ]
+    },
+    {
+      "family": "user",
+      "symbol": "batchQueryUser",
+      "signature": "batchQueryUser(userNames, token[, timeoutMs])",
+      "effect": "查询账号",
+      "result": "Promise<网关 data 或错误信息>。完整回执按账号接口的返回分支解释。",
+      "facts": [
+        "计算包装以 userNameArr 提交名称数组。服务侧先取当前操作者可见用户，再按名字筛选。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "用测试账号验有权限、无权限、重名及不存在用户，核对可见范围和回包字段。",
+      "priority": "专项核对",
+      "registration": {
+        "formals": 3,
+        "requiredFormals": 3,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "user_global_func",
+          "symbol": "global.batchQueryUser",
+          "line": 1,
+          "column": 285
+        },
+        {
+          "source": "user_global_interface",
+          "symbol": "batchQueryUser",
+          "line": 1,
+          "column": 1274
+        },
+        {
+          "source": "user_controller",
+          "symbol": "multiQueryUser",
+          "line": 1,
+          "column": 16852
+        },
+        {
+          "source": "user_service",
+          "symbol": "multiQueryUser",
+          "line": 581,
+          "column": 5
+        },
+        {
+          "source": "request_util",
+          "symbol": "httpPost",
+          "line": 40,
+          "column": 11
+        }
+      ]
+    },
+    {
+      "family": "user",
+      "symbol": "batchResetPassword",
+      "signature": "batchResetPassword(userInfo, token[, timeoutMs])",
+      "effect": "重置凭据",
+      "result": "Promise<网关 data 或错误信息>。完整回执按账号接口的返回分支解释。",
+      "facts": [
+        "计算包装以 userInfoArr 提交。服务侧取每项 userId 与 password。当前服务代码的批处理把单项回调收束为 0，不能仅根据总返回确认重置结果。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "核对租户权限、密码策略和旧凭据失效。只用专用测试账户，按实际登录或审计回执检查结果。",
+      "priority": "专项核对",
+      "registration": {
+        "formals": 3,
+        "requiredFormals": 3,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "user_global_func",
+          "symbol": "global.batchResetPassword",
+          "line": 1,
+          "column": 385
+        },
+        {
+          "source": "user_global_interface",
+          "symbol": "batchResetPassword",
+          "line": 1,
+          "column": 1628
+        },
+        {
+          "source": "user_controller",
+          "symbol": "multiResetPassword",
+          "line": 1,
+          "column": 17239
+        },
+        {
+          "source": "user_service",
+          "symbol": "multiResetPassword",
+          "line": 594,
+          "column": 11
+        },
+        {
+          "source": "request_util",
+          "symbol": "httpPost",
+          "line": 40,
+          "column": 11
+        }
+      ]
+    },
+    {
+      "family": "user",
+      "symbol": "batchDeleteUser",
+      "signature": "batchDeleteUser(userIds, token[, timeoutMs])",
+      "effect": "删除账号",
+      "result": "Promise<网关 data 或错误信息>。完整回执按账号接口的返回分支解释。",
+      "facts": [
+        "计算包装下发 userIdArr。控制器按 ID 检查目标存在性以及当前操作者权限。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "仅用测试账号，验证部分失败、无权目标和删除后可见性，不使用高权限或现有业务账号。",
+      "priority": "专项核对",
+      "registration": {
+        "formals": 3,
+        "requiredFormals": 3,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "user_global_func",
+          "symbol": "global.batchDeleteUser",
+          "line": 1,
+          "column": 493
+        },
+        {
+          "source": "user_global_interface",
+          "symbol": "batchDeleteUser",
+          "line": 1,
+          "column": 1990
+        },
+        {
+          "source": "user_controller",
+          "symbol": "multiDeleteUser",
+          "line": 1,
+          "column": 9405
+        },
+        {
+          "source": "user_service",
+          "symbol": "multiDeleteUser",
+          "line": 262,
+          "column": 11
+        },
+        {
+          "source": "request_util",
+          "symbol": "httpDelete",
+          "line": 56,
+          "column": 11
+        }
+      ]
+    },
+    {
+      "family": "dll",
+      "symbol": "LoadDllFile",
+      "signature": "LoadDllFile(fileName, output)",
+      "effect": "加载原生模块",
+      "result": "Promise<原生状态码> 为实现意图，成功分支向 output.handle 赋值。",
+      "facts": [
+        "入口要求正好两个实参，首参为字符串。在其预置模块目录下解析 DLL 文件名。",
+        "包装调用 newDLLInterface，但同文件可见的 require 结果只绑定在 try 块内的另一个局部名。下层部分调用也使用未限定的 dllNodecall。需核对目标产物中的实际绑定。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "人工核对当前 DLL、进程位数、依赖和输出对象结构。只用内部测试模块验证成功、缺文件和句柄状态。",
+      "priority": "专项核对",
+      "registration": {
+        "formals": 2,
+        "requiredFormals": 2,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "dll_global_func",
+          "symbol": "global.LoadDllFile",
+          "line": 1,
+          "column": 286
+        },
+        {
+          "source": "dll_global_interface",
+          "symbol": "LoaddllFileExtension",
+          "line": 1,
+          "column": 900
+        }
+      ]
+    },
+    {
+      "family": "dll",
+      "symbol": "ExecuteDllFunction",
+      "signature": "ExecuteDllFunction(handle, functionName, input, output)",
+      "effect": "执行原生函数",
+      "result": "Promise<原生状态码> 为实现意图，成功分支向 output.FuncResult 赋值。",
+      "facts": [
+        "入口检查 handle 为数字、functionName 为字符串、input 为 object。下层读取并删除 input.len，剩余字段序列化后传入原生模块。",
+        "包装调用 newDLLInterface，但同文件可见的 require 结果只绑定在 try 块内的另一个局部名。下层部分调用也使用未限定的 dllNodecall。需核对目标产物中的实际绑定。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "人工确认原生功能及入参约定，在专用模块测入参副作用、返回、错误和超时。",
+      "priority": "专项核对",
+      "registration": {
+        "formals": 4,
+        "requiredFormals": 4,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "dll_global_func",
+          "symbol": "global.ExecuteDllFunction",
+          "line": 1,
+          "column": 670
+        },
+        {
+          "source": "dll_global_interface",
+          "symbol": "ExedllFunctionExtension",
+          "line": 1,
+          "column": 1243
+        }
+      ]
+    },
+    {
+      "family": "dll",
+      "symbol": "UnloadDllFile",
+      "signature": "UnloadDllFile(handle)",
+      "effect": "释放原生模块",
+      "result": "Promise<原生状态码> 为实现意图，参数类型错误返回 -2。",
+      "facts": [
+        "只接受一个数字句柄。下层没有可见的句柄生命周期保证。",
+        "包装调用 newDLLInterface，但同文件可见的 require 结果只绑定在 try 块内的另一个局部名。下层部分调用也使用未限定的 dllNodecall。需核对目标产物中的实际绑定。"
+      ],
+      "verification": "人工核对 + KF 实机",
+      "check": "用目标 Windows 进程和专用模块核对卸载、失效或重复句柄、资源释放及并发调用的行为。",
+      "priority": "专项核对",
+      "registration": {
+        "formals": 1,
+        "requiredFormals": 1,
+        "async": true
+      },
+      "evidence": [
+        {
+          "source": "dll_global_func",
+          "symbol": "global.UnloadDllFile",
+          "line": 1,
+          "column": 1293
+        },
+        {
+          "source": "dll_global_interface",
+          "symbol": "UnloaddllFileExtension",
+          "line": 1,
+          "column": 344
+        }
+      ]
+    }
+  ],
+  "sourceFiles": {
+    "globalFunc": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/init/globalFunc.js",
+      "sha256": "b6561401ad24797e58909212357469c7f9c20c903bd1a32106c94eee83a39884"
+    },
+    "globalUtilsFunc": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/init/globalUtilsFunc.js",
+      "sha256": "ff0f449fc1c27e60ad26d32d1effad03cfcc6bb183e8cccff1283623f344d18e"
+    },
+    "error_code": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/core/enums/error_code.js",
+      "sha256": "1cb66c5b4cbc584d21da4e4023d46923d0b23ecdc900f4a8ace399da857bd985"
+    },
+    "request_util": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/core/utils/request_util.js",
+      "sha256": "164d47516feef759e9f7ea31ee28b088c9ea34d986475508ee717400b454219c"
+    },
+    "template_request_global_func": {
+      "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/request_global_func.js",
+      "sha256": "e6bae91aab2a019df13a2d9042edc97ffcedcfc9a6559a8c6fe0b8c8ae8031d8"
+    },
+    "datasource_kh4.0": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingdbconnector/exe/lib/services/datasource/datasource_access/datasource_kh4.0.js",
+      "sha256": "c3a9fd32113bb1fcf1d9249b95e104f0fcc4e27b045d538f2d87d8baa115bb52"
+    },
+    "datasource_mongodb": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingdbconnector/exe/lib/services/datasource/datasource_access/datasource_mongodb.js",
+      "sha256": "33de01bbe8db7bf79cec7de9a0f5f6b7f3af6b4e294af9f66ab0ab8dd240af29"
+    },
+    "dao_kh": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingdbconnector/exe/lib/daos/dao_kh.js",
+      "sha256": "c2a4107e4e65b73b865c07e09477bf424955807b45fb9d2c1490526004bff9d7"
+    },
+    "dao_mongodb": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingdbconnector/exe/lib/daos/dao_mongodb.js",
+      "sha256": "cb445ec211cf3e17e93461be96ca25606447a818e9755b7239cf732c6d99f0f4"
+    },
+    "dao_ioredis": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingdbconnector/exe/lib/daos/dao_ioredis.js",
+      "sha256": "386ca0e27395e8fbb77418c54dcd704f8633f44ada10cd1a2795444a12477775"
+    },
+    "enum_common": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingdbconnector/exe/core/enums/enum_common.js",
+      "sha256": "83011256ce52c98b2e09fdd12a9084282a43364bbb2c38a7ef7ef265b28f63af"
+    },
+    "user_controller": {
+      "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingoauth/exe/lib/controllers/controllers_user_manage/user.controller.js",
+      "sha256": "bd6fd161af7a6022cdd20381b9248a0665517fdaa63fc42a85b3e74b03b527d9"
+    },
+    "user_service": {
+      "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingoauth/exe/lib/services/services_user_manage/user.service.js",
+      "sha256": "01ff04f2eb8feedd7836296ad26c1040cf37e20a56a4fde91c85805b7b344268"
+    },
+    "agent_registration": {
+      "path": "dev/agent/src/kc-registrations.ts",
+      "sha256": "2d68f6381754a8935b0dce6e062cb39907fb42d6813d830f120234614fc5fecd"
+    },
+    "agent_catalog": {
+      "path": "dev/agent/src/calc-runtime.ts",
+      "sha256": "166de3d5e1fdf0792fbee3bab0748ee67761092f629ac9161e514c3d1e741237"
+    },
+    "dll_global_func": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/dll_global_func.js",
+      "sha256": "34d03de67c7540e14e7f6a5873ae97aea9f3721a677e04c881636d98ff39ba78",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/dll_global_func.js"
+        },
+        "developmentTemplate": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/dll_global_func.js"
+        }
+      }
+    },
+    "file_global_func": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/file_global_func.js",
+      "sha256": "d1e14fbef7fdfedf7db1996b5264d5c848f391744918a2f9718ce01e56f5e2fb",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/file_global_func.js"
+        },
+        "developmentTemplate": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/file_global_func.js"
+        }
+      }
+    },
+    "kh_global_func": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/kh_global_func.js",
+      "sha256": "8ea65e69b10a8f219310c9fe33e6353751d8700578dc81dd8761e1a1998e2cf2",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节不同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/kh_global_func.js",
+          "sha256": "ef39b2e78126d87b48ae8906ba0bc159ec9e2904b1dd7f5b6f636a65d5239524"
+        },
+        "developmentTemplate": {
+          "state": "字节不同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/kh_global_func.js",
+          "sha256": "ef39b2e78126d87b48ae8906ba0bc159ec9e2904b1dd7f5b6f636a65d5239524"
+        }
+      }
+    },
+    "kio_global_func": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/kio_global_func.js",
+      "sha256": "303a271eefc9ff48c706476dd51d4bce446e8753fa7b758e23dcfd8050db5a6f",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/kio_global_func.js"
+        },
+        "developmentTemplate": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/kio_global_func.js"
+        }
+      }
+    },
+    "ks_global_func": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/ks_global_func.js",
+      "sha256": "c2c803d4a38abd4b2a102a5f1afa87a9fe3557a22f13a847700979b4966c114a",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/ks_global_func.js"
+        },
+        "developmentTemplate": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/ks_global_func.js"
+        }
+      }
+    },
+    "math_global_func": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/math_global_func.js",
+      "sha256": "85fe2c2944e4f03af92b7c0ca67df0a48057195430fe7ac3c42d25be035df921",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/math_global_func.js"
+        },
+        "developmentTemplate": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/math_global_func.js"
+        }
+      }
+    },
+    "md5_global_func": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/md5_global_func.js",
+      "sha256": "819ce19c27030463cb98f54609be3b5772ca17f9099ec464c8752faede4f7d62",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/md5_global_func.js"
+        },
+        "developmentTemplate": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/md5_global_func.js"
+        }
+      }
+    },
+    "mongo_global_func": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/mongo_global_func.js",
+      "sha256": "e5fdb7a2ab7226f0a689b60b586ca2679db52511f5ef249c8771d7c045f01e5d",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/mongo_global_func.js"
+        },
+        "developmentTemplate": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/mongo_global_func.js"
+        }
+      }
+    },
+    "redis_global_func": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/redis_global_func.js",
+      "sha256": "362e7e37077c62a96668552822d80ddf8dbcc3a33bd1945a073e3572db518063",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/redis_global_func.js"
+        },
+        "developmentTemplate": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/redis_global_func.js"
+        }
+      }
+    },
+    "redundancy_global_func": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/redundancy_global_func.js",
+      "sha256": "8187fcf5b05806fb1bb2f7bddf6d4130a1a0acc91dbed9cf24574b9064591ff3",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/redundancy_global_func.js"
+        },
+        "developmentTemplate": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/redundancy_global_func.js"
+        }
+      }
+    },
+    "request_global_func": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/request_global_func.js",
+      "sha256": "c546b4ecd9ca8c82c35175c3b262f775852c46277bff05076c61363dd065dd6f",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/request_global_func.js"
+        },
+        "developmentTemplate": {
+          "state": "字节不同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/request_global_func.js",
+          "sha256": "e6bae91aab2a019df13a2d9042edc97ffcedcfc9a6559a8c6fe0b8c8ae8031d8"
+        }
+      }
+    },
+    "sql_global_func": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/sql_global_func.js",
+      "sha256": "437c2f3a5e23a11b769a8b7c6958d5431822ab44999bc635b5e1e9d70afb8e7f",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/sql_global_func.js"
+        },
+        "developmentTemplate": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/sql_global_func.js"
+        }
+      }
+    },
+    "user_global_func": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/user_global_func.js",
+      "sha256": "5035bd318a6822d546bea8b94915366d49dcfba4c1d8bbd7ff8b9a3cf91004d4",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/user_global_func.js"
+        },
+        "developmentTemplate": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/user_global_func.js"
+        }
+      }
+    },
+    "dll_global_interface": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/dll_global_interface.js",
+      "sha256": "4e604b2eb4d288255a33efdd02cb512130118b3cfa41c15d16ac764c42a69c62",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/dll_global_interface.js"
+        },
+        "developmentTemplate": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/globalInterfaceMng/dll_global_interface.js"
+        }
+      }
+    },
+    "file_global_interface": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/file_global_interface.js",
+      "sha256": "02ab689f1bfc6d2f523c9ead329c10e3644dfe4ff6f1ba8b210cb3ef80e0725b",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/file_global_interface.js"
+        },
+        "developmentTemplate": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/globalInterfaceMng/file_global_interface.js"
+        }
+      }
+    },
+    "kh_global_interface": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/kh_global_interface.js",
+      "sha256": "7ed59086a6388b38053f3531f4cb7db7e10822782e7209cd718a3bdbdcffe122",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节不同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/kh_global_interface.js",
+          "sha256": "a5f3a91e59fef50591f6c8e7e132e6cb94104a23d5e15e19ca6391f6a7fc415f"
+        },
+        "developmentTemplate": {
+          "state": "字节不同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/globalInterfaceMng/kh_global_interface.js",
+          "sha256": "a5f3a91e59fef50591f6c8e7e132e6cb94104a23d5e15e19ca6391f6a7fc415f"
+        }
+      }
+    },
+    "ks_global_interface": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/ks_global_interface.js",
+      "sha256": "774dcb71537c3e1bdad1c6bc9a225ca544032f581e0049cf4275637e813b73d5",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/ks_global_interface.js"
+        },
+        "developmentTemplate": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/globalInterfaceMng/ks_global_interface.js"
+        }
+      }
+    },
+    "mongo_global_interface": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/mongo_global_interface.js",
+      "sha256": "bf79dc0a6603a6bd4b5858dc00035d58b46d858f17df57c043db8042d943131c",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/mongo_global_interface.js"
+        },
+        "developmentTemplate": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/globalInterfaceMng/mongo_global_interface.js"
+        }
+      }
+    },
+    "redis_global_interface": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/redis_global_interface.js",
+      "sha256": "9ffb1d81ed28d7e9c7f1df41d62bbe6f1767529f0bfdd18f9111365ec8605681",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/redis_global_interface.js"
+        },
+        "developmentTemplate": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/globalInterfaceMng/redis_global_interface.js"
+        }
+      }
+    },
+    "sql_global_interface": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/sql_global_interface.js",
+      "sha256": "ab0bc70176f8a630e48a04a4d056438e2c1b482ee83a27f2c21c15b06c5daf4c",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/sql_global_interface.js"
+        },
+        "developmentTemplate": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/globalInterfaceMng/sql_global_interface.js"
+        }
+      }
+    },
+    "user_global_interface": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/user_global_interface.js",
+      "sha256": "4d979feb6ee08ca6f0a125f8057f408cd37f488f8ea5294f2c13f255e7985398",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/user_global_interface.js"
+        },
+        "developmentTemplate": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/globalInterfaceMng/user_global_interface.js"
+        }
+      }
+    },
+    "kh_manger": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/dataSourceMng/kh_manger.js",
+      "sha256": "2ea4063509d56c3f9e996468766f39b482df53d45783c60abf865c4ffc8615f2",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节不同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/dataSourceMng/kh_manger.js",
+          "sha256": "55b4f4409c1ea72e367b98ade60ffb205f08ae7bf83b2636d7cd8e080cf0b802"
+        },
+        "developmentTemplate": {
+          "state": "字节不同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/dataSourceMng/kh_manger.js",
+          "sha256": "55b4f4409c1ea72e367b98ade60ffb205f08ae7bf83b2636d7cd8e080cf0b802"
+        }
+      }
+    },
+    "kh_interface": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/interface/kh_interface.js",
+      "sha256": "2f4fdd08a63cb0c085a8d707260d2a74a7baf6d582ceb24aaf3299bd8260c387",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节不同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/interface/kh_interface.js",
+          "sha256": "f3b52bdfa7ff14aa135b0b4767410a8a2cea3b75606761ce315dcb3242534159"
+        },
+        "developmentTemplate": {
+          "state": "字节不同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/interface/kh_interface.js",
+          "sha256": "f3b52bdfa7ff14aa135b0b4767410a8a2cea3b75606761ce315dcb3242534159"
+        }
+      }
+    },
+    "ks_manger": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/dataSourceMng/ks_manger.js",
+      "sha256": "1501034ae9c74c9d642dcfaa5456e25bcf9225f55b5e1dd935a45288279877d2",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/dataSourceMng/ks_manger.js"
+        },
+        "developmentTemplate": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/dataSourceMng/ks_manger.js"
+        }
+      }
+    },
+    "ks_interface": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/interface/ks_interface.js",
+      "sha256": "f025b4a8374d87b811a33276cb7ce711ba607ed7c12bc447e351fc8be5fe5501",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/interface/ks_interface.js"
+        },
+        "developmentTemplate": {
+          "state": "字节不同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/interface/ks_interface.js",
+          "sha256": "3253062a53b039704900d2b2e8303ac28983cd0ba0ba03bb3f5c76b5368953f7"
+        }
+      }
+    },
+    "mongo_manger": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/dataSourceMng/mongo_manger.js",
+      "sha256": "36537bdf5296d5d9841a384c65bcd3e8059d11b269f29dd3128bc999168396e2",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/dataSourceMng/mongo_manger.js"
+        },
+        "developmentTemplate": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/dataSourceMng/mongo_manger.js"
+        }
+      }
+    },
+    "mongo_interface": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/interface/mongo_interface.js",
+      "sha256": "4a0af1125a4b97489333df4f4a36c3ae88506020f00e53f355a743084338e56c",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/interface/mongo_interface.js"
+        },
+        "developmentTemplate": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/interface/mongo_interface.js"
+        }
+      }
+    },
+    "redis_manager": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/dataSourceMng/redis_manager.js",
+      "sha256": "48e354c30190aca60a472c5464bf67d135f2d4dfb6f78f0e760cb515bcf49e40",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/dataSourceMng/redis_manager.js"
+        },
+        "developmentTemplate": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/dataSourceMng/redis_manager.js"
+        }
+      }
+    },
+    "redis_interface": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/interface/redis_interface.js",
+      "sha256": "b15e5f050ea2bd14e4df66694e4ff98954809fde62881c4b5170b001d8a0dc12",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/interface/redis_interface.js"
+        },
+        "developmentTemplate": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/interface/redis_interface.js"
+        }
+      }
+    },
+    "sql_manger": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/dataSourceMng/sql_manger.js",
+      "sha256": "3c1bfd184266798f9f13487f6567381beb0c040ef1d0c82ea273b4b1e0f8ead1",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/dataSourceMng/sql_manger.js"
+        },
+        "developmentTemplate": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/dataSourceMng/sql_manger.js"
+        }
+      }
+    },
+    "sql_interface": {
+      "path": "kf-reference/KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/interface/sql_interface.js",
+      "sha256": "b6a7b97cf7d60f9565d93f7bc98476a1a0b7248c998c40528227c5caf61f585f",
+      "snapshotComparison": {
+        "centerRuntime": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/interface/sql_interface.js"
+        },
+        "developmentTemplate": {
+          "state": "字节相同",
+          "path": "kf-reference/KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/interface/sql_interface.js"
+        }
+      }
+    }
+  }
+}

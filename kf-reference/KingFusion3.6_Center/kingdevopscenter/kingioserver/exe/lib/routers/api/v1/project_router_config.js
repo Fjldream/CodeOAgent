@@ -1,0 +1,6 @@
+const { project } = require("../../../controllers"), { midware_auth } = require("../../../../core/middlewares/index");
+module.exports = { get: { "/projectList": [midware_auth.checkProjectGroupAccess, project.getProjectsByGroupId], "/projectById": [project.getProjectsById], "/share": [midware_auth.checkProjectWriteAccess, project.getProjectSharedUsers], "/isUserCreateProject": [project.isUserCreateProject] }, post: { "/createProject": [midware_auth.checkProjectGroupAccess, project.createProject], "/share": [midware_auth.checkProjectWriteAccess, project.shareProject], "/exportProject": [midware_auth.checkProjectArrWriteAccess, project.exportProject], "/importProjects": [project.importProjects] }, put: { "/updateProject": [midware_auth.checkProjectWriteAccess, project.updateProject] }, delete: { "/deleteProject": [midware_auth.checkProjectDeleteAccess, project.deleteProject], "/share": [midware_auth.checkProjectWriteAccess, project.unshareProject], "/share/all": [midware_auth.checkProjectAdminAccess, project.clearProjectShares] } };
+
+// modified by jinlong.feng at 2026-11-09 运维中心权限改造
+require("../../../../../../../common/project-permissions").attachRoutes(module.exports, require("path").resolve(__dirname, "../../../../../../../sdb"), 2);
+// end

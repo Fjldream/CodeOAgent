@@ -1,0 +1,363 @@
+// modified by jinlong.feng at 2026-11-19 开发态前端本地启动
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'primary': ('base': #0348dd),
+    'success': ('base': #05ab6b),
+    'warning': ('base': #fc8200),
+    'error': ('base': #d82f2f),
+  )
+);
+@use 'element-plus/theme-chalk/src/index.scss';
+
+.el-button:not(.el-button--small) {
+  height: 30px;
+  padding: 10px;
+  font-size: 14px;
+  line-height: 30px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: 2px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.toolbar .button {
+  display: flex;
+}
+
+.toolbar .el-button:not(:first-child) {
+  margin-left: 10px;
+}
+
+:root {
+  --custom-dbeafe-color: #dbeafe;
+  --custom-d2f5e7-color: #d2f5e7;
+  --custom-ffecd9-color: #ffecd9;
+  --custom-ffebeb-color: #ffebeb;
+  --custom-1f2937-color: #1f2937;
+  --custom-6b7280-color: #6b7280;
+  --custom-9ca3af-color: #9ca3af;
+  --custom-d1d5db-color: #d1d5db;
+  --custom-ffffff-color: #ffffff;
+  --custom-f8fafc-color: #f8fafc;
+  --custom-f3f4f6-color: #f3f4f6;
+  --custom-e5e7eb-color: #e5e7eb;
+  --custom-030712-color: #030712;
+  --custom-e5eaf4-color: #e5eaf4;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, figure, figcaption, hr {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--theme-font-family);
+  color: var(--el-text-color-primary);
+  background-color: var(--el-bg-color);
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button, input, select, textarea, fieldset {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+textarea {
+  resize: vertical;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.df {
+  display: flex;
+  align-items: center;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h40 {
+  height: 40px;
+}
+
+.mr-2 {
+  margin-right: 2px;
+}
+
+.mr-5 {
+  margin-right: 5px;
+}
+
+.mr-20 {
+  margin-right: 20px;
+}
+
+.mr-6 {
+  margin-right: 6px;
+}
+
+.mr-12 {
+  margin-right: 12px;
+}
+
+.mb-12 {
+  margin-bottom: 12px;
+}
+
+.mb-8 {
+  margin-bottom: 8px;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.w94 {
+  width: 94%;
+}
+
+.w-90 {
+  width: 90%;
+}
+
+.w70 {
+  width: 70%;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.my-20 {
+  margin: 20px 0;
+}
+
+.w-16 {
+  width: 16px;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.mb-5 {
+  margin-bottom: 5px;
+}
+
+.mb-2 {
+  margin-bottom: 2px;
+}
+
+.page-position {
+  transform: translate(0);
+}
+
+.p-8 {
+  padding: 8px;
+}
+
+.p-10 {
+  padding: 10px;
+}
+
+.p-12 {
+  padding: 12px;
+}
+
+.pr-12 {
+  padding-right: 12px;
+}
+
+.pt-12 {
+  padding-top: 12px;
+}
+
+.layout-card {
+  border: 1px solid var(--el-card-border-color);
+  border-radius: var(--el-card-border-radius);
+  color: var(--el-text-color-primary);
+  overflow: hidden;
+  transition: var(--el-transition-duration);
+}
+
+.header-back {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  position: relative;
+}
+
+.header-back .icon {
+  margin-right: 4px;
+  font-size: 14px;
+}
+
+.header-back .text {
+  font-size: 14px;
+  color: #555;
+  white-space: nowrap;
+}
+
+.common-icon {
+  width: 1rem !important;
+  height: 1rem !important;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d1d1d1 #f1f1f1;
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #d1d1d1;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  background-clip: content-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #999;
+}
+
+.table-max-52 {
+  --table-content__height: calc(100% - 52px) !important;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.multiline-ellipsis {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.table-custom {
+  padding: 10px;
+}
+
+.justify-every {
+  justify-content: space-evenly;
+}
+
+.justify-space {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-end {
+  justify-content: end;
+}
+
+.fz-16 {
+  font-size: 16px;
+}
+
+.time-class {
+  color: #9ca3af;
+  font-size: 10px;
+}
+
+.name-class {
+  color: #000;
+  font-size: 12px;
+}
+
+.search-box {
+  min-width: 260px;
+  margin-top: 8px;
+}
+
+@media screen and (min-width: 768px) {
+  .search-box {
+    margin-top: 0;
+  }
+}
+.search-box .search-input {
+  width: 260px;
+}
+
+.w-120 {
+  width: 120px;
+}
+
+.el-tree-node__content > .el-tree-node__expand-icon {
+  padding: 2px;
+}
+// end

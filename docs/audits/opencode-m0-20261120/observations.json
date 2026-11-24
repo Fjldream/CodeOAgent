@@ -1,0 +1,10 @@
+{
+  "publicSummary": true,
+  "ordinaryAccount": true,
+  "checks": [
+    "只读引用追踪",
+    "跨工程及重启续聊",
+    "账号隔离",
+    "个人方案确认和重放"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "publicSummary": true,
+  "release": "22578ffbe276",
+  "passed": true,
+  "ordinaryAccount": true,
+  "priorHistoryVerified": true,
+  "formalPlanUnchanged": true,
+  "pilotUpdated": true,
+  "manualBusinessCorrections": 0,
+  "manualScriptEdits": 0,
+  "pilotVersion": "22578ffbe276",
+  "checksCount": 18,
+  "checksMatched": 18,
+  "turnsCount": 4
+}

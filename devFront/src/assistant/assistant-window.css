@@ -1,0 +1,781 @@
+/* modified by jinlong.feng at 2026-11-20 KF助手浮动对话窗 */
+.assistant-float {
+  /* modified by jinlong.feng at 2026-11-23 KF开发助手双栏代码浮窗 */
+  --ink: #1e304e;
+  --muted: #5c6b83;
+  --soft: #edf2fc;
+  --line: #d3ddef;
+  --blue: #255bd7;
+  /* end */
+  position: fixed;
+  z-index: 12000;
+  box-sizing: border-box;
+  isolation: isolate;
+  color: var(--ink);
+  font:
+    14px/1.55 -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'PingFang SC',
+    'Microsoft YaHei',
+    sans-serif;
+  text-align: left;
+  transform-origin: top left;
+  /* modified by jinlong.feng at 2026-11-23 KF开发助手双栏代码浮窗 */
+  border-radius: 12px;
+  /* end */
+  box-shadow:
+    0 18px 54px #1c30422b,
+    0 3px 10px #12284017;
+}
+.assistant-float.in-editor {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: none;
+}
+.assistant-float.is-docked {
+  border-radius: 24px;
+  box-shadow: 0 4px 16px #21334830;
+}
+.assistant-float :where(*, *::before, *::after) {
+  box-sizing: border-box;
+}
+.assistant-float :where(button, input, textarea) {
+  font: inherit;
+  letter-spacing: normal;
+  color: inherit;
+}
+.assistant-float :where(button) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  white-space: nowrap;
+  line-height: 1.3;
+}
+.assistant-float :where(button):disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+.assistant-float :where(button, input, textarea, [tabindex]):focus-visible {
+  outline: 2px solid #5488c5;
+  outline-offset: 2px;
+}
+.assistant-float svg {
+  display: block;
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+.kf-assistant {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  border-radius: inherit;
+  /* modified by jinlong.feng at 2026-11-23 KF开发助手双栏代码浮窗 */
+  position: relative;
+  container: assistant / size;
+  border: 1px solid #bdcce5;
+  /* end */
+  background: #fff;
+  color: var(--ink);
+}
+/* modified by jinlong.feng at 2026-11-23 KF开发助手双栏代码浮窗 */
+.window-bar {
+  flex: none;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px 0 14px;
+  background: linear-gradient(105deg, #edf3ff, #e3ecfc);
+  border-bottom: 1px solid var(--line);
+}
+.window-handle {
+  align-self: stretch;
+}
+.window-context {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-left: 1px solid #bbcbe2;
+  padding-left: 10px;
+  color: #536983;
+  font-size: 12px;
+}
+.window-handle strong {
+  flex-shrink: 0;
+}
+/* end */
+.window-handle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  border-radius: 5px;
+}
+.window-handle:active {
+  cursor: grabbing;
+}
+.window-handle strong {
+  font-size: 14px;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+}
+.kf-mark {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 26px;
+  height: 25px;
+  border-radius: 7px;
+  /* modified by jinlong.feng at 2026-11-23 KF开发助手双栏代码浮窗 */
+  background: #255bd7;
+  /* end */
+  color: white;
+  font:
+    700 12px/1 ui-monospace,
+    'SFMono-Regular',
+    Consolas,
+    monospace;
+  letter-spacing: -0.07em;
+}
+.window-controls,
+.send-tools,
+.actions,
+.quick-actions,
+.section-heading,
+.composer-toolbar,
+.planbar,
+.reply-author,
+.context,
+.navigation nav {
+  display: flex;
+  align-items: center;
+}
+/* modified by jinlong.feng at 2026-11-23 KF开发助手双栏代码浮窗 */
+.window-controls {
+  gap: 2px;
+}
+.window-controls button,
+.icon-button {
+  height: 30px;
+  width: 30px;
+  color: #425776;
+}
+.window-controls button:hover,
+.icon-button:hover,
+.text-button:hover,
+.quick-actions button:hover,
+.history-row:hover,
+.thread-name:hover,
+.view-action:hover {
+  background: #e5edfd;
+}
+.window-controls button:last-child:hover {
+  color: #952c29;
+  background: #fbe9e7;
+}
+.assistant-body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  position: relative;
+}
+.assistant-main {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+.thread-heading {
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 15px;
+  border-bottom: 1px solid var(--line);
+}
+.thread-name {
+  min-width: 0;
+  overflow: hidden;
+  font-weight: 650;
+  padding: 4px 5px;
+  text-overflow: ellipsis;
+  display: block;
+  text-align: left;
+}
+.thread-name svg {
+  display: inline;
+  vertical-align: middle;
+  width: 10px;
+  margin-left: 6px;
+}
+.view-action {
+  flex: none;
+  margin-left: auto;
+  padding: 5px 7px;
+  font-size: 12px;
+  color: #375175;
+}
+.sidebar-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: #283f651c;
+  border-radius: 0;
+}
+.resize-edge {
+  position: absolute;
+  z-index: 5;
+  touch-action: none;
+  user-select: none;
+}
+.resize-edge[data-edge='n'],
+.resize-edge[data-edge='s'] {
+  left: 12px;
+  right: 12px;
+  height: 6px;
+  cursor: ns-resize;
+}
+.resize-edge[data-edge='w'],
+.resize-edge[data-edge='e'] {
+  top: 12px;
+  bottom: 12px;
+  width: 6px;
+  cursor: ew-resize;
+}
+.resize-edge[data-edge^='n'] {
+  top: 0;
+}
+.resize-edge[data-edge^='s'] {
+  bottom: 0;
+}
+.resize-edge[data-edge$='w'] {
+  left: 0;
+}
+.resize-edge[data-edge$='e'] {
+  right: 0;
+}
+.resize-edge[data-edge='nw'],
+.resize-edge[data-edge='se'] {
+  width: 13px;
+  height: 13px;
+  cursor: nwse-resize;
+}
+.resize-edge[data-edge='ne'],
+.resize-edge[data-edge='sw'] {
+  width: 13px;
+  height: 13px;
+  cursor: nesw-resize;
+}
+.resize-edge[data-edge='se']::after {
+  content: '';
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid #bac9df;
+  border-bottom: 2px solid #bac9df;
+  border-radius: 0 0 3px;
+}
+/* end */
+.pending-count {
+  font-size: 11px;
+  line-height: 16px;
+  padding: 0 4px;
+  border-radius: 4px;
+  background: #d9e9fa;
+  color: #245a91;
+}
+/* modified by jinlong.feng at 2026-11-23 KF对话轮次导航 */
+.conversation-layout { display:flex; min-height:0; min-width:0; flex:1 1 0; }
+.conversation-layout > .conversation { min-width:0; }
+.turn-nav + .conversation { padding-inline-start:8px; }
+/* end */
+.conversation {
+  width: 100%;
+  flex: 1 1 0;
+  min-height: 0;
+  margin: 0;
+  padding: 18px 22px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #c8cfd4 transparent;
+}
+.conversation h2,
+.conversation h3,
+.conversation p,
+.conversation dl,
+.conversation dd {
+  margin: 0;
+}
+.conversation h2 {
+  font-size: 18px;
+  line-height: 1.35;
+  font-weight: 640;
+  letter-spacing: -0.018em;
+  color: #1f2c35;
+}
+.conversation h3 {
+  font-size: 13px;
+  line-height: 1.45;
+  font-weight: 610;
+}
+.conversation p,
+.evidence-detail,
+.question,
+.history-row,
+.planbar span {
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+.assistant-float small,
+.muted {
+  color: var(--muted);
+  font-size: 12px;
+}
+.conversation .muted {
+  margin: 8px 0;
+}
+/* modified by jinlong.feng at 2026-11-23 KF开发助手双栏代码浮窗 */
+.streaming-reply {
+  margin: 8px 0;
+}
+/* end */
+.planbar {
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  min-width: 0;
+  margin-bottom: 6px;
+}
+.planbar span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.planbar small {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.planbar svg {
+  width: 14px;
+  height: 14px;
+}
+.turn + .turn {
+  margin-top: 21px;
+}
+.question {
+  max-width: 87%;
+  width: fit-content;
+  margin: 0 0 15px auto;
+  padding: 8px 13px;
+  border-radius: 13px 13px 4px 13px;
+  /* modified by jinlong.feng at 2026-11-23 KF开发助手双栏代码浮窗 */
+  background: #eaf0ff;
+  /* end */
+  font-size: 14px;
+  line-height: 1.6;
+}
+.reply-author {
+  gap: 7px;
+  margin-bottom: 7px;
+}
+.reply-author strong {
+  font-size: 12px;
+  font-weight: 640;
+}
+.reply-author small {
+  padding-left: 7px;
+  border-left: 1px solid #dce1e5;
+  line-height: 1;
+}
+/* modified by jinlong.feng at 2026-11-23 KF开发助手双栏代码浮窗 */
+.reply-mark {
+  width: 21px;
+  height: 21px;
+  border-radius: 5px;
+  font-size: 10px;
+}
+/* end */
+.answer,
+.proposal p,
+.item p {
+  font-size: 14px;
+  line-height: 1.72;
+}
+.turn > .text-button,
+.evidence {
+  margin-top: 7px;
+}
+.text-button,
+.quick-actions button {
+  font-size: 12px;
+  color: var(--blue);
+  padding: 5px 7px;
+}
+.evidence .text-button {
+  margin-left: -6px;
+}
+.evidence .text-button svg:last-child,
+.turn > .text-button svg:last-child {
+  width: 11px;
+  height: 11px;
+}
+.evidence-detail {
+  margin: 5px 0 0 2px;
+  padding: 7px 0 5px 12px;
+  border-left: 2px solid #becfdc;
+  color: #455463;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.evidence-detail dl {
+  display: grid;
+  grid-template-columns: minmax(60px, 35%) 1fr;
+  gap: 5px 8px;
+  margin: 8px 0;
+}
+.evidence-detail dt {
+  font-weight: 600;
+}
+.evidence-detail dd {
+  min-width: 0;
+}
+.live {
+  margin: 8px 0;
+  color: var(--blue);
+  font-size: 13px;
+}
+.composer-area {
+  flex: 0 0 auto;
+  padding: 7px 15px 14px;
+  background: #fff;
+}
+.quick-actions {
+  gap: 6px;
+  margin: 0 2px 7px;
+  flex-wrap: wrap;
+}
+.quick-actions button {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  color: #435564;
+  background: #fff;
+  padding: 5px 8px;
+}
+.quick-actions svg {
+  width: 13px;
+  height: 13px;
+}
+.composer {
+  /* modified by jinlong.feng at 2026-11-23 KF开发助手双栏代码浮窗 */
+  position: relative;
+  border: 1px solid #c5d3ed;
+  /* end */
+  border-radius: 13px;
+  padding: 9px 10px 8px;
+  background: #fcfcfd;
+  box-shadow: 0 1px 3px #21303c0a;
+}
+.composer:focus-within {
+  border-color: #80a1c2;
+  box-shadow: 0 0 0 2px #367bc21a;
+}
+.composer textarea {
+  display: block;
+  width: 100%;
+  height: 45px;
+  min-height: 0;
+  border: 0;
+  background: none;
+  outline: 0 !important;
+  resize: none;
+  box-shadow: none;
+  padding: 1px 2px;
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.55;
+}
+.composer textarea::placeholder {
+  color: #78848d;
+}
+.composer-toolbar {
+  /* modified by jinlong.feng at 2026-11-23 KF开发助手双栏代码浮窗 */
+  justify-content: flex-start;
+  gap: 10px;
+  min-width: 0;
+  /* end */
+}
+.context {
+  min-width: 0;
+  gap: 5px;
+  color: #566773;
+  font-size: 12px;
+}
+.context svg {
+  width: 13px;
+  height: 13px;
+}
+.context span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.send-tools {
+  /* modified by jinlong.feng at 2026-11-23 KF开发助手双栏代码浮窗 */
+  margin-left: auto;
+  /* end */
+  gap: 8px;
+  flex-shrink: 0;
+}
+.send-tools small {
+  font-size: 11px;
+}
+.send {
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: white;
+}
+.send:disabled {
+  opacity: 1;
+  background: #e6e9ec;
+  color: #8b969f;
+}
+.send svg {
+  width: 16px;
+  height: 16px;
+}
+.unsaved {
+  display: block;
+  margin: 5px 3px 0;
+}
+.empty-state {
+  display: grid;
+  justify-items: start;
+  align-content: center;
+  gap: 10px;
+  padding: 22px 0;
+  min-height: 70%;
+}
+.empty-state .empty-icon {
+  width: 28px;
+  height: 28px;
+  color: #648299;
+}
+.empty-state p {
+  color: #5d6c76;
+  font-size: 13px;
+}
+.chat-empty {
+  min-height: 60%;
+  justify-items: center;
+  text-align: center;
+}
+.primary,
+.secondary {
+  font-size: 13px;
+  font-weight: 550;
+  padding: 7px 12px;
+  border-radius: 7px;
+}
+.primary {
+  background: var(--blue);
+  color: #fff;
+}
+.primary:hover:enabled {
+  background: #194d88;
+}
+.secondary {
+  background: #fff;
+  border: 1px solid var(--line);
+}
+.secondary:hover:enabled {
+  background: #f2f5f7;
+}
+.section-heading {
+  margin-bottom: 12px;
+  justify-content: space-between;
+  gap: 8px;
+}
+.group {
+  margin: 17px 0;
+}
+.group h3 {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #4b5c68;
+  margin-bottom: 5px;
+  overflow-wrap: anywhere;
+}
+.history-row {
+  width: 100%;
+  justify-content: flex-start;
+  padding: 8px 9px;
+  gap: 8px;
+  text-align: left;
+  white-space: normal;
+}
+.history-row.current {
+  background: #edf3f8;
+}
+.history-row span {
+  flex: 1;
+  min-width: 0;
+}
+.history-row svg {
+  width: 13px;
+  height: 13px;
+}
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--soft);
+}
+.item > svg {
+  color: #44714e;
+  margin-top: 5px;
+}
+.item small,
+.proposal small {
+  font-size: 11px;
+}
+.pending-heading {
+  margin-top: 20px !important;
+}
+.proposal {
+  border-left: 2px solid #89aacf;
+  padding: 7px 12px;
+  margin: 12px 0;
+  background: #f5f8fb;
+}
+.proposal p {
+  margin: 6px 0;
+}
+.actions {
+  gap: 7px;
+}
+.name-form label {
+  display: grid;
+  gap: 9px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.name-form input {
+  margin-bottom: 12px;
+  padding: 8px 10px;
+  border: 1px solid #bcc7d0;
+  border-radius: 7px;
+  width: 100%;
+}
+.name-form .back {
+  margin: 0 0 14px -6px;
+}
+.error {
+  margin: 8px 15px 0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: #fff1dc;
+  color: #684713;
+  font-size: 12px;
+}
+.assistant-dock {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #c3ccd3;
+  border-radius: 24px;
+  gap: 8px;
+  background: #fbfcfd;
+  color: #243746;
+  font-size: 13px;
+  font-weight: 620;
+}
+.assistant-dock:hover {
+  background: #f1f6fa;
+}
+.assistant-dock .kf-mark {
+  width: 22px;
+  height: 22px;
+  font-size: 11px;
+  border-radius: 6px;
+}
+.restore-arrow {
+  color: #526e81;
+  font-size: 15px;
+}
+/* modified by jinlong.feng at 2026-11-23 KF开发助手双栏代码浮窗 */
+@container assistant (max-height: 460px) {
+  .window-bar {
+    height: 34px;
+  }
+  .thread-heading {
+    min-height: 32px;
+  }
+  .conversation {
+    padding: 8px 12px;
+  }
+  .composer-area {
+    padding: 3px 10px 8px;
+  }
+  .composer textarea {
+    height: 28px;
+  }
+}
+@container assistant (max-width: 430px) {
+  .window-bar {
+    padding: 0 6px;
+  }
+  .thread-heading {
+    padding-inline: 6px;
+  }
+  .composer-toolbar {
+    gap: 4px;
+  }
+  .send-tools small {
+    display: none;
+  }
+}
+/* end */
+@media (prefers-contrast: more) {
+  .kf-assistant,
+  .assistant-dock,
+  .composer {
+    border-color: #536372;
+  }
+}
+/* modified by jinlong.feng at 2026-11-23 KF开发助手双栏代码浮窗 */
+@media (prefers-reduced-motion: reduce) {
+  .assistant-float {
+    scroll-behavior: auto;
+  }
+}
+/* end */
+/* end */

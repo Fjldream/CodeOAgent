@@ -1,0 +1,2037 @@
+{
+  "scope": "测试和静态源码索引所需的脱敏 KF 参考子集",
+  "files": [
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/gateway/core/middlewares/midware_verifyToken.js",
+      "sha256": "7ca65ca6fe238327eefa950c9db5bb5e82670c1c187db39ab011d84586af8e62"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/gateway/lib/routers/api/v1/project_permissions_router_config.js",
+      "sha256": "6452dbfb1beaf610c89c1188989f8ef141f16ac46eae15786642e2df9fb28829"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingalarm/exe/lib/routers/api/v1/alarm_router_config.js",
+      "sha256": "fc35d93d66e41bd7b33e2de6f75b5874b80331709d9f1269ce7ccad2f9bb1a16"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingalarm/exe/lib/routers/api/v1/projectGroup_router_config.js",
+      "sha256": "f268f4da982024d3c5ede91af2402eaa5dcfd542747e0e8527f30072a6defbe2"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingalarm/exe/lib/routers/api/v1/project_router_config.js",
+      "sha256": "ac99a248d99290fe8f62d2e2c26a04cb761c074b66888d716470dcfd65721241"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/lib/routers/api/v1/projectGroup_router_config.js",
+      "sha256": "f268f4da982024d3c5ede91af2402eaa5dcfd542747e0e8527f30072a6defbe2"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/lib/routers/api/v1/project_router_config.js",
+      "sha256": "f505e4cba9d0409dab786bfd96d519ae687495c63ca33d40758a7f1dab09b7b9"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/lib/routers/api/v1/script_router_config.js",
+      "sha256": "b6895586a193f4ed546491d34d5f6b3ec81090576ecefd80837348637ac4f7de"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/dataSourceMng/kh_manger.js",
+      "sha256": "55b4f4409c1ea72e367b98ade60ffb205f08ae7bf83b2636d7cd8e080cf0b802"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/dataSourceMng/ks_manger.js",
+      "sha256": "1501034ae9c74c9d642dcfaa5456e25bcf9225f55b5e1dd935a45288279877d2"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/dataSourceMng/mongo_manger.js",
+      "sha256": "36537bdf5296d5d9841a384c65bcd3e8059d11b269f29dd3128bc999168396e2"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/dataSourceMng/redis_manager.js",
+      "sha256": "48e354c30190aca60a472c5464bf67d135f2d4dfb6f78f0e760cb515bcf49e40"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/dataSourceMng/sql_manger.js",
+      "sha256": "3c1bfd184266798f9f13487f6567381beb0c040ef1d0c82ea273b4b1e0f8ead1"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/dll_global_func.js",
+      "sha256": "34d03de67c7540e14e7f6a5873ae97aea9f3721a677e04c881636d98ff39ba78"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/file_global_func.js",
+      "sha256": "d1e14fbef7fdfedf7db1996b5264d5c848f391744918a2f9718ce01e56f5e2fb"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/globalInterfaceMng/dll_global_interface.js",
+      "sha256": "4e604b2eb4d288255a33efdd02cb512130118b3cfa41c15d16ac764c42a69c62"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/globalInterfaceMng/file_global_interface.js",
+      "sha256": "02ab689f1bfc6d2f523c9ead329c10e3644dfe4ff6f1ba8b210cb3ef80e0725b"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/globalInterfaceMng/kh_global_interface.js",
+      "sha256": "a5f3a91e59fef50591f6c8e7e132e6cb94104a23d5e15e19ca6391f6a7fc415f"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/globalInterfaceMng/ks_global_interface.js",
+      "sha256": "774dcb71537c3e1bdad1c6bc9a225ca544032f581e0049cf4275637e813b73d5"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/globalInterfaceMng/mongo_global_interface.js",
+      "sha256": "bf79dc0a6603a6bd4b5858dc00035d58b46d858f17df57c043db8042d943131c"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/globalInterfaceMng/redis_global_interface.js",
+      "sha256": "9ffb1d81ed28d7e9c7f1df41d62bbe6f1767529f0bfdd18f9111365ec8605681"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/globalInterfaceMng/sql_global_interface.js",
+      "sha256": "ab0bc70176f8a630e48a04a4d056438e2c1b482ee83a27f2c21c15b06c5daf4c"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/globalInterfaceMng/user_global_interface.js",
+      "sha256": "4d979feb6ee08ca6f0a125f8057f408cd37f488f8ea5294f2c13f255e7985398"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/kh_global_func.js",
+      "sha256": "ef39b2e78126d87b48ae8906ba0bc159ec9e2904b1dd7f5b6f636a65d5239524"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/kio_global_func.js",
+      "sha256": "303a271eefc9ff48c706476dd51d4bce446e8753fa7b758e23dcfd8050db5a6f"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/ks_global_func.js",
+      "sha256": "c2c803d4a38abd4b2a102a5f1afa87a9fe3557a22f13a847700979b4966c114a"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/math_global_func.js",
+      "sha256": "85fe2c2944e4f03af92b7c0ca67df0a48057195430fe7ac3c42d25be035df921"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/md5_global_func.js",
+      "sha256": "819ce19c27030463cb98f54609be3b5772ca17f9099ec464c8752faede4f7d62"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/mongo_global_func.js",
+      "sha256": "e5fdb7a2ab7226f0a689b60b586ca2679db52511f5ef249c8771d7c045f01e5d"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/redis_global_func.js",
+      "sha256": "362e7e37077c62a96668552822d80ddf8dbcc3a33bd1945a073e3572db518063"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/redundancy_global_func.js",
+      "sha256": "8187fcf5b05806fb1bb2f7bddf6d4130a1a0acc91dbed9cf24574b9064591ff3"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/request_global_func.js",
+      "sha256": "e6bae91aab2a019df13a2d9042edc97ffcedcfc9a6559a8c6fe0b8c8ae8031d8"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/sql_global_func.js",
+      "sha256": "437c2f3a5e23a11b769a8b7c6958d5431822ab44999bc635b5e1e9d70afb8e7f"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalFuncMng/user_global_func.js",
+      "sha256": "5035bd318a6822d546bea8b94915366d49dcfba4c1d8bbd7ff8b9a3cf91004d4"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/globalScriptMng/systemScript/systemScript.js",
+      "sha256": "f2d5077d37c8b5795f884c7677ed6f41184984c25c8b3e5250837a1dd87407ce"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/interface/kh_interface.js",
+      "sha256": "f3b52bdfa7ff14aa135b0b4767410a8a2cea3b75606761ce315dcb3242534159"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/interface/ks_interface.js",
+      "sha256": "3253062a53b039704900d2b2e8303ac28983cd0ba0ba03bb3f5c76b5368953f7"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/interface/mongo_interface.js",
+      "sha256": "4a0af1125a4b97489333df4f4a36c3ae88506020f00e53f355a743084338e56c"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/interface/redis_interface.js",
+      "sha256": "b15e5f050ea2bd14e4df66694e4ff98954809fde62881c4b5170b001d8a0dc12"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingcalculation/exe/solutions/project_demo/src/lib/service/interface/sql_interface.js",
+      "sha256": "b6a7b97cf7d60f9565d93f7bc98476a1a0b7248c998c40528227c5caf61f585f"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/lib/routers/api/v1/img_router_config.js",
+      "sha256": "da5e504d56a9bfe1759ca8afe05ecdd6bbe4f95574e8c5a90b8893c6d77b8c54"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/lib/routers/api/v1/projectGroup_router_config.js",
+      "sha256": "f268f4da982024d3c5ede91af2402eaa5dcfd542747e0e8527f30072a6defbe2"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/lib/routers/api/v1/project_router_config.js",
+      "sha256": "3ceabf1f2c26269707e0873dd84441834d5158ae65a6d4299767ddbd24fac844"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/AlarmEventWindow/AlarmWindow/km_alarmwindow.js",
+      "sha256": "c988364fa2dc1f575bdb9fb2b941da1f1602ee7c0b74a2c5e73ca33b51f30dcf"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/AlarmEventWindow/AlarmWindow/km_alarmwindow_list.js",
+      "sha256": "b18d51e2ce5f669f2a54edbe7f811575392550717a20a03e951ec23222eab4ef"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/AlarmEventWindow/EventWindow/km_eventwindow.js",
+      "sha256": "059513d2fea22588329a3561b3575db0c2bb1bbecd0385b291a89c5898f4dda6"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/AlarmEventWindow/EventWindow/km_eventwindow_list.js",
+      "sha256": "4f243226be060032a1d0097d72930a5d2ddae4f699e821e20fca15060531a9db"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/AlarmEventWindow/km_aewindow_base.js",
+      "sha256": "be20e85953ae15738be510d6e894725ec95a3a53edbe3f5d636f80a2a8791adc"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/AlarmEventWindow/km_aewindow_datamanager.js",
+      "sha256": "ea1f96fc836ee907c5e647e5ac99b603d352aaa6d207cc4782f34e73ef2fe411"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/AlarmEventWindow/km_aewindow_list.js",
+      "sha256": "dd931f605198cf4417e63ccc4784d3d4aee759c09b75f8961009d624a74ba597"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/AlarmEventWindow/km_aewindow_statusbar.js",
+      "sha256": "ef53566e17686c484039378a14b338e440db38453e1338460084f3ea85b6425e"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/AlarmEventWindow/km_aewindow_title.js",
+      "sha256": "9644e39652d1685d7c918f1700c804d4700a5c6e29864e1ab8ce296092826941"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/AlarmEventWindow/km_aewindow_toolbar.js",
+      "sha256": "d5a74a450ac227d9d61a2bcd85f9fe579404fd91a07069a4967b4a32fe892045"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/AlarmEventWindow/km_aewindow_tree.js",
+      "sha256": "55a432f8e438f6233a5422851488fcb897b7759c7f22259fa9808e2c6bbabd90"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/AlarmEventWindow/km_aewindowfilter_editor.js",
+      "sha256": "bd925339de7cafb14dc21d6539e7f0e0601aa689402816adc4e960189b95e1d3"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/AlarmEventWindow/km_aewinwoquery_editor.js",
+      "sha256": "b5c14f98fa2a5444820d9052770e1a092fd4c787bb1cde4becb0d52dcb461ddb"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/AlarmEventWindow/km_alarmwindow_list.js",
+      "sha256": "52a4eb48589d816fa256e31964e4ac25410d58d506e4141b46171e887fbd6826"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/AlarmEventWindow/km_confirmremark_editor.js",
+      "sha256": "2ab60e0da9766d3dde2a7e65ac9d25bd25f64d5d1305dd91e81a81233b580d83"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/AlarmEventWindow/kmui_aewindow_datasource.js",
+      "sha256": "59aa10d9b17e67cc8bf063d7f7959e6d4fa5e35fe46a46db100058842556a223"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/CustomCharts/ECharts/km_chart_mng.js",
+      "sha256": "69bcdf3fbc7e3c3eb63c745f2fd6f9af41c0e52a060599757046d0bd1a14de33"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/CustomCharts/ECharts/kmui_chart.js",
+      "sha256": "39876668d28d46f3248eb67e0802d59407d4271afec532e612dbcf224d9dc08b"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/CustomCharts/Reports/kmui_grid.js",
+      "sha256": "14e704eb37b434b5d122dfbb7bff134911a77ebb4343dd9d0577b278837aaf33"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/CustomCharts/km_custom_charts.js",
+      "sha256": "6393ddb50a1b3d15f9b62f54b1caf646755ed8ac1131113cc40cd4f82b0f68a4"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/CustomCharts/kmui_customcharts_base.js",
+      "sha256": "85a04e28d2a0f6f8182ce7480ba16446c8673104bc79cedcf3af89847ee3cfd1"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/EChart/BarChart/kmcc_barchart.js",
+      "sha256": "f8a38980b068271d6c6732f824dd1894b05980aaba5049983308a804faa2659f"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/EChart/BarChart/kmcc_barchart_area.js",
+      "sha256": "24c738ff0acbe916ee0e2ba453d7e63aba0ea86a1f30ab8341db898c4435b849"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/EChart/BarChart/kmcc_barchart_axis.js",
+      "sha256": "dae8f5f7cea5eebf39974513aa76f46a997cc15f19322dcb654ce4408ac5f11d"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/EChart/BarChart/kmcc_barchart_series.js",
+      "sha256": "c7e17fc911d2dc19c0a5b75e1eb521d7e799c10054fe3676c811cef822d2aaae"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/EChart/PieChart/kmcc_piechart.js",
+      "sha256": "6d5927154e4ff19c5eb4f2d27bd6481c66490544b7be62f7d407a01c34ab3d1a"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/EChart/PieChart/kmcc_piechart_area.js",
+      "sha256": "bda3111607ce98c1e7014afdd606252b2f50d69655b4828f61d7f81be7bff3d6"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/EChart/PieChart/kmcc_piechart_series.js",
+      "sha256": "3f903aae96211d9a12d2d4695825b4c2c9398fe1c52ad2396d4084fb980be668"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/EChart/TrendChart/kmcc_trendchart.js",
+      "sha256": "9e40efef47edef8317e3f43ba9f7aece366ede52ed062d9c02f17fc5997e1f49"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/EChart/TrendChart/kmcc_trendchart_area.js",
+      "sha256": "d0c22e3e284a713723b8b1b036c62ae6eff61b0f8721345b358ceb7561555cdd"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/EChart/TrendChart/kmcc_trendchart_axis.js",
+      "sha256": "06a635d4c3d0982b23c2921a4248f99e848646e6c817f787323f132c21e7bf86"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/EChart/TrendChart/kmcc_trendchart_series.js",
+      "sha256": "3a961b0bc1d2e7c24bac189bb7e2875f23e7992d866b23af19982968c5f30245"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/EChart/XYChart/kmcc_xychart.js",
+      "sha256": "e1368b52eafd54f7e7a9bc66f3754b2ec24e052602ac89eb7535c8dce7fb7f26"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/EChart/XYChart/kmcc_xychart_area.js",
+      "sha256": "46b79577cf2ead305721c4087721c8401bb11b16a9d886287fc571c52c1bd5af"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/EChart/XYChart/kmcc_xychart_axis.js",
+      "sha256": "8928d23c1546147f0b961f34075eb7dbf08287622a096eb10d7489386c8cd3ba"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/EChart/XYChart/kmcc_xychart_series.js",
+      "sha256": "42ae110bbf9ff70cec585c3c33df9363ce98ef055ed9e19473999ad80181bda9"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/EChart/kmcc_area_base.js",
+      "sha256": "a6f74cc8e7e40df6d6761ef3619eb597342a5eff678de40ef73d88816874612c"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/EChart/kmcc_auxiliary.js",
+      "sha256": "e846d4045af4425c66e169b44717370b5e52ce233086b29e689fd3cc97ec307a"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/EChart/kmcc_axis_base.js",
+      "sha256": "3a04f59f46b1e824d2560ed5dd08f69c38473c692fa056601b23b8397ad53f17"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/EChart/kmcc_chart_base.js",
+      "sha256": "7082b6d2884945cff74fce2434f3f6891d0de4b141916b55bdf487168ffecc18"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/EChart/kmcc_data_zoom.js",
+      "sha256": "962cf557efd83d33d22912b0ea5501b12ebe8c8d70ce85ae4bf943ecf19a287c"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/EChart/kmcc_grid.js",
+      "sha256": "a9bb8ad436eb7e55e9dae6341808b9e2b90d09ce19fdfd827173c4f63f4a1c28"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/EChart/kmcc_legend.js",
+      "sha256": "0ed8e53b39468e1474c07580d899d15422f42d5556685a6c7681037d8c4133a2"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/EChart/kmcc_series_base.js",
+      "sha256": "397eb8d2e3f0edc5a014bdcde4c4a385a813587cf0bd5ba584edb75411c4bd35"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/EChart/kmcc_title.js",
+      "sha256": "95731495110507a70c9742d3da46912abe770e632d94f7554ad3365be98b939b"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/EChart/kmcc_toolbox.js",
+      "sha256": "361fad8bf232a0511cbb018cc8ead518a56d9e2969ecf9f3b1c38261641c2caf"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/EChart/kmcc_tooltip.js",
+      "sha256": "56d1c1b81d7a0d07c92b9ddeb4fa236449620891808a60ff79c1b2e7776940c4"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ChartComponent/km_chart_component_base.js",
+      "sha256": "cf44191294720526f6688ee104e41747d1545967c13c0a5a7c6e5f9cc3c4eff1"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ElementUI/kmui_elementui_base.js",
+      "sha256": "14a8ae3455907d462fd2997861838de7458f5def6c78d7f63a723ac320ebab60"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ElementUI/kmui_elementui_button.js",
+      "sha256": "ec75fae61ff1eea445efdf0a4e64d41867c663d67dfc19655459df7bfcc1bad4"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ElementUI/kmui_elementui_cascader.js",
+      "sha256": "bd418ea8f59c7691f74616ec39f73ba5549735a871e0088d50ceee4627584da7"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ElementUI/kmui_elementui_checkbox.js",
+      "sha256": "5187c3711e495379f4c1d7b910d8a7dc411ca5da2487c56328be290eba27dcb6"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ElementUI/kmui_elementui_datetimepicker.js",
+      "sha256": "83e7eb48be3c7ca8eefb494fc007e5cd84581c32cbb2e22597a2d43e413e8e79"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ElementUI/kmui_elementui_dropdown.js",
+      "sha256": "bfc43d89fe55a0b881bc6af3bac460cf5894de2f789585ebaa45639a57c3bde4"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ElementUI/kmui_elementui_image.js",
+      "sha256": "992529f370a8a04fdef732e60a4b75549cf4b330cd86e1bb7cb985aedb74ba0a"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ElementUI/kmui_elementui_input.js",
+      "sha256": "052f46cc529d821e5c84aefb54f97e085518401c2364f2f115617da6388a74bf"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ElementUI/kmui_elementui_inputnumber.js",
+      "sha256": "7ddb5c275df5686f4bafea04912d2d4661a4f4671f9e8bba3c31c9dc88827735"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ElementUI/kmui_elementui_map.js",
+      "sha256": "052fe7fc9d5b5f626437a9fda338a19c480fff92a4223717e8ca5520d1e37a87"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ElementUI/kmui_elementui_navmenu.js",
+      "sha256": "9f94723beff4c6aeed2349f10d630f63610202b2930c986ccf72cfc008726a71"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ElementUI/kmui_elementui_radio.js",
+      "sha256": "a0f3a35ae858ebfa726cedc5cd5ef2fbb8502020e8afacdf22b0dd4d9f547c0a"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ElementUI/kmui_elementui_select.js",
+      "sha256": "d861a4e82c80f1491118a6ea568826f92a1699a0983b4dd2c8b7bf3ac085d7ff"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ElementUI/kmui_elementui_steps.js",
+      "sha256": "f53ec53d3b146fcf0e942dbc6cd794b58252356e63891fec172ef7851c72a8e2"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ElementUI/kmui_elementui_switch.js",
+      "sha256": "6f010b0f4a81fdcecac007966c5e228bd22649bd95fc846cdda272b141b43f4c"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ElementUI/kmui_elementui_table.js",
+      "sha256": "e32e769874d231dffbc17415eae4bb28458dce7929df60b86b7063dd0cb21394"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ElementUI/kmui_elementui_tabs.js",
+      "sha256": "249fa389a0cb79e14b150b454b70a2edecc477dbfaa45d6bc59e87ae5d6db4e1"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ElementUI/kmui_elementui_tag.js",
+      "sha256": "5aae561614909404841416073f09ea2d409275a02bd48d55886141442019fff9"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ElementUI/kmui_elementui_timeline.js",
+      "sha256": "993da54aa7f4925e59d02b5866d4396d643789088aeff360f93255dd9bfe01ad"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ElementUI/kmui_elementui_transfer.js",
+      "sha256": "0cee51b6757feddf7e62bcae4491439bced9f322342e7ac3e5d04e80339cba46"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ElementUI/kmui_elementui_tree.js",
+      "sha256": "ddf96450821c0a0c4158d87d858dd6d47733fa5b083f37f4f67a8d530f9eb8e8"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ElementUI/kmui_elementui_upload.js",
+      "sha256": "074ee42164d049884bac2896266bda12a5b83ceddcdc847cff77425153ce5b21"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/FlowChart/km_arc.js",
+      "sha256": "0069a1f90f022885b70173d37d31e7a8e1ca5045306ff2e7cf49c6cf18df5b1b"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/FlowChart/km_bezier_close.js",
+      "sha256": "1d65d3d54aaf0cd3a0924cda8eea754b0ca0c604ba39c74b4182457c384f8cb3"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/FlowChart/km_bezier_open.js",
+      "sha256": "ef6786956abaf703a54bd0c3e049659414e14200af03fa0af101f092db5ebf62"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/FlowChart/km_bow.js",
+      "sha256": "3bcc07d6b733a399ac046c16bed1a09ed6215d36ed954b82e99e7db1f6519577"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/FlowChart/km_canvas.js",
+      "sha256": "0f866fb013b20eb647aeaaaabfa58a27e424d0605025a58b236a963040b00aaf"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/FlowChart/km_ellipse.js",
+      "sha256": "86e0ba160a5d54462480c80ae0f788ee290601a523307cae882ca35f17d091cc"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/FlowChart/km_graphic_base.js",
+      "sha256": "46f75c52255a219711b7138aa929130785ef07dc6654c4d88d301be2ea04e23c"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/FlowChart/km_graphic_group.js",
+      "sha256": "f886ba12eb3f74b7361be116a1559fa63a1226997c6972098db22dcf490960d3"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/FlowChart/km_graphic_mng.js",
+      "sha256": "be8c2e313fd16f09c9c056c6697aca824cb001086ca1e0e1f26e58373506ff41"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/FlowChart/km_image.js",
+      "sha256": "5e073dcb85227bc5b40b6a1c9e467fc731763250d4ae18861a9d0a38cc2613f7"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/FlowChart/km_line.js",
+      "sha256": "bb65b625c817fa17e3b66e9359f2e44885220860bbddd8f008b850d11cdd71cd"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/FlowChart/km_path.js",
+      "sha256": "daeeab3e1375c07f4d64617ae85bcbbb40e21777ffab01775f3bb4f0879b0b5d"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/FlowChart/km_percent_fill_style.js",
+      "sha256": "c661632a99a125827074efb4375a9a7fb34aaf207b1b904ac2254e26fc08dc0a"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/FlowChart/km_pie.js",
+      "sha256": "37ed1934d018261caf2ab9614b0f4813257522b0e599909be67a90d991e599a3"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/FlowChart/km_pipe.js",
+      "sha256": "7ca127a57f08e7d1536b2a0e5f6ab01f330ad980e2871e009b55ec6c214bc000"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/FlowChart/km_polygon.js",
+      "sha256": "839aa844243bdf4bb65ae55f873d6ee09b28daae58db07220f60a510630728db"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/FlowChart/km_polyline.js",
+      "sha256": "e05aae2b6d87a99eabb96bcdc57eea7c2fef6c9bf129340acf19b50849e2c52f"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/FlowChart/km_rectangle.js",
+      "sha256": "6f46c04c2960db46c19d268947bc8ebe04f9668926887237bc724ccc3c2e00d2"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/FlowChart/km_round_rectangle.js",
+      "sha256": "9c576439fb321976070c2963837d5541e709cf9d5c3e2089b53cf2b312c75669"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/FlowChart/km_select_manager.js",
+      "sha256": "a50464bba65637b8bbe81a657b5ba21666859c26c798d810d60f6133b1dcd4dc"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/FlowChart/km_spline_close.js",
+      "sha256": "14835e376a2a31497eb8f04a89074fec07ababf41fb0c37fcae26f7efbd0fe57"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/FlowChart/km_spline_open.js",
+      "sha256": "7fa7f0c0b9a91a08ae0f7ab5d3e396f02d4e460828beeadc3c52b378c01a3824"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/FlowChart/km_text.js",
+      "sha256": "3479ab260850bbd2ef02f61b3084b6e9bcab137f7b73d772fb38cc70ba7d6a2c"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/FlowChart/km_tile.js",
+      "sha256": "131741ea1c5358c90a332d12b7b8305204c95124ef725b0d522ea6e77c8a5168"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/FlowChart/km_tile_calc.js",
+      "sha256": "d8926dea5a9c8f26cc0be83199e2f0e45f6d00a9c7a478f55e86db30561ed285"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Layout/kmui_accordion.js",
+      "sha256": "80222193965b3b7d31b6c3d39bef5ba65a7b14ef42c71195c776cae114c9b50a"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Layout/kmui_component_group.js",
+      "sha256": "1a7330bfa567fd005510c1b6ff1f076a9dc01efa4ada53a0e8b0598012f37580"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Layout/kmui_componentbase.js",
+      "sha256": "a375d3716518d6b3080c384bd61469902d9e839bae34b474546a5263792ba5b5"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Layout/kmui_form_layout.js",
+      "sha256": "5be8e659c826eab3870151883cb85a328e5e70654e87deb2d845249cc4dc85f4"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Layout/kmui_grid_layout.js",
+      "sha256": "4a27ab9e033f3b00f31b8837b02f85e735a98f8f69e713bb3c705a0827aeaf62"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Layout/kmui_horizontal_layout.js",
+      "sha256": "dc7666b9ec73d47d465b4928e76075f26ea8ffbc7a161add012f6189ed0d184b"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Layout/kmui_ht_3d_layout/kmui_ht_3d_layout.js",
+      "sha256": "69c421fe5cd2d8e520fea1023251139b3abd118de6082de066834e999dd90be5"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Layout/kmui_ht_3d_layout/kmui_ht_3d_layout_view.js",
+      "sha256": "cc7694c65177711aa30ea3db3347abdcf80b7d73df901708e2ccfb503aeffc64"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Layout/kmui_ht_layout/kmui_ht_layout.js",
+      "sha256": "7d7bbdef484b2bd8a8c723ecb271d8d3463d3d3df4ff68bf6f454c6074e0b918"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Layout/kmui_ht_layout/kmui_ht_layout_view.js",
+      "sha256": "bcfc5193bc385930c6d96b1980cd97a11d1b73f4e9261c0dc0b95a07453b9699"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Layout/kmui_layout.js",
+      "sha256": "24583e123b9b3c75552b2c92f5544eba2b715514ad8484dcde585b022988ae16"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Layout/kmui_layoutcomponentbase.js",
+      "sha256": "082a25fa7e20f5324a339379a1d91d47d7d66240dc3e97d4cd1b02eba27e63ff"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Layout/kmui_mobile_layout.js",
+      "sha256": "77751572e62f0d70d2f36720a13a249c49765cc1a30829cdc5580e4236a94de1"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Layout/kmui_tab.js",
+      "sha256": "94bea0e5a20c3f52622a0b3611fe4c9473814322b29ed0a0661bafeb73d673fe"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Layout/kmui_twodimensional_layout.js",
+      "sha256": "6a4e4ef463ddf72e1644c88611198b04647b5f588056ed0bde6968bedd5cb219"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Layout/kmui_twodimensionalview.js",
+      "sha256": "8cbb4bd4f1682bf34973ff8f027ded555d4d49253f3927f3b094b10adf4827dc"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Layout/kmui_vertical_layout.js",
+      "sha256": "bda0cfcb4906cc21fea0f4350edbb704ae910cbd2775444a5c5ab64a2300474d"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Layout/kmui_windiag_layout.js",
+      "sha256": "bf2ae728f0ce8b6575c0dee90bc808d2fc54f9188a0efd3f2fd64b4359110902"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/Expression/km_displaylink.js",
+      "sha256": "c32e6c037e91205d320e0e3231df6c282165b208e6544c756e07be7ba980b6e3"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/Expression/km_displaylinkblink.js",
+      "sha256": "353b6c2e2b163c9d0457732ed805d5b6adc971ba727cd3434a22387da52f9b67"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/Expression/km_displaylinkbrush.js",
+      "sha256": "4f302cff6bfb4ad1f0c42e0195b4821b885059c66fa59e437605ce343f15462d"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/Expression/km_displaylinkenable.js",
+      "sha256": "9861b9b457e2d28fdcaa4cd8b57db8cf7d52f0dc7775c4b1d1b73c65feaf6d74"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/Expression/km_displaylinkfillblink.js",
+      "sha256": "21bcbb5f05f262a8fdce60347eb94089f7a4eb4b58739bdaa3b52869be3e97da"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/Expression/km_displaylinkfillpercent.js",
+      "sha256": "d9f1026932efc1076a2e96d9f3f03942fdaa16e26e71d0c54e43c87c0b932f16"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/Expression/km_displaylinkhorzfillpercent.js",
+      "sha256": "980f3f13cf2bc13ca8f8a516f618436f50552dd15d0b53712d0fcbc9a9d51d67"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/Expression/km_displaylinkhorzscale.js",
+      "sha256": "82d904a55e277ed4a3124f61f58bbe0c52ce1586f0ee7db2a3152d1104b258b0"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/Expression/km_displaylinkhorzshift.js",
+      "sha256": "c5a52f6bc0b27cf251dcea4cd5f08e2b701296603ea1af3b7d29707c6102efbc"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/Expression/km_displaylinkorientation.js",
+      "sha256": "4e415b798d1f9b0ec36b94aec65a6f1ad73d44e08c866179cc353735e68c3946"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/Expression/km_displaylinkpen.js",
+      "sha256": "09bc33ace4872ae71eb04cd91a6dedef73f4a004f13c9c7165e5169f1831938d"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/Expression/km_displaylinkpenblink.js",
+      "sha256": "e3c3fbf84b9fa300142fd6b89d9e0d3a9ada9d4a75f9a0fc8bcde27b87f3cfc9"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/Expression/km_displaylinkpipeflow.js",
+      "sha256": "95e670734fdd583d6ed7e330ca7ae42eab93b229ebe56a8c7dbb8a8968ce6924"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/Expression/km_displaylinkrotation.js",
+      "sha256": "dadfc9583da65f181d4f30b889f87835f00030acb213beed3fa762b3cb5f498c"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/Expression/km_displaylinkscale.js",
+      "sha256": "4800f11867dbc7774082f8096626b1a6d0df16c3a6d5341a3449b03e722cda10"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/Expression/km_displaylinkshift.js",
+      "sha256": "8cfe6288565a48899176bb3bbd1a9e15d5d3fee5cc858bb7d6c38e2f59f39cd4"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/Expression/km_displaylinkshowhideblink.js",
+      "sha256": "f35cbdef5fcd3e6484aff597dfdaf92d5b73a531b9d12628890c5fb6b1ed7a4c"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/Expression/km_displaylinktextblink.js",
+      "sha256": "b88e8f6047fcd9e92efbd0c463e5ad03667902285f6d30ec8ce1bfa3421b10a7"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/Expression/km_displaylinktextbrush.js",
+      "sha256": "2aacbaf35a44f809346adc5b6e05352a19947d5e5814fdc92464eec8799995c4"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/Expression/km_displaylinkvertfillpercent.js",
+      "sha256": "be640f38eb10658af418ea721b23d3c74598ccc08f8500a6dcbe4b872adb37de"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/Expression/km_displaylinkvertscale.js",
+      "sha256": "6cad3067cde2b1b45748d2804400b823e1aabe2bbf6fc2f296934087ce35137f"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/Expression/km_displaylinkvertshift.js",
+      "sha256": "b985004eb87155a98fb7e50a9c1e2ebe8cd56d3d89c522c54905001158dbbb2f"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/Expression/km_displaylinkvisibility.js",
+      "sha256": "ce907c021a31b6ad7fa14b72f3e5eeb2299ce8073411a9cd680f69bba927046d"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/Expression/km_expressionlink.js",
+      "sha256": "8f7bb07a52c5c4f50a917e580efd47b00c4aa1681218693706427bbefc5ed2d5"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/Expression/km_textoutputlink.js",
+      "sha256": "d094db92066c802b8c08275e80980d199d3182f16ab121f4c01feea13d056b99"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/Expression/km_textoutputlinkanalog.js",
+      "sha256": "8dc722544d79c018256ddf9cf7765f3cdd77a90dc986907676e2f02b4c5b6af9"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/Expression/km_textoutputlinkdiscret.js",
+      "sha256": "1a04f71571c0c5b0c230c8f3e888e80faf537acf2798f93b8f3fe5098571be85"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/Expression/km_textoutputliskstring.js",
+      "sha256": "fef4ab6c30738183a2208204a39a1f8d28f3df5ff4ea9c1e158cba17fd7f832b"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/Expression/km_valueinput.js",
+      "sha256": "7fab71b48470045a8e4015946dd4361a0053143f2b7fb9a287e20b8cd88fa4f7"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/km_link.js",
+      "sha256": "95735c73da2c8bb0e49cfc3a71edc9952fe4b3815be94374b1c693da91ac35f3"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/km_linkmanager.js",
+      "sha256": "53ffa449e60f7d3f77d0255650eead1a91bbcb0a96b9ef909d5454d52866273b"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/km_objectlink.js",
+      "sha256": "b92cf9782cba4f7991ce204d670fd70f071aa3de7ad8f75a82e8a8801c08572e"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/trigger/km_alarmevent.js",
+      "sha256": "06f1c6ae24fa4ef59df859c5f11e46039b730a2828a2072cf3b769c4631dfafa"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/trigger/km_customizelink.js",
+      "sha256": "f79998520ef8c6e607830820366a805f85b1565335df939d679ecebd8865e0b9"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/trigger/km_datachangelink.js",
+      "sha256": "4adfa82c88930af680ac808a76c7e18c15285f8ae994196e03c02a2e64de5e68"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/trigger/km_inputlink.js",
+      "sha256": "ebfc14e0b272d17ff837b3a72d4544a8d01cf2fe6027df9c94781ef94c78e306"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/trigger/km_inputlinkanalog.js",
+      "sha256": "c15417fe08cd8a3b2c78423854e46202a321089e998a2123e248148307b77f2f"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/trigger/km_inputlinkdiscret.js",
+      "sha256": "abbcbfa0de783c03d4aa53f62b9c7c007a1ec80b2b96080b4c92d23e63e7078b"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/trigger/km_inputlinkstring.js",
+      "sha256": "414ff51e9277350e93ee07e398b47fd351676f3d8036c4782aa6315d40ec2519"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/trigger/km_modellink.js",
+      "sha256": "a297222d0661d8844539e487417d9e6184a0dee2ef7442453312e5da539ca612"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/trigger/km_mouselink.js",
+      "sha256": "7740639fc56058dd8b01e9d7804beec0937418294633d1c2d886acbceb578f5e"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/trigger/km_mouselinkleftdoubleclick.js",
+      "sha256": "21b8c4e9fe87edc63f1dd1a23bd4436bbd0f32109849ed8bf1c98e27e2d7bfcf"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/trigger/km_mouselinkleftmousepressed.js",
+      "sha256": "952e56fe8f71e470b0a0db4c8b557b12075910df788e246edf1232cfdebd9bfd"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/trigger/km_mouselinkover.js",
+      "sha256": "a4656a97b631db99309451d42b638a5ac64ca6c090ba8d0329902b8c498fe4e4"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/trigger/km_mouselinkrightmousepressed.js",
+      "sha256": "792157e5d4a651d488d5836cf8710d4ad9bb6e3a8ff55edad711847f9cd93711"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/trigger/km_scripttrggerlink.js",
+      "sha256": "e78777d8e5ae976ebb28d03e321d8cd3ecb18c92a2bfe6db5c0679e2f332ae01"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/trigger/km_showinglink.js",
+      "sha256": "5389a7df92c2ce51de75a786b7cb7e53619c130478ec29b728183a31ede21588"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/trigger/km_triggerlink.js",
+      "sha256": "351e51f73bd2a78af5f31c48fdec57dad3199ac5fe8482e15cb42837953bbb4e"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Link/trigger/km_uilink.js",
+      "sha256": "74e41c04b2b7fe8ea775ed3b1f6d3894a7a43d5e56614ebdd44f845fa2c62ec7"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/DataModel/km_datamodel.js",
+      "sha256": "a9aacf9a9f75caee1353b768f6df77880cbcaef4e2790f2e19ce9ffbba35865b"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/DataModel/km_datamodel_changelistener.js",
+      "sha256": "3b4d9b2e13a6bf9497073a46d61698c78f35c11f1053e1b5eac1742a398fd35d"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/DataModel/km_related_variable_item.js",
+      "sha256": "2940cbfeb3f2f3cee0ab82d8e7a2c60ab5c2d878d2fcf3e8b564f6a9ad2ae988"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/HT3DModel/km_graphic_ht_3d.js",
+      "sha256": "c11674c76321a7ffa260c923c06e3865b34bff3482e3e59b8dcee234829e008d"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/HT3DModel/km_ht_3d_model_variable_event.js",
+      "sha256": "bdf9a1f183d9e3b2d83d151153d08a2be8c08d9d0b6a80b7ac93c9e297e7b21f"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/HTModel/km_graphic_ht.js",
+      "sha256": "cf26421b61609f917c27cb26adf47e892c1e6ca40b7e1af007c0ccae6ce4167e"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/HTModel/km_htModel_event.js",
+      "sha256": "ed2e2e148729a3d03721cb01c22c9644c96d33b3c3c7d517d4f9f2a83f52162e"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/HTModel/km_htModel_variable_event.js",
+      "sha256": "af3010a20cad2b6fb35d3fc0a63126b117a89a425b1a6672aafe5824cadc276c"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/PublicEvent/km_publicEvent.js",
+      "sha256": "5859d3feb4aacb1bd3548c631804cb3e672982c7921bcf50e7afe2b1f54851ed"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/PublicEvent/km_publicEventAssociate.js",
+      "sha256": "b02a0c73dbd8f8959ea6b927f57c60c454cb0ebe5639a61a79a0cbd4074dff38"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/PublicEvent/km_publicEventAssociate_manager.js",
+      "sha256": "6d72431637aeaf5d02e67ba2e7615c63f858a6ab522c8374563d479a54b19518"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/PublicEvent/km_publicEvent_manager.js",
+      "sha256": "b113753ead71fcf8c62efe4d50461517632c2568c8bd74b7f2e75d2c1ac425b3"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/PublicProperty/km_publicProperty.js",
+      "sha256": "4f12f096e177d41041cd2fe3fe69fce44fab65f448ebe84b0381d7640ae10cc6"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/PublicProperty/km_publicProperty_manager.js",
+      "sha256": "4dfd24aae9ad2f7084f2ad1565cdaa08064dd14f52acc61d96181329ccff9bb8"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/PublicProperty/km_related_variable_info.js",
+      "sha256": "202b443a8c30f831d2a75e0d5eb51ca3c6c66cd290229fae08ee525e3d13139e"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/PublicProperty/km_variable_subscribe_item.js",
+      "sha256": "a81b1e794ea11fbc85f58eee99547729d342c8052aefb73bb40bf58287d57e52"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/indexdb.js",
+      "sha256": "ffa70252d3acd3a74260990b1d719bef58e0fbfad24ab38f5e38c1d000ef4847"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/km_2d_container_backprop.js",
+      "sha256": "034f0bc3d5e10906c84dc03e906922ee85766bb19b3fc581a30f342a85151263"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/km_associateGraphic_model.js",
+      "sha256": "f187ff1e374eda6df13fc38c3972e5f715d3b0482d4ccdcd47dabd1a96abe0f2"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/km_compositeGraphic_model.js",
+      "sha256": "e89be80d312e90cc53312288b91d93391a132133a46d99abbafbde30dcdc377a"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/km_dependitem.js",
+      "sha256": "0183713a630788f0d748c064c410c11ea2b404f5606960474dfcd4082625c94f"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/km_diffusion_manager.js",
+      "sha256": "ab6a54bfb1b3879608b5835c36acf7e76f27733c48686f0a4b5756922e81e6d0"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/km_graphic_model.js",
+      "sha256": "a6909eb41e05b0cfb89dab89abe5b7822abf0679204a18400652e28e83d79d20"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/km_layer.js",
+      "sha256": "7cfe1ba36196f74bc7fa5fd3d7345f17ba8a075661a09a1e7b9bbe88c17bb9b2"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/km_layermanager.js",
+      "sha256": "114b2ef6f7954d482c8286a2a32df58ff5b89a8cc08ab4bd2f7d709660f5cfd9"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/km_model_base.js",
+      "sha256": "2adea51f67d7c014c4e86d7686483661be9569be18477a73598f9ac14b2d8dcf"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/km_modeldepender.js",
+      "sha256": "8fcc100e407703189f543c34c4125d14028d9b503342b434eced6270ab26cff1"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/km_page.js",
+      "sha256": "165d5296eeda0608ecafc4ca4324c1b2fe433488b988630cba0900bf3206b69b"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/km_page_base.js",
+      "sha256": "8607f475d422b1f48d2eb99f8fe03303e76fa76891156d8286a3fe0519ee26ab"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/km_page_datasource.js",
+      "sha256": "e5b8761c2432700ad49959d0990f2840e38784f0e5e527516822d4ac8c5a4f8f"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/Model/km_page_property.js",
+      "sha256": "7a9b730e4429786d82c8b63c3dfd8ff1d871146e19295dcff45159218c50ef0b"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/ReportUI/kmui_report_model.js",
+      "sha256": "cc09adad41ead309f977ae7e52efbc96b3c86c455c9cf670ea92fcf6fa5192d3"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/TwoFlowChart/kmui_flowchart_base.js",
+      "sha256": "aed5773e7179a13ab24150c4d285a78681f84ec46e558034d8ac8800c318f2e5"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/TwoFlowChart/kmui_twodimensionalflowchart.js",
+      "sha256": "a8a78f223f8390ff5f6dea547d5169572a9f22257423ab91de993841541e51b1"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_button_model.js",
+      "sha256": "cd8aa456fc67e0d106cee7e940a14916ed834dc141978001ffc0dd3be5f73372"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_checkbox_model.js",
+      "sha256": "51dd464a0c1cdd12c29f174501ca357f959677f441fd9fe15ca78411916df468"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_combobox_model.js",
+      "sha256": "e840e436f736b3c3b5d25a8768490d8029f05e55b51c3f127c8b1568f48bea45"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_custome_model.js",
+      "sha256": "6f8026e879fee596b1d25c2f390409a7b7a1544ade294a35065c10e7f8d8eb06"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_ext_calendar.js",
+      "sha256": "6aab8d61c62c0f1bd073ebeb7763e19a4b161a685176529f1949fac4a26e5e61"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_ext_combobox.js",
+      "sha256": "89ffccaa6002d02698245038e72d6689b3b760fc5105d4cdaa696cd1777297a8"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_ext_combotree.js",
+      "sha256": "4a65fa18995fbd0cb494269f9ecb3c1bb22093b06c844986fa548004a0ec2a28"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_ext_datagrid.js",
+      "sha256": "1efbc8af18086d838eca8fd7526b54c3fded36a4e1a4ffafaf8d2f9108ecc9cb"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_ext_linkbutton.js",
+      "sha256": "17dc15a55e04475973ef5801edcd6bedf51b95a2787b91aa17c06d61b4e6595d"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_ext_numberbox.js",
+      "sha256": "2445eb0d818718d34798b8859f9d256c4df08a7073a641008c934bd95e66ad04"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_ext_numberspinner.js",
+      "sha256": "ba4b5c2f2d1137751bcb9f75255705a9e9b6469148dc5c5633b004b58056c413"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_ext_propergrid.js",
+      "sha256": "36d4a4e298ed016d0777e5837861de841ffaa21b06f69769b871fcd567e12e74"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_ext_searchbox.js",
+      "sha256": "4f75bc76bde366c8d605514c7b23956362e224cf4e4cc39dab0c12436d101b0f"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_ext_sidemenu.js",
+      "sha256": "a53226618cc820d7ba68099a208ae6437d37856a212c97e860875a21c1805f22"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_ext_slider.js",
+      "sha256": "d10759dc192cab06d7a0773a7b6bf071d824bbb5824085e1e519ea88402290fb"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_ext_spinner.js",
+      "sha256": "6847c4e4341fbe5475316ee44cf882549ac957b1087fd34583aafc333d1766fd"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_ext_switchbutton.js",
+      "sha256": "c30e139403e4e1bd93c5f652c6ce609453cc97636f7018f91deb6b8b15e2a9d2"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_ext_tagbox.js",
+      "sha256": "a9dd6e27f8c74a1e786db0c3780d09b828cdb51652101f6326a2b5f12b73247f"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_ext_textbox.js",
+      "sha256": "8ef9b3ade0f3efff98631d0df21b03d67317483d5891497e0b3d9561500af020"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_ext_timespinner.js",
+      "sha256": "854cc1e7ee64a89e6ad664b8b522d7fa1a6cc916e04e6f4d0148dc8346477f2b"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_extdatebox.js",
+      "sha256": "b6be02aee32073280c3ab39121eff3a01ea6ba31c94a2ff939c7fdec24304bd7"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_extdatetimebox.js",
+      "sha256": "a6146cb19b694fb7ebaebbeafecbf60c975d3971725bf087ebfa3f7b7ad59fee"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_extdialog.js",
+      "sha256": "a97d26da518f98da3766dee44145009f74d391a6c5c9a19fe4166ca57e4aae17"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_extfilebox.js",
+      "sha256": "966ab29cf8b4b6d40540e9c8c2546a07b30960f57c71be2e7fc808f0fbd7eebe"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_extmenubutton.js",
+      "sha256": "3196404b69fc9005585cceddfaf3264eaf5f68a2deca12b53246ad10c1aab859"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_extpagination.js",
+      "sha256": "1323349c26692a9b45ce4a4163cb08950bbb23a60c8c2ce1c907f01e13efd6a8"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_extprogressbar.js",
+      "sha256": "7d651e49719822afa7dbd59cf2354a7617bde2783a532854b20b28cebcf5c28a"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_exttooltip.js",
+      "sha256": "24798dd1064d2c6273db3d039a6c968cc03b8bed7ee1bf27341e426e67c83fac"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_exttree.js",
+      "sha256": "f5a18b5788278f1dd13b921fc43b05ef8c61ca52f8c4f1c8382e82e5449707af"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_exttreegird.js",
+      "sha256": "e42a759e52dd0296ba6b465459cbac5a80a5ec2bbb2ce2a5573a0bdb5193fffd"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_extvalidatebox.js",
+      "sha256": "abd97fbac92d2efd7ed785191ad72e78d3511839a79e63bbd75202eb3c185301"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_extwindows.js",
+      "sha256": "5e61be7aecc6a50553f00e32ce65fe054ec1d6152ca94e12c4603b382b7caf28"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_factorycalendar.js",
+      "sha256": "80306bee038b27ccaf26a018e214633ac8efb528f2d6abe9b6bcb2231265c64a"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_gantt.js",
+      "sha256": "f048ee86763a7dd07d23926753425136c6046871408053cba08595bd1b0fdfa8"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_horizontal_spacer.js",
+      "sha256": "ffdc2f56adda0693293cd3f2161d27d16e661390cccc8147f06a92279f9c9497"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_image_carsuel.js",
+      "sha256": "8386a4c9367ea039b16589b9a4b826a57ed41624c7088090745902143be31130"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_image_sequence.js",
+      "sha256": "21da7cac697b131abfaf9e4d240edb8cff1f0a1881445f217c2eede973c0cc85"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_list_model.js",
+      "sha256": "edbfb498f167aca091c8d5c0ea96e09d1fd2f2bd3d46db83a0f58b4b159d5b1c"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_modelbase.js",
+      "sha256": "9be41977bce23a39f86e1542dc3ff90455f2d443c323ef1685640358febe38ef"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_radio_model.js",
+      "sha256": "d774b9b905b0ace39aaf84e569cf9f3a88b1be4f9fdce9073d42ba42bffc78b0"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_richtext.js",
+      "sha256": "66c82b8917b3025e4961da61c6209651bb23c1df68227f1d30ee27ad1d48885b"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_scale.js",
+      "sha256": "8feda6c406f7c13f69d7ef8190610cda5a2cb466994160b67ec35d8167bb2468"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_textbox.js",
+      "sha256": "ba927ba38322fd3b81bc6174b2a9fb4ba29dd323ea3a1e659e41918b8617796a"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_time.js",
+      "sha256": "bd888b18678c1dbaf555f5f9eb9819a46fffb8f9f681e4d9a82460de0320b299"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_treeview.js",
+      "sha256": "c58876b032068af643da17dded62b6ad9c8cb4b5d003b40107814598d22cfde6"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_uibase.js",
+      "sha256": "ec405d09779cee7592e9c5bd140b8c8179e3f1b8dd0b62e9bc305ff0a48d62d8"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_validatebox.js",
+      "sha256": "3beec7086ee4744d6df6da3738f219055e453936b1200d0dcf887f2cb7129377"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_vertical_spacer.js",
+      "sha256": "b876404391e95ba5377220fd59de072c5c3e455ffcc10c8fa6acd12c97145a51"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/UI/kmui_webcontainer.js",
+      "sha256": "a4ed23705ab348cda04565ad71ba030c3df98a22282866dfd94a94e56ae91210"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/Common/Graphic/km_svg_convert.js",
+      "sha256": "790f44450b3765173004f0f781429bbbbcd879905bfbd5d34c1e5a9a130e2256"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/2dprocessflowcharteditor/kmui_2Dflowchart_editor.js",
+      "sha256": "f3ee7c30bcc1d8b902354444131cfeaa16d3ad46fd28e926eb6206ac7d612f16"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/2dprocessflowcharteditor/kmui_2Dflowchart_toolkit.js",
+      "sha256": "2a9420e7c09dabef984b3fda4f567a085d1a310c1bf4d4ec4419d3e4a9695c70"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/2dprocessflowcharteditor/kmui_2Dflowchart_view.js",
+      "sha256": "cbe4beee5538616d34cafe918f72db3df13d7ad41f79a0a77680f1a7ae571292"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/chartscomponenteditor/kmui_customcharts_editor.js",
+      "sha256": "9bd9206eb193cc505f08419c3e56b4871fd6a7949cdc27ca69ee5172ab3c45e7"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/chartscomponenteditor/kmui_customcharts_view.js",
+      "sha256": "f81017dbfad97f5bac0b84f36089f3be6a0b0d9e03e9ecc3c6c9807c6cd46219"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/chartscomponenteditor/kmui_customchartstoolkit.js",
+      "sha256": "fea6a6e162791b9edd6666fc54ae2a92a35cb2d06cd80e1a189817464d497792"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/chartscomponenteditor/kmui_option_editor.js",
+      "sha256": "e0911d267a8226491d564cdcfefbc3e7c85bf2142bf5e67d0a7a035ff669daaf"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/graphicmodeleditor/kmui_graphic_view.js",
+      "sha256": "d31854a72748888394cf4cfe7f13d77689f3bed88f1398349985e7de3591b79c"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/graphicmodeleditor/kmui_graphicmodel_editor.js",
+      "sha256": "23ca03ffac8bfaffbbf874d188513e1f1a2e2c791824f89319d9a45c46a87e69"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/graphicmodeleditor/kmui_graphicmodeltoolkit.js",
+      "sha256": "e5d58e31b41ff0fa91330847a29eb6cb481a321a6cb15bd11d023dcf0befc304"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/ht3deditor/Pipe.js",
+      "sha256": "a5d6368aaad61c2a59f0f18fd24e72688dab095bae82fc710899217d4db9b35b"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/ht3deditor/kmui_ht_3d_editor.js",
+      "sha256": "c3a375c622aa3ee04407e9bb4024c80c445975408c53ed5babfb73657cc2259d"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/ht3deditor/kmui_ht_3d_editor_container.js",
+      "sha256": "f0e38e34efb1280efec1cb0c481febb209f87c88eb5fe79d8c1c0f4f7d7fe079"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/ht3deditor/kmui_ht_3d_toolkit.js",
+      "sha256": "35b1033c550573a22563a5e071564742f5f9170f7ff2f4a58878a83a82438565"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/ht3deditor/kmui_ht_3d_view.js",
+      "sha256": "b9d6dddd6c4c24093cc42bcef9e1e21380f702a26c179ec74d4f94243e5d8186"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/hteditor/kmui_ht_editor.js",
+      "sha256": "f3e2d96cc2ca2e8ba9664f7bfabf96c85491ab7797ba3e5d00722bf647f56473"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/hteditor/kmui_ht_toolkit.js",
+      "sha256": "babe9d61719a8ef2f6ff902d9c1da62a8cfbb70da188a6da75af201461ef5f9e"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/hteditor/kmui_ht_view.js",
+      "sha256": "b68c0041558e43945f845bbc57dc7d14324b2bfda44392ed397dcdc99e8ea227"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/km_draggable.js",
+      "sha256": "7cddabdf09420aefc893ea93c7c0dcfc5aa8c8e0a7ac96a5d7574f69d60c1c30"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/km_name_manager.js",
+      "sha256": "c9b464018d37bd14298dad622687fc50944e872b91e8be29ab675a1fcc12a6a7"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/kmui_editor_base.js",
+      "sha256": "81297df0ff7b90e177086ccf0c3bcbfaa05751b8bb7da3e939fcf2d99dde0ed5"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/kmui_multi_level_toolkit.js",
+      "sha256": "456449be1892b96e2841cfb810e60c9a6f219645ea71d2c14463c76341c04027"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/kmui_toolkit.js",
+      "sha256": "3cee0432187beabcc43c5936192dc428b41f7ac0ccaa21dbb98c2799a2cd8ce7"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/kmui_toolkit_accordion_panel.js",
+      "sha256": "79aafeb04d8666ded7990461eff954fc5572593718e140e2329afaa5845f0022"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/kmui_uiscript_editor.js",
+      "sha256": "625bb4c62e0caf49c0b15c287e270747d2f9250c34791a7a299b4deb998f73d7"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/kmui_view_base.js",
+      "sha256": "cd01c0fed95db3f7bd24d36b633e9babb64cc9be282a7abcce78572d2e58732b"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/pageeditor/kmui_page_editor.js",
+      "sha256": "52e2b9650cb9090196c7ae0724f3845ea5490837ff4db23673c6e614b78368a2"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/pageeditor/kmui_page_view.js",
+      "sha256": "4f46a67d25be33766ecbf2883e14dae037a4f48e99be63d54b191e9b3ff23b36"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/pageeditor/kmui_pagetoolkit.js",
+      "sha256": "898678e019863638ca66f09442bec0c7c65c38be0244f45fbe09667069618a04"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_basiccompositeflow.js",
+      "sha256": "8db0ec54fadc144ea757fa1202f355ff86eb6392b4e1429a40c8da972f69bf4b"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_basicpipeflow.js",
+      "sha256": "847d5db20df54c40f1cd4f7f033c481b7829f6d659e1a9f2af5fec210c0d6f5a"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_basicsingle.js",
+      "sha256": "dd4772d89fbd1533cc517571bf7008cea24134e62d9188ccbe409c84e3c87d2a"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_configbasicbase.js",
+      "sha256": "4a56aa9eabc4a31065c537d3527e18cd8551442fc401b5267965376b2f528fc3"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_configpropertybase.js",
+      "sha256": "7d6c34905105d99db03e84a300d1630f24d4fc8ab7b75f1b4624a25ac84c1b72"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_configrotatebase.js",
+      "sha256": "44e9c7beb6ebb5a752e5b5ba65fe9eb8de83ca81f09c56b189d110d760ff0096"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_configurebase.js",
+      "sha256": "b8a8936be402b66504d68d7fc7e08ad86d80b570ec4f04210a205105a26b0a2c"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_configurebrushproperty.js",
+      "sha256": "99c6e3069f4150c36393e375235a3977fb30575998288239dd7ff4294a6ef6ff"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_configurefill.js",
+      "sha256": "f6640adf5b675a4c420653dae2f6b59e32f21f42c51c1c040b43cd15f5e46ab5"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_configuremove.js",
+      "sha256": "34202c4a86774fb00124b9dd90e5a6bbb1817c516a44bbb19859e76098c75c6c"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_configurepenproperty.js",
+      "sha256": "d5d4b81cd5d618f4aac1b34ad2752ecdd387db50889a53aa403e191239ce09d5"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_configuretextbrushproperty.js",
+      "sha256": "2f979dfe543f45fc13c5d3168d64140d4978a11162e9e1e4c293e44937cabe09"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_configuretwinkle.js",
+      "sha256": "dd7d363152b74efd11dedc6f47e758877a56e4b7775004923292bfe34e9b6b3b"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_configurevalinputbase.js",
+      "sha256": "a236f0b07076d9deee27d3f3f28a7d8738b59010a407613aff989b512219be8c"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_configurevaloutbase.js",
+      "sha256": "36e2e746117bccab62114fb55a9d02f89339c27fdaf6fcd5ec0dafa0e464480d"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_configurezoom.js",
+      "sha256": "3a5896e55c4ce503660b5c877ea39290dcf644107475605117eff9934fa08905"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_keyword.js",
+      "sha256": "58a2f2cb7f7e11e6c4b027c1ca9636c5ac93d5d75da6c3bced56af698ab4c8d8"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_memberevent.js",
+      "sha256": "13f8bbd50c5b3a640041fb26a54c9d875702a18fadd3b0613e6a7b25ca4e9d7a"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_rotate_axis_3d.js",
+      "sha256": "575a276a1c6e34d9e33bc2f8185dba248325d34704e205643ef71b4b2d72bc06"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_rotatecenter.js",
+      "sha256": "237845cc123a9375fcc2c19efab3a9aa95fb3439a85e76a67749f09d771f8dc4"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_rotateself.js",
+      "sha256": "bb0357f4076d13125019a8be00b62e0ae5474bcdf8ffed4d04e8044ced5621a9"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_rotateself_3d.js",
+      "sha256": "6c879775265ae7cc7cfad11bbb1e65e53fe2130df5fc326e0e3d119e13f42b76"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_scripteditor.js",
+      "sha256": "cbd6f10122b4917213381c7f5360b9c93ed38c0889dca1aa5e8a53714e1bf6c0"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_scriptfunconfig.js",
+      "sha256": "ed0c3c316192e8a3acfaa09c683ba86a47fd698884518cf6ba848267ea9d33ba"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_valinputanalog.js",
+      "sha256": "e2e47d5f44ee00695eaf111dcac94a935d998a37c0a93f332c130db7d8aa7963"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_valinputdiscrete.js",
+      "sha256": "9df189229f63db3c9f4ddbb1a9ef55a192674dfefe3e0525138fecb261a55989"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_valinputstring.js",
+      "sha256": "06e78d5f263d27fb88b0d6580ea38d611d5989cefb38e8f75613f9d7f5b14c1a"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_valoutdiscrete.js",
+      "sha256": "7904f90a9bf0d5a059f3bc01f3ce685be77ea992ba62709d273baf9d0cb3ade8"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_valoutimitate.js",
+      "sha256": "d2fc866146183a953335f6f250ecd8471f1353e9d8ac79ff3d76b5b4b09543e2"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_valoutstring.js",
+      "sha256": "965e65fc1dfaa0c2007ff0ece17b79742b62077d4c5c6e821ee7d7a421d58eb5"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/km_variableselector.js",
+      "sha256": "f05339bd0c817cbd62d14edc8f816ed81dc1d60d88e0594bda1244aef376e03a"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/kmse_assistarea.js",
+      "sha256": "af8c2c7a94fc97167f8ca2d8b5259d81e5d579e63cc375308b51b46cd3f7bcb4"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/kmse_connect.js",
+      "sha256": "e23a153eedb9ce8ecf67a5eae9d405d06f0d63f07d33ff2cb53c85d562d7b529"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/kmse_toolbar.js",
+      "sha256": "b21255d9eaad06e3daaa03ad1c48c677fb3669821c79b14a8e6093a23cd068db"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/kmui_ht_scripteditor.js",
+      "sha256": "6e42725fcecc82be80eb6ffe55705640956bfa813d26a4c5af41a9f4326be96f"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/kmui_model_popup.js",
+      "sha256": "91d682e20bcdb8d8411393a223d462e6c4c59167cb95feb6d1df0782eb8e7fa2"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/DevelopClient/libs/editor/scripteditor/kmui_scripteditor.js",
+      "sha256": "8729702e82ced22edc0daef5ad7c4666bc56095e7813bc2ab4e818a3a903b164"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/HT3DEditor/client/client.js",
+      "sha256": "388c328be038da2b3d9e742ec782936f8c3c5bdd407562714365f47a7987af79"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/HT3DEditor/client/client3d.js",
+      "sha256": "fc4d03316b21afdbabbe44ef64a77be07cb0aa6cd4ea8b763c9cb2710bd54c66"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/HT3DEditor/client/index.html",
+      "sha256": "5b6d9938ea353b79dbd128ed0daf0aad5f7cd0cffdbb70f2da47111077b0e683"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingclient/exe/public/javascripts/HT3DEditor/client/index3d.html",
+      "sha256": "0ad47d2ffe271c2d88abfb1b3293618871db2dbea96c66f916449e124ede1a25"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingdbmanager/exe/lib/routers/api/v1/projectGroup_router_config.js",
+      "sha256": "f268f4da982024d3c5ede91af2402eaa5dcfd542747e0e8527f30072a6defbe2"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingdbmanager/exe/lib/routers/api/v1/project_router_config.js",
+      "sha256": "5156d65adf527c7397eda1f8cd978739f7605bb121f9710623de5a45cac8846c"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingioserver/exe/Routes/RestfulManage.js",
+      "sha256": "56665b1fe42660741c83f55fee5aefe78f7025dddd99d4039e52f13bf00d6895"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingioserver/exe/lib/routers/api/v1/projectGroup_router_config.js",
+      "sha256": "32ea3cbb29d216b89c03334b5a1b4223b2ebf38ce928decd501375c89c99e4a8"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingioserver/exe/lib/routers/api/v1/project_router_config.js",
+      "sha256": "a3cd4bcdde28a1d2a5a2f4604f00e41787f57ad2809497de2467d12c201b7c2c"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingoauth/exe/lib/controllers/controllers_user_manage/user.controller.js",
+      "sha256": "bd6fd161af7a6022cdd20381b9248a0665517fdaa63fc42a85b3e74b03b527d9"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingdevopscenter/kingoauth/exe/lib/services/services_user_manage/user.service.js",
+      "sha256": "01ff04f2eb8feedd7836296ad26c1040cf37e20a56a4fde91c85805b7b344268"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/dataSourceMng/kh_manger.js",
+      "sha256": "55b4f4409c1ea72e367b98ade60ffb205f08ae7bf83b2636d7cd8e080cf0b802"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/dataSourceMng/ks_manger.js",
+      "sha256": "1501034ae9c74c9d642dcfaa5456e25bcf9225f55b5e1dd935a45288279877d2"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/dataSourceMng/mongo_manger.js",
+      "sha256": "36537bdf5296d5d9841a384c65bcd3e8059d11b269f29dd3128bc999168396e2"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/dataSourceMng/redis_manager.js",
+      "sha256": "48e354c30190aca60a472c5464bf67d135f2d4dfb6f78f0e760cb515bcf49e40"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/dataSourceMng/sql_manger.js",
+      "sha256": "3c1bfd184266798f9f13487f6567381beb0c040ef1d0c82ea273b4b1e0f8ead1"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/dll_global_func.js",
+      "sha256": "34d03de67c7540e14e7f6a5873ae97aea9f3721a677e04c881636d98ff39ba78"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/file_global_func.js",
+      "sha256": "d1e14fbef7fdfedf7db1996b5264d5c848f391744918a2f9718ce01e56f5e2fb"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/dll_global_interface.js",
+      "sha256": "4e604b2eb4d288255a33efdd02cb512130118b3cfa41c15d16ac764c42a69c62"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/file_global_interface.js",
+      "sha256": "02ab689f1bfc6d2f523c9ead329c10e3644dfe4ff6f1ba8b210cb3ef80e0725b"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/kh_global_interface.js",
+      "sha256": "a5f3a91e59fef50591f6c8e7e132e6cb94104a23d5e15e19ca6391f6a7fc415f"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/ks_global_interface.js",
+      "sha256": "774dcb71537c3e1bdad1c6bc9a225ca544032f581e0049cf4275637e813b73d5"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/mongo_global_interface.js",
+      "sha256": "bf79dc0a6603a6bd4b5858dc00035d58b46d858f17df57c043db8042d943131c"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/redis_global_interface.js",
+      "sha256": "9ffb1d81ed28d7e9c7f1df41d62bbe6f1767529f0bfdd18f9111365ec8605681"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/sql_global_interface.js",
+      "sha256": "ab0bc70176f8a630e48a04a4d056438e2c1b482ee83a27f2c21c15b06c5daf4c"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/user_global_interface.js",
+      "sha256": "4d979feb6ee08ca6f0a125f8057f408cd37f488f8ea5294f2c13f255e7985398"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/kh_global_func.js",
+      "sha256": "ef39b2e78126d87b48ae8906ba0bc159ec9e2904b1dd7f5b6f636a65d5239524"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/kio_global_func.js",
+      "sha256": "303a271eefc9ff48c706476dd51d4bce446e8753fa7b758e23dcfd8050db5a6f"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/ks_global_func.js",
+      "sha256": "c2c803d4a38abd4b2a102a5f1afa87a9fe3557a22f13a847700979b4966c114a"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/math_global_func.js",
+      "sha256": "85fe2c2944e4f03af92b7c0ca67df0a48057195430fe7ac3c42d25be035df921"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/md5_global_func.js",
+      "sha256": "819ce19c27030463cb98f54609be3b5772ca17f9099ec464c8752faede4f7d62"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/mongo_global_func.js",
+      "sha256": "e5fdb7a2ab7226f0a689b60b586ca2679db52511f5ef249c8771d7c045f01e5d"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/redis_global_func.js",
+      "sha256": "362e7e37077c62a96668552822d80ddf8dbcc3a33bd1945a073e3572db518063"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/redundancy_global_func.js",
+      "sha256": "8187fcf5b05806fb1bb2f7bddf6d4130a1a0acc91dbed9cf24574b9064591ff3"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/request_global_func.js",
+      "sha256": "c546b4ecd9ca8c82c35175c3b262f775852c46277bff05076c61363dd065dd6f"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/sql_global_func.js",
+      "sha256": "437c2f3a5e23a11b769a8b7c6958d5431822ab44999bc635b5e1e9d70afb8e7f"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/user_global_func.js",
+      "sha256": "5035bd318a6822d546bea8b94915366d49dcfba4c1d8bbd7ff8b9a3cf91004d4"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/interface/kh_interface.js",
+      "sha256": "f3b52bdfa7ff14aa135b0b4767410a8a2cea3b75606761ce315dcb3242534159"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/interface/ks_interface.js",
+      "sha256": "f025b4a8374d87b811a33276cb7ce711ba607ed7c12bc447e351fc8be5fe5501"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/interface/mongo_interface.js",
+      "sha256": "4a0af1125a4b97489333df4f4a36c3ae88506020f00e53f355a743084338e56c"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/interface/redis_interface.js",
+      "sha256": "b15e5f050ea2bd14e4df66694e4ff98954809fde62881c4b5170b001d8a0dc12"
+    },
+    {
+      "path": "KingFusion3.6_Center/kingexedb/kingcalculation/exe/lib/service/interface/sql_interface.js",
+      "sha256": "b6a7b97cf7d60f9565d93f7bc98476a1a0b7248c998c40528227c5caf61f585f"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingalarm/exe/lib/services/alarm/alarm_config.js",
+      "sha256": "ebd9e8121ff5599a3ab7de861811b66d12806a19536801e0cb0327ba3894a1dd"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingalarm/exe/lib/services/alarm/alarm_item.js",
+      "sha256": "1220f14e36c24bc2bb62d675e99de5459e8d6e0adee7a8137a6c3ef244bbf3cb"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingalarm/exe/lib/services/alarm/alarm_mng.js",
+      "sha256": "7989ad2bd2204dacd59a8ac9b35230e0095cb35532036a20f60c4ea2ff284cc8"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingalarm/exe/lib/services/alarm/api/confirm.js",
+      "sha256": "7602e86ae336bf6f30ea8638eb062a10896703c56f81755d37812d1da6834eb6"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingalarm/exe/lib/services/alarm/api/delete.js",
+      "sha256": "335d3619ba592a406c6819fc39ff6eee297be6ad3e53ed4c3e86c2d592d2e3b9"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingalarm/exe/lib/services/alarm/api/getAllConfig.js",
+      "sha256": "2270a3cedaf2ef36e0473e58b00b96e6e898be4cc4937fd38509246059f41713"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingalarm/exe/lib/services/alarm/api/getConfigOfTag.js",
+      "sha256": "fdb49211802f045786e9a63b79e142b3cfcc90a33e0538896da6de4af1f5c48d"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingalarm/exe/lib/services/alarm/api/getConnectionInfo.js",
+      "sha256": "6d360dbfd602c01cfa34de1764a3c604fc7e228769403fe0be7cbb7d98313a91"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingalarm/exe/lib/services/alarm/api/setConfigOfTag.js",
+      "sha256": "bfdf8a4cd002c4a5b5ef10e6a80fd6f1b2c0e594d5cd947d14327df45f6647bd"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingalarm/exe/lib/services/alarm/calculators/discrete.js",
+      "sha256": "8399082b4348fa19e81e4c6e90c0b5d4daf8e3eb91f375718cb13df2289df0e3"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingalarm/exe/lib/services/alarm/calculators/restricted.js",
+      "sha256": "bd67fb9d6ed5c2145dbb0964cf278593844659f80bf35523b3f26f9289696c96"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingalarm/exe/lib/services/alarm/custom/depIndex.js",
+      "sha256": "9797841dbacd9af3c1edf4c0ce2cda31bf44b752754bc54ffcc336ef1cd89f2a"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingalarm/exe/lib/services/alarm/custom/depIndex_bak.js",
+      "sha256": "83749290488f8c68741d9f76064151d312c61bf5443d40ab39ff1e436eed5321"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingalarm/exe/lib/services/alarm/custom/groupLoader.js",
+      "sha256": "7dccdd3a55d10418f7cfa6f69d44f8ec612e46fe0e5a97cdfc78b83a340a11c3"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingalarm/exe/lib/services/alarm/custom/index.js",
+      "sha256": "dfb07a31b382878f11714f85c07d5b7015f6351c76fe6e09f63bfd6cb42ac7f7"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingalarm/exe/lib/services/alarm/custom/loader.js",
+      "sha256": "ff077229c30f2e76a51f1d154089d36861e3d45291293208dabd24e8ffd2d690"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingalarm/exe/lib/services/alarm/custom/runner.js",
+      "sha256": "75f1c93f493f71d2be97d451920c6e0cac075124be3264f0b490611eca30af00"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingalarm/exe/lib/services/alarm/custom/scheduler.js",
+      "sha256": "7bc0e84c55fd72bec3c214aadac50abc282fdc000a11fcc274cc72502bdb75a5"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingalarm/exe/lib/services/alarm/formatters/cache.js",
+      "sha256": "7430441689bdd7896e79811f35ae289c6410b0ef1bdc65239e19443b5426d19c"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingalarm/exe/lib/services/alarm/formatters/events.js",
+      "sha256": "df88f0401fa309f525a627ab5f058bec0d1b2bef062ca2c2b1949d3e68714b48"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingalarm/exe/lib/services/alarm/state/upgradeScheduler.js",
+      "sha256": "db941bcfb32e7c13cadd4e969db96b8dd7cb3e9116aa3d308aaae2845365a124"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingalarm/exe/lib/services/alarm/utils.js",
+      "sha256": "220e2c94219500c0befa949301672bf635737f4377e72bb51fc19f55578ee786"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/core/enums/error_code.js",
+      "sha256": "1cb66c5b4cbc584d21da4e4023d46923d0b23ecdc900f4a8ace399da857bd985"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/core/utils/request_util.js",
+      "sha256": "164d47516feef759e9f7ea31ee28b088c9ea34d986475508ee717400b454219c"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/init/globalFunc.js",
+      "sha256": "b6561401ad24797e58909212357469c7f9c20c903bd1a32106c94eee83a39884"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/init/globalScript.js",
+      "sha256": "1f15a8a8d15f812777b01f4663ad7f06b4160df9bf97f894a925fb2b4ccddd97"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/init/globalUtilsFunc.js",
+      "sha256": "ff0f449fc1c27e60ad26d32d1effad03cfcc6bb183e8cccff1283623f344d18e"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/appInfoMng/app_all_info.js",
+      "sha256": "7286d0906750edd861ef437d21a46a779fc546b3dd6286ebd3315bcfd246247d"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/dataSourceMng/kh_manger.js",
+      "sha256": "2ea4063509d56c3f9e996468766f39b482df53d45783c60abf865c4ffc8615f2"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/dataSourceMng/ks_manger.js",
+      "sha256": "1501034ae9c74c9d642dcfaa5456e25bcf9225f55b5e1dd935a45288279877d2"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/dataSourceMng/mongo_manger.js",
+      "sha256": "36537bdf5296d5d9841a384c65bcd3e8059d11b269f29dd3128bc999168396e2"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/dataSourceMng/redis_manager.js",
+      "sha256": "48e354c30190aca60a472c5464bf67d135f2d4dfb6f78f0e760cb515bcf49e40"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/dataSourceMng/sql_manger.js",
+      "sha256": "3c1bfd184266798f9f13487f6567381beb0c040ef1d0c82ea273b4b1e0f8ead1"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/dll_global_func.js",
+      "sha256": "34d03de67c7540e14e7f6a5873ae97aea9f3721a677e04c881636d98ff39ba78"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/file_global_func.js",
+      "sha256": "d1e14fbef7fdfedf7db1996b5264d5c848f391744918a2f9718ce01e56f5e2fb"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/dll_global_interface.js",
+      "sha256": "4e604b2eb4d288255a33efdd02cb512130118b3cfa41c15d16ac764c42a69c62"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/file_global_interface.js",
+      "sha256": "02ab689f1bfc6d2f523c9ead329c10e3644dfe4ff6f1ba8b210cb3ef80e0725b"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/kh_global_interface.js",
+      "sha256": "7ed59086a6388b38053f3531f4cb7db7e10822782e7209cd718a3bdbdcffe122"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/kio_global_interface.js",
+      "sha256": "4f7573950b218c472d9b91af4ea20db591000506fd024fd2b1fef3cca5beebea"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/ks_global_interface.js",
+      "sha256": "774dcb71537c3e1bdad1c6bc9a225ca544032f581e0049cf4275637e813b73d5"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/mongo_global_interface.js",
+      "sha256": "bf79dc0a6603a6bd4b5858dc00035d58b46d858f17df57c043db8042d943131c"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/redis_global_interface.js",
+      "sha256": "9ffb1d81ed28d7e9c7f1df41d62bbe6f1767529f0bfdd18f9111365ec8605681"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/sql_global_interface.js",
+      "sha256": "ab0bc70176f8a630e48a04a4d056438e2c1b482ee83a27f2c21c15b06c5daf4c"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/globalInterfaceMng/user_global_interface.js",
+      "sha256": "4d979feb6ee08ca6f0a125f8057f408cd37f488f8ea5294f2c13f255e7985398"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/kh_global_func.js",
+      "sha256": "8ea65e69b10a8f219310c9fe33e6353751d8700578dc81dd8761e1a1998e2cf2"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/kio_global_func.js",
+      "sha256": "303a271eefc9ff48c706476dd51d4bce446e8753fa7b758e23dcfd8050db5a6f"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/ks_global_func.js",
+      "sha256": "c2c803d4a38abd4b2a102a5f1afa87a9fe3557a22f13a847700979b4966c114a"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/math_global_func.js",
+      "sha256": "85fe2c2944e4f03af92b7c0ca67df0a48057195430fe7ac3c42d25be035df921"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/md5_global_func.js",
+      "sha256": "819ce19c27030463cb98f54609be3b5772ca17f9099ec464c8752faede4f7d62"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/mongo_global_func.js",
+      "sha256": "e5fdb7a2ab7226f0a689b60b586ca2679db52511f5ef249c8771d7c045f01e5d"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/redis_global_func.js",
+      "sha256": "362e7e37077c62a96668552822d80ddf8dbcc3a33bd1945a073e3572db518063"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/redundancy_global_func.js",
+      "sha256": "8187fcf5b05806fb1bb2f7bddf6d4130a1a0acc91dbed9cf24574b9064591ff3"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/request_global_func.js",
+      "sha256": "c546b4ecd9ca8c82c35175c3b262f775852c46277bff05076c61363dd065dd6f"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/sql_global_func.js",
+      "sha256": "437c2f3a5e23a11b769a8b7c6958d5431822ab44999bc635b5e1e9d70afb8e7f"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalFuncMng/user_global_func.js",
+      "sha256": "5035bd318a6822d546bea8b94915366d49dcfba4c1d8bbd7ff8b9a3cf91004d4"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalScriptMng/conditionEventScript/condition_script.js",
+      "sha256": "3eae7cafe98c8998e5225f98b3f5a7fef1e20a64716f84375f5af82917999559"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalScriptMng/customEventScript/customEventScript.js",
+      "sha256": "33c6889320741ed457d2c44533e891ba99eada7959917aba56d366efe2ee2bbb"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalScriptMng/customFunction/customFunction.js",
+      "sha256": "a6fe5f1557dd0c519d9531ca653d23132500e5ed9eafb5cc512d74f3db14b70e"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalScriptMng/dataChangeEventScript/dataChangeScript.js",
+      "sha256": "f806e70d4336ddc95a4853bfd9a6e1687ad274b2426d7f9078fa3e95db469332"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalScriptMng/onDemandCalcScript/onDemandCalcScript.js",
+      "sha256": "04d82b2e4dd281308f4e07e0479299c95148d411446ffb17b643f5895963c996"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalScriptMng/periodicScript/periodScript.js",
+      "sha256": "c06413d1f9516d37ced00fe4760e94466b1458f5e030be6e029341005c724d56"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalScriptMng/scriptGuard.js",
+      "sha256": "050c79afd707274b5d615f5f0f334f657123ed70057c758b7f57b1331e775a0e"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalScriptMng/systemScript/systemScript.js",
+      "sha256": "bd7eaf8510df98239c1b41007b2bc9e6d9c90075f709155df0bb79d5d7cbea96"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/globalVarMng/dataDictionary/globalVar.js",
+      "sha256": "7e643258c57bc016f2d2330007a15594a274d7aca9823f02ac3b72a656c6e2ff"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/interface/kh_interface.js",
+      "sha256": "2f4fdd08a63cb0c085a8d707260d2a74a7baf6d582ceb24aaf3299bd8260c387"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/interface/kio_interface.js",
+      "sha256": "b02ef12ff08485778a7e2451bbc638cac9dad396912b97d21a143ebcd00bf228"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/interface/ks_interface.js",
+      "sha256": "f025b4a8374d87b811a33276cb7ce711ba607ed7c12bc447e351fc8be5fe5501"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/interface/mongo_interface.js",
+      "sha256": "4a0af1125a4b97489333df4f4a36c3ae88506020f00e53f355a743084338e56c"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/interface/redis_interface.js",
+      "sha256": "b15e5f050ea2bd14e4df66694e4ff98954809fde62881c4b5170b001d8a0dc12"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingcalculation/exe/lib/service/interface/sql_interface.js",
+      "sha256": "b6a7b97cf7d60f9565d93f7bc98476a1a0b7248c998c40528227c5caf61f585f"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingclient/exe/lib/services/reportDataMng/index.js",
+      "sha256": "fe3032c484c53b16ab212786c54808b5abf50671ea93d569fda6079c58e71159"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingclient/exe/public/javascripts/RunClient/Frame/libs/runview/km_datasourcemanagerapi.js",
+      "sha256": "cc9161a5d120e838041089a7cdf9d39f7a1e7f61ed50ea278b6c92c6c9adf4a3"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingclient/exe/public/javascripts/RunClient/Frame/libs/runview/km_object_convert.js",
+      "sha256": "5189f0359303e9630e92f45fe3ab606309a258d008bdc2114c178965bee639c6"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingclient/exe/public/javascripts/RunClient/Frame/libs/runview/km_pagemanager.js",
+      "sha256": "197ba54eb78f80ae65ad61e4e6f4200c631b3c69a276ec546790978121c2677a"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingclient/exe/public/javascripts/RunClient/Frame/libs/runview/km_project_server.js",
+      "sha256": "c79ab1b04e5dad2dbedc0276f3732715b0b718ad2a2417d115048708afc68db2"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingclient/exe/public/javascripts/RunClient/Frame/libs/runview/km_stationdataserver.js",
+      "sha256": "a0e1bda407a05355f0eb25bf0c576d6bb57662241719df732420e9c667142412"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingclient/exe/public/javascripts/RunClient/Frame/libs/runview/km_stationdataserver_manager.js",
+      "sha256": "5e93cffd21726cbd9f7154ced3c6a13a70da80ad9866eab21e51b77ca4133ad2"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingclient/exe/public/javascripts/RunClient/Frame/libs/runview/km_system_event.js",
+      "sha256": "ba6a4837e413f392b24c9775439bd5a71f5ee400b17e807069e1f33a133f8d3b"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingclient/exe/public/javascripts/RunClient/Frame/libs/runview/km_system_interval.js",
+      "sha256": "f092aef6b799bab00034cd00cd4aa6627909696ec89ead455b4d81d659bef48f"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingclient/exe/public/javascripts/RunClient/Frame/libs/runview/km_system_request_mng.js",
+      "sha256": "1f129055b28e0ede51fc9f8fb2fcd2522467117db5b38a172451300d6f8a1d80"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingclient/exe/public/javascripts/RunClient/Frame/libs/runview/km_ui_initial.js",
+      "sha256": "a7dcedf9b6ff0833f40fd5a714d325c1a3da6c32a34ee808189badc41a2c6065"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingclient/exe/public/javascripts/RunClient/Frame/libs/runview/km_userauth_manager.js",
+      "sha256": "deaed55f86e3a73ab01a92f1e179a3b8dace5f29697c29c427bc659b617a7444"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingclient/exe/public/javascripts/RunClient/Frame/libs/runview/kmui_ht_3d_editor_container.js",
+      "sha256": "314c7f11ad86fe6f5a590c6a112004524f82f02c102de01db3cf631798d02ffc"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingclient/exe/public/javascripts/RunClient/Frame/libs/runview/kmui_ht_3d_preview_container.js",
+      "sha256": "f99e010213fb025052b622313a6d85b912a9c9b137f68e8e94406fc99413d16a"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingdbconnector/exe/core/enums/enum_common.js",
+      "sha256": "83011256ce52c98b2e09fdd12a9084282a43364bbb2c38a7ef7ef265b28f63af"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingdbconnector/exe/lib/daos/dao_ioredis.js",
+      "sha256": "386ca0e27395e8fbb77418c54dcd704f8633f44ada10cd1a2795444a12477775"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingdbconnector/exe/lib/daos/dao_kh.js",
+      "sha256": "c2a4107e4e65b73b865c07e09477bf424955807b45fb9d2c1490526004bff9d7"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingdbconnector/exe/lib/daos/dao_mongodb.js",
+      "sha256": "cb445ec211cf3e17e93461be96ca25606447a818e9755b7239cf732c6d99f0f4"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingdbconnector/exe/lib/services/datasource/datasource_access/datasource_alarm_server.js",
+      "sha256": "fed367f85bb6217ace5944b70fc64edbd312335891ead55a4c39cad6d7a48da5"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingdbconnector/exe/lib/services/datasource/datasource_access/datasource_base.js",
+      "sha256": "0903b942dad69575a1838d041ecf3de5b00f898b5a3329cbece74e0701a6efe9"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingdbconnector/exe/lib/services/datasource/datasource_access/datasource_dm.js",
+      "sha256": "cdc9f14cc1f214c5495a32f67cc9c067efbb48bd9ee966750a0f0585082d4558"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingdbconnector/exe/lib/services/datasource/datasource_access/datasource_emqx.js",
+      "sha256": "6b1c87c210cae4b45cc7fb14822361d65609fac9b1f57cc18082da44be77317b"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingdbconnector/exe/lib/services/datasource/datasource_access/datasource_ioredis.js",
+      "sha256": "e6b5ce28475dc5116f98edb773ff451e5ade2126c777e5a087ea8a62a5cea2dd"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingdbconnector/exe/lib/services/datasource/datasource_access/datasource_ioserver.js",
+      "sha256": "1f0185a5644a9195a279ef57361c1b34ec0ad7a407add1b7f318005986ac59e7"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingdbconnector/exe/lib/services/datasource/datasource_access/datasource_kh.js",
+      "sha256": "a2c344264d9c09f7ba7d19678685b139dd34256e78385da0c9b5a0806f06ed4c"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingdbconnector/exe/lib/services/datasource/datasource_access/datasource_kh4.0.js",
+      "sha256": "c3a9fd32113bb1fcf1d9249b95e104f0fcc4e27b045d538f2d87d8baa115bb52"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingdbconnector/exe/lib/services/datasource/datasource_access/datasource_ks.js",
+      "sha256": "a3702cc882375d192fa07ae5f71429bcb50c860278c80c1430e026c759ee29b8"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingdbconnector/exe/lib/services/datasource/datasource_access/datasource_ks_linux.js",
+      "sha256": "ca279c0bba0ddce904c4a6aeabb5fd5fe33eba93e0bf572dcb7cd3ab7a16cc16"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingdbconnector/exe/lib/services/datasource/datasource_access/datasource_kv.js",
+      "sha256": "7c093456cc9ae80400d72179644ad61ef500662f96ceae76e754771761f22f77"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingdbconnector/exe/lib/services/datasource/datasource_access/datasource_mongodb.js",
+      "sha256": "33de01bbe8db7bf79cec7de9a0f5f6b7f3af6b4e294af9f66ab0ab8dd240af29"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingdbconnector/exe/lib/services/datasource/datasource_access/datasource_mysql.js",
+      "sha256": "c3133c303eb6f9b68cf3ac7dae6303de6863a1e6800f8052753374dbf2aa571c"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingdbconnector/exe/lib/services/datasource/datasource_access/datasource_oracle.js",
+      "sha256": "e53c2db2e33369f4125b5572c62dec1e8b7ec130c4f8a4c6eee7495ab127c27d"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingdbconnector/exe/lib/services/datasource/datasource_access/datasource_pg.js",
+      "sha256": "3134b01ff400bd54d5bf76837fc0e09f7845bcd502a78f1c7f048e6764c2fa6c"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingdbconnector/exe/lib/services/datasource/datasource_access/datasource_sqlserver.js",
+      "sha256": "b105eafad7a107f1dbc37a0510f67e0fe496015b709876dbcfb762e316a88287"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingdbconnector/exe/lib/services/datasource/datasource_access/datasource_tdengine.js",
+      "sha256": "5e9e72e9fb06a0295181d616d9a32de58093707c4140c1d727d0fd81a8fc45e7"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingdbconnector/exe/lib/services/datasource/datasource_access/datasource_uads.js",
+      "sha256": "ecc8f611eeefc5bcd1821f7b63ff6b8e8b782dcd5e23a3158cb87ebd45702bad"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingexedb/kingdbconnector/exe/lib/services/datasource/datasource_access/index.js",
+      "sha256": "19bd66468de822fdecdc3c5db2c544d4578a66a0503ceb135b2ed53892f626ea"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingopsproxy/exe/kingopsagent/exe/lib/services/commands/command/deployCommand.js",
+      "sha256": "012cdc9b5a08a6f64f41b13307ce80396fd6b1258631e950935319c9579bceff"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingopsproxy/exe/kingopsagent/exe/lib/services/deploy/deploy.js",
+      "sha256": "11a645a23f07bc8e32edce0982b3181d259253651fa3da28241d27bba9e8639d"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingopsproxy/exe/kingopsagent/exe/lib/services/deploy/pm2Delegate.js",
+      "sha256": "40b39c9e980ebf9ce392d5ebca276b2141a48be7d2e2e47e3041399c448a892e"
+    },
+    {
+      "path": "KingFusion3.6_Node/kingopsproxy/exe/kingopsagent/exe/lib/services/project/project_download.js",
+      "sha256": "f2b35f23512590aa991f5ff7d224cce14183b006d00d9ad73c69f891755a4a4b"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "KF 运行画面核对",
+  "version": "0.1.0",
+  "description": "单击后，仅向本机 KF 开发助手提供当前运行标签页中选定控件的观察。",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwf1RoqP4hBrPWUdv+CBJB94eWo1Z6egKK7vWg+h8QUMi7kwqXN4bMEr3L4mPSUhJ3f1wNNZ14hIy4eit/hJe2dhvqAhCdZgtr43dwW+2tv/bc1lUQz1v0qz+RYlKGfcZPahaUfEymgDFeOG/YNiAMILevuRVP3WX9BOv+qMSyEoefatUglY40wbJp2fRPEgq9HVZrmyY09VNvCPgsW5vTrdNr3scsewx7zh2OqGv7JmVJ8vnJMRTLEDAvT1ADLuinNFXUOcyvKaCpXcVaJq1Rugh+E3OTvlnWu313AT8OC6yN1sIlGsjVEZ7Nr0HH2VgIH5Hg5Mj4/2obN3wCBnnAwIDAQAB",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "action": {
+    "default_title": "将此 KF 运行页关联到本机开发助手，再次单击解除"
+  },
+  "background": {
+    "service_worker": "worker.js",
+    "type": "module"
+  },
+  "externally_connectable": {
+    "matches": [
+      "http://127.0.0.1/*",
+      "http://localhost/*"
+    ]
+  }
+}

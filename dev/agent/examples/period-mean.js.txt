@@ -1,0 +1,61 @@
+// modified by jinlong.feng at 2026-11-20 KF开发助手工程上下文与证据
+// modified by jinlong.feng at 2026-11-20 供水站压力监控开发指导方案
+const source = "Rt";
+const inputTag = "P_OUT";
+const outputTag = "P_AVG5_TEXT";
+// modified by jinlong.feng at 2026-11-20 供水站压力监控实机联调
+// 无时区的设备时间需要现场校时。此测试台已核实为 UTC+08:00。
+const sourceUtcOffset = "+08:00";
+// end
+const now = Date.now();
+const minute = Math.floor(now / 60000);
+const stateKey = "waterStationPressureWindowV1";
+const state = global[stateKey] || (global[stateKey] = {
+  busy: false, lastMinute: null, samples: new Map()
+});
+
+if (state.busy || state.lastMinute === minute) return;
+state.busy = true;
+try {
+  if (state.lastMinute !== null && minute < state.lastMinute) state.samples.clear();
+  state.lastMinute = minute;
+  for (const slot of state.samples.keys()) {
+    if (slot < minute - 4) state.samples.delete(slot);
+  }
+
+  const rows = [];
+  const code = await KIOQueryDatas(source, [inputTag], rows);
+  const row = rows.length === 1 && rows[0];
+  if (code === 0 && row && row.N === inputTag && row.Q === 192) {
+    const raw = row.V;
+    const value = typeof raw === "number" ||
+      (typeof raw === "string" && raw.trim() !== "") ? Number(raw) : NaN;
+    let stamp = NaN;
+    if (typeof row.T === "number" && Number.isInteger(row.T)) stamp = row.T;
+    if (typeof row.T === "string" && /(?:Z|[+-]\d{2}:\d{2})$/i.test(row.T)) {
+      stamp = Date.parse(row.T);
+    }
+    // modified by jinlong.feng at 2026-11-20 供水站压力监控实机联调
+    if (typeof row.T === "string" && /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{3}$/.test(row.T)) {
+      stamp = Date.parse(row.T.replace(" ", "T") + sourceUtcOffset);
+    }
+    // end
+    const age = now - stamp;
+    if (Number.isFinite(value) && value >= 0 && value <= 1000 &&
+        Math.floor(stamp / 60000) === minute && age >= 0 && age <= 20000) {
+      state.samples.set(minute, value);
+    }
+  }
+
+  const values = Array.from(state.samples.values());
+  const result = values.length === 5
+    ? "AVG5=" + (values.reduce((sum, value) => sum + value, 0) / 5).toFixed(1) + " kPa"
+    : "WAIT " + values.length + "/5";
+  const text = result + " | " + new Date(now).toISOString();
+  const writeCode = await KIOUpdateDatas(source, [{ N: outputTag, V: text, Q: 192 }], []);
+  if (writeCode !== 0) throw new Error("P_AVG5_TEXT write code " + writeCode);
+} finally {
+  state.busy = false;
+}
+// end
+// end

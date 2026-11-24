@@ -1,0 +1,4 @@
+# modified by jinlong.feng at 2026-11-24 KF开发助手公开仓库交付
+kf-reference/** -text
+dev/agent/src/*.ts text eol=lf
+# end

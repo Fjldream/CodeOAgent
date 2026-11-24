@@ -1,0 +1,12 @@
+// modified by jinlong.feng at 2026-11-20 KF开发助手工程上下文与证据
+const samples = InParam && InParam.samples;
+if (!Array.isArray(samples) || samples.length !== 5) {
+  OutParam.status = "need_five_samples";
+} else if (!samples.every(sample => sample && sample.Q === 192 && Number.isFinite(sample.V))) {
+  OutParam.status = "bad_sample";
+} else {
+  OutParam.status = "ok";
+  OutParam.mean = samples.reduce((sum, sample) => sum + sample.V, 0) / samples.length;
+}
+endResponse(RequestID);
+// end

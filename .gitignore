@@ -1,0 +1,21 @@
+# modified by jinlong.feng at 2026-11-24 KF开发助手公开仓库交付
+node_modules
+dist/
+.state/
+.cache/
+.toolchain/
+outputs/
+__pycache__/
+.DS_Store
+.env
+.env.*
+!.env.example
+*.log
+*.har
+*.db
+*.sqlite
+*.sqlite3
+*.pem
+*.key
+*.p12
+# end
